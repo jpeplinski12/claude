@@ -46,7 +46,7 @@
     .link-inherit, .link-inherit a { color: inherit !important; text-decoration: none !important; }
 
     /* Mobile styles */
-    @media only screen and (max-width: 620px) {
+    @media only screen and (max-width: 660px) {
       body, html { overflow-x: hidden !important; }
       table { table-layout: fixed !important; }
       .wrapper { width: 100% !important; max-width: 100% !important; }
@@ -113,13 +113,13 @@
       <td align="center" style="padding: 0;">
 
         <!--[if (gte mso 9)|(IE)]>
-        <table role="presentation" cellpadding="0" cellspacing="0" width="600" align="center">
+        <table role="presentation" cellpadding="0" cellspacing="0" width="640" align="center">
         <tr>
         <td>
         <![endif]-->
 
         <!-- Main Container -->
-        <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="wrapper" style="max-width: 600px; width: 100%; background-color: #0b0c0e;">
+        <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="wrapper" style="max-width: 640px; width: 100%; background-color: #0b0c0e;">
 
           <!-- ============================================
                HEADER SECTION
@@ -222,11 +222,13 @@
                         {% if custom_attribute.${total_minutes_listened} != blank and custom_attribute.${total_minutes_listened} | plus: 0 > 0 %}Your Time in Prayer{% else %}Community Time in Prayer{% endif %}
                       </p>
                       <p class="stat-number-lg" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 56px; font-weight: 800; color: #ffffff; line-height: 150%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
+                        <a href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" target="_blank" style="text-decoration: none; color: #ffffff;">
                         {% if custom_attribute.${total_minutes_listened} != blank and custom_attribute.${total_minutes_listened} | plus: 0 > 0 %}
                           {{custom_attribute.${total_minutes_listened} | round | number_with_delimiter}}
                         {% else %}
                           {{platform_total_minutes}}
                         {% endif %}
+                        </a>
                       </p>
                       <p class="mobile-text-sm" style="margin: 8px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #a0a0a8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
                         minutes in prayer
@@ -270,11 +272,13 @@
                               {% if custom_attribute.${longest_streak} != blank and custom_attribute.${longest_streak} | plus: 0 > 0 %}Your Longest Streak{% else %}Top Streak of All Time{% endif %}
                             </p>
                             <p class="stat-number-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 150%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
+                              <a href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" target="_blank" style="text-decoration: none; color: #ffffff;">
                               {% if custom_attribute.${longest_streak} != blank and custom_attribute.${longest_streak} | plus: 0 > 0 %}
                                 {{custom_attribute.${longest_streak} | round | number_with_delimiter}}
                               {% else %}
                                 {{platform_longest_streak}}
                               {% endif %}
+                              </a>
                             </p>
                             <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
                               days
@@ -305,11 +309,13 @@
                               {% if custom_attribute.${prayers_shared} != blank and custom_attribute.${prayers_shared} | plus: 0 > 0 %}Your Prayers Shared{% else %}Total Prayers Shared{% endif %}
                             </p>
                             <p class="stat-number-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 150%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
+                              <a href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" target="_blank" style="text-decoration: none; color: #ffffff;">
                               {% if custom_attribute.${prayers_shared} != blank and custom_attribute.${prayers_shared} | plus: 0 > 0 %}
                                 {{custom_attribute.${prayers_shared} | round | number_with_delimiter}}
                               {% else %}
                                 {{platform_prayers_shared}}
                               {% endif %}
+                              </a>
                             </p>
                             <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
                               {% if custom_attribute.${prayers_shared} != blank and custom_attribute.${prayers_shared} | plus: 0 == 1 %}prayer shared{% else %}prayers shared{% endif %}
@@ -346,25 +352,27 @@
                 <tr>
                   <!-- Your 2025 Scripture -->
                   <td class="mobile-stack mobile-stack-padding" width="49%" valign="top" style="padding-right: 8px;">
-                    <a href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" target="_blank" style="text-decoration: none; color: inherit;">
-                      <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card-tall" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 180px;">
-                        <tr>
-                          <td align="center" valign="middle" class="inner-padding stat-card-tall" width="100%" style="padding: 24px 16px; height: 180px;">
-                            <p style="margin: 0 0 4px; font-size: 28px; line-height: 150%; mso-line-height-rule: exactly;">📖</p>
-                            <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
-                              {% if custom_attribute.${first_daily_saved} != blank %}Your 2025 Scripture{% else %}Top 2025 Scripture{% endif %}
-                            </p>
-                            <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 400; color: #ffffff; line-height: 150%; font-style: italic; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
-                              {% if custom_attribute.${first_daily_saved} != blank %}
-                                {{custom_attribute.${first_daily_saved}}}
-                              {% else %}
-                                {{platform_top_scripture}}
-                              {% endif %}
-                            </p>
-                          </td>
-                        </tr>
-                      </table>
-                    </a>
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card-tall" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 200px;">
+                      <tr>
+                        <td align="center" valign="middle" class="inner-padding stat-card-tall" width="100%" style="padding: 24px 16px; height: 200px;">
+                          <p style="margin: 0 0 4px; font-size: 28px; line-height: 150%; mso-line-height-rule: exactly;">📖</p>
+                          <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
+                            {% if custom_attribute.${first_daily_saved} != blank %}Your 2025 Scripture{% else %}Top 2025 Scripture{% endif %}
+                          </p>
+                          <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 400; color: #ffffff; line-height: 150%; font-style: italic; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
+                            <a href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" target="_blank" style="text-decoration: none; color: #ffffff;">
+                            {% if custom_attribute.${first_daily_saved} != blank %}
+                              {{custom_attribute.${first_daily_saved}}}
+                            {% else %}
+                              {{platform_top_scripture}}
+                            {% endif %}
+                            </a>
+                          </p>
+                          <!-- Spacer for equal height -->
+                          <p style="margin: 20px 0 0; font-size: 16px; color: transparent; mso-line-height-rule: exactly; line-height: 150%;">&nbsp;</p>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
 
                   <!--[if (gte mso 9)|(IE)]>
@@ -373,28 +381,28 @@
 
                   <!-- AI Chat Sessions -->
                   <td class="mobile-stack" width="49%" valign="top" style="padding-left: 8px;">
-                    <a href="https://pray.com?deeplink=pray://page/ai-chat" target="_blank" style="text-decoration: none; color: inherit;">
-                      <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card-tall" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 180px;">
-                        <tr>
-                          <td align="center" valign="middle" class="inner-padding stat-card-tall" width="100%" style="padding: 24px 16px; height: 180px;">
-                            <p style="margin: 0 0 4px; font-size: 28px; line-height: 150%; mso-line-height-rule: exactly;">💬</p>
-                            <p class="mobile-text-xs" style="margin: 0 0 6px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
-                              {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 > 0 %}Your AI Chats{% else %}Total AI Chat Sessions{% endif %}
-                            </p>
-                            <p class="stat-number-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 150%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
-                              {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 > 0 %}
-                                {{custom_attribute.${ai_count} | round | number_with_delimiter}}
-                              {% else %}
-                                {{platform_ai_sessions}}
-                              {% endif %}
-                            </p>
-                            <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
-                              {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 == 1 %}faith conversation{% else %}faith conversations{% endif %}
-                            </p>
-                          </td>
-                        </tr>
-                      </table>
-                    </a>
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card-tall" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 200px;">
+                      <tr>
+                        <td align="center" valign="middle" class="inner-padding stat-card-tall" width="100%" style="padding: 24px 16px; height: 200px;">
+                          <p style="margin: 0 0 4px; font-size: 28px; line-height: 150%; mso-line-height-rule: exactly;">💬</p>
+                          <p class="mobile-text-xs" style="margin: 0 0 6px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
+                            {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 > 0 %}Your AI Chats{% else %}Total AI Chat Sessions{% endif %}
+                          </p>
+                          <p class="stat-number-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 150%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
+                            <a href="https://pray.com?deeplink=pray://page/ai-chat" target="_blank" style="text-decoration: none; color: #ffffff;">
+                            {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 > 0 %}
+                              {{custom_attribute.${ai_count} | round | number_with_delimiter}}
+                            {% else %}
+                              {{platform_ai_sessions}}
+                            {% endif %}
+                            </a>
+                          </p>
+                          <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
+                            {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 == 1 %}faith conversation{% else %}faith conversations{% endif %}
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
@@ -441,25 +449,25 @@
                 <tr>
                   <!-- #1 Devotional -->
                   <td class="mobile-stack mobile-stack-padding" width="49%" valign="top" style="padding-right: 8px;">
-                    <a href="https://www.pray.com/series/bible-in-a-year-with-jack-graham?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/series/bible-in-a-year-with-jack-graham" target="_blank" style="text-decoration: none; color: inherit;">
-                      <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 160px;">
-                        <tr>
-                          <td align="center" valign="middle" class="inner-padding stat-card" width="100%" style="padding: 20px 16px; height: 160px;">
-                            <p style="margin: 0 0 4px; font-size: 32px; line-height: 150%; mso-line-height-rule: exactly;">🎙️</p>
-                            <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
-                              {% if custom_attribute.${most_listened_podcast} != blank %}Your #1 Devotional{% else %}#1 Devotional{% endif %}
-                            </p>
-                            <p class="mobile-text-sm" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; font-weight: 700; color: #ffffff; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
-                              {% if custom_attribute.${most_listened_podcast} != blank %}
-                                {{custom_attribute.${most_listened_podcast}}}
-                              {% else %}
-                                {{platform_top_podcast}}
-                              {% endif %}
-                            </p>
-                          </td>
-                        </tr>
-                      </table>
-                    </a>
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 180px;">
+                      <tr>
+                        <td align="center" valign="middle" class="inner-padding stat-card" width="100%" style="padding: 20px 16px; height: 180px;">
+                          <p style="margin: 0 0 4px; font-size: 32px; line-height: 150%; mso-line-height-rule: exactly;">🎙️</p>
+                          <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
+                            {% if custom_attribute.${most_listened_podcast} != blank %}Your #1 Devotional{% else %}#1 Devotional{% endif %}
+                          </p>
+                          <p class="mobile-text-sm" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; font-weight: 700; color: #ffffff; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
+                            <a href="https://www.pray.com/series/bible-in-a-year-with-jack-graham?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/series/bible-in-a-year-with-jack-graham" target="_blank" style="text-decoration: none; color: #ffffff;">
+                            {% if custom_attribute.${most_listened_podcast} != blank %}
+                              {{custom_attribute.${most_listened_podcast}}}
+                            {% else %}
+                              {{platform_top_podcast}}
+                            {% endif %}
+                            </a>
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
 
                   <!--[if (gte mso 9)|(IE)]>
@@ -468,25 +476,25 @@
 
                   <!-- Favorite Voice -->
                   <td class="mobile-stack" width="49%" valign="top" style="padding-left: 8px;">
-                    <a href="https://www.pray.com/series/bible-in-a-year-with-jack-graham?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/series/bible-in-a-year-with-jack-graham" target="_blank" style="text-decoration: none; color: inherit;">
-                      <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 160px;">
-                        <tr>
-                          <td align="center" valign="middle" class="inner-padding stat-card" width="100%" style="padding: 20px 16px; height: 160px;">
-                            <p style="margin: 0 0 4px; font-size: 32px; line-height: 150%; mso-line-height-rule: exactly;">⭐</p>
-                            <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
-                              {% if custom_attribute.${most_listened_artist} != blank %}Your Favorite Voice{% else %}Favorite Voice{% endif %}
-                            </p>
-                            <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 20px; font-weight: 700; color: #ffffff; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
-                              {% if custom_attribute.${most_listened_artist} != blank %}
-                                {{custom_attribute.${most_listened_artist}}}
-                              {% else %}
-                                {{platform_top_artist}}
-                              {% endif %}
-                            </p>
-                          </td>
-                        </tr>
-                      </table>
-                    </a>
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 180px;">
+                      <tr>
+                        <td align="center" valign="middle" class="inner-padding stat-card" width="100%" style="padding: 20px 16px; height: 180px;">
+                          <p style="margin: 0 0 4px; font-size: 32px; line-height: 150%; mso-line-height-rule: exactly;">⭐</p>
+                          <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
+                            {% if custom_attribute.${most_listened_artist} != blank %}Your Favorite Voice{% else %}Favorite Voice{% endif %}
+                          </p>
+                          <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 20px; font-weight: 700; color: #ffffff; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
+                            <a href="https://www.pray.com/series/bible-in-a-year-with-jack-graham?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/series/bible-in-a-year-with-jack-graham" target="_blank" style="text-decoration: none; color: #ffffff;">
+                            {% if custom_attribute.${most_listened_artist} != blank %}
+                              {{custom_attribute.${most_listened_artist}}}
+                            {% else %}
+                              {{platform_top_artist}}
+                            {% endif %}
+                            </a>
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
               </table>
@@ -533,7 +541,7 @@
                         2025 Milestone
                       </p>
                       <p class="community-number" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 48px; font-weight: 800; color: #ffffff; line-height: 150%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
-                        {{platform_total_downloads}}+
+                        <a href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" target="_blank" style="text-decoration: none; color: #ffffff;">{{platform_total_downloads}}+</a>
                       </p>
                       <p class="mobile-text-sm" style="margin: 8px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #ffffff; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
                         Total Podcast Downloads
@@ -649,33 +657,33 @@
               <table role="presentation" cellpadding="0" cellspacing="0">
                 <tr>
                   <td style="padding: 0 8px;">
-                    <a href="https://www.facebook.com/paboraypray" target="_blank" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/66913e949d0f83005959f221/original.png?1720794772" alt="Facebook" width="32" height="32" style="display: block;">
+                    <a href="https://www.facebook.com/pray/" target="_blank" style="text-decoration: none;">
+                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/622a7f73a4943e1bce16f6f0/original.png?1646952307" alt="Facebook" width="40" height="40" style="display: block;">
                     </a>
                   </td>
                   <td style="padding: 0 8px;">
-                    <a href="https://www.youtube.com/c/paboraydotcom" target="_blank" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/66913e94e817fe005b56e17b/original.png?1720794772" alt="YouTube" width="32" height="32" style="display: block;">
+                    <a href="https://www.youtube.com/channel/UCNyNg5QgG5irAuFCs8L8BSg" target="_blank" style="text-decoration: none;">
+                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/622a7f7359344573bd4ccd3d/original.png?1646952307" alt="YouTube" width="40" height="40" style="display: block;">
                     </a>
                   </td>
                   <td style="padding: 0 8px;">
-                    <a href="https://www.instagram.com/pray" target="_blank" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/66913e949d0f83005959f222/original.png?1720794772" alt="Instagram" width="32" height="32" style="display: block;">
+                    <a href="https://www.instagram.com/pray/" target="_blank" style="text-decoration: none;">
+                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/622a7f7359344574564ccff9/original.png?1646952307" alt="Instagram" width="40" height="40" style="display: block;">
                     </a>
                   </td>
                   <td style="padding: 0 8px;">
-                    <a href="https://twitter.com/paboray" target="_blank" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/66913e949d0f83005959f223/original.png?1720794772" alt="X" width="32" height="32" style="display: block;">
+                    <a href="https://twitter.com/pray/" target="_blank" style="text-decoration: none;">
+                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/6508687b8cb7de004bea29c4/original.png?1695049851" alt="X" width="40" height="40" style="display: block;">
                     </a>
                   </td>
                   <td style="padding: 0 8px;">
-                    <a href="https://www.linkedin.com/company/paboray/" target="_blank" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/66913e95e817fe005b56e17c/original.png?1720794773" alt="LinkedIn" width="32" height="32" style="display: block;">
+                    <a href="https://www.linkedin.com/company/pray.com" target="_blank" style="text-decoration: none;">
+                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/622a7f73fde9db4f948352c3/original.png?1646952307" alt="LinkedIn" width="40" height="40" style="display: block;">
                     </a>
                   </td>
                   <td style="padding: 0 8px;">
-                    <a href="https://www.tiktok.com/@pray.com" target="_blank" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/66913e95e817fe005b56e17d/original.png?1720794773" alt="TikTok" width="32" height="32" style="display: block;">
+                    <a href="https://www.tiktok.com/@pray?lang=en" target="_blank" style="text-decoration: none;">
+                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/622a7f733e3a900d48a2ee82/original.png?1646952307" alt="TikTok" width="40" height="40" style="display: block;">
                     </a>
                   </td>
                 </tr>
