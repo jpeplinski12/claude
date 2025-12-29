@@ -221,10 +221,10 @@
                     <td align="center" class="inner-padding" style="padding: 32px 24px;">
                       <p style="margin: 0 0 4px; font-size: 36px; line-height: 1;">🙏</p>
                       <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 2px;">
-                        {% if has_personal_stats %}Your Time in Prayer{% else %}Community Time in Prayer{% endif %}
+                        {% if custom_attribute.${total_minutes_listened} != blank and custom_attribute.${total_minutes_listened} | plus: 0 > 0 %}Your Time in Prayer{% else %}Community Time in Prayer{% endif %}
                       </p>
                       <p class="stat-number-lg" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 56px; font-weight: 800; color: #ffffff; line-height: 1;">
-                        {% if has_personal_stats %}
+                        {% if custom_attribute.${total_minutes_listened} != blank and custom_attribute.${total_minutes_listened} | plus: 0 > 0 %}
                           {{custom_attribute.${total_minutes_listened} | round | number_with_delimiter}}
                         {% else %}
                           {{platform_total_minutes}}
@@ -264,10 +264,10 @@
                           <td align="center" valign="middle" class="inner-padding stat-card-tall" style="padding: 24px 16px; height: 180px;">
                             <p style="margin: 0 0 4px; font-size: 28px; line-height: 1;">🔥</p>
                             <p class="mobile-text-xs" style="margin: 0 0 6px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
-                              {% if has_personal_stats %}Your Streak{% else %}Top Streak{% endif %}
+                              {% if custom_attribute.${longest_streak} != blank and custom_attribute.${longest_streak} | plus: 0 > 0 %}Your Longest Streak{% else %}Top Streak of All Time{% endif %}
                             </p>
                             <p class="stat-number-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 1;">
-                              {% if has_personal_stats and custom_attribute.${longest_streak} != blank %}
+                              {% if custom_attribute.${longest_streak} != blank and custom_attribute.${longest_streak} | plus: 0 > 0 %}
                                 {{custom_attribute.${longest_streak} | round | number_with_delimiter}}
                               {% else %}
                                 {{platform_longest_streak}}
@@ -299,17 +299,17 @@
                           <td align="center" valign="middle" class="inner-padding stat-card-tall" style="padding: 24px 16px; height: 180px;">
                             <p style="margin: 0 0 4px; font-size: 28px; line-height: 1;">🤝</p>
                             <p class="mobile-text-xs" style="margin: 0 0 6px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
-                              {% if has_personal_stats %}Prayers Shared{% else %}Total Prayers Shared{% endif %}
+                              {% if custom_attribute.${prayers_shared} != blank and custom_attribute.${prayers_shared} | plus: 0 > 0 %}Your Prayers Shared{% else %}Total Prayers Shared{% endif %}
                             </p>
                             <p class="stat-number-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 1;">
-                              {% if has_personal_stats and custom_attribute.${prayers_shared} != blank %}
+                              {% if custom_attribute.${prayers_shared} != blank and custom_attribute.${prayers_shared} | plus: 0 > 0 %}
                                 {{custom_attribute.${prayers_shared} | round | number_with_delimiter}}
                               {% else %}
                                 {{platform_prayers_shared}}
                               {% endif %}
                             </p>
                             <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8;">
-                              {% if has_personal_stats and custom_attribute.${prayers_shared} | plus: 0 == 1 %}prayer shared{% else %}prayers shared{% endif %}
+                              {% if custom_attribute.${prayers_shared} != blank and custom_attribute.${prayers_shared} | plus: 0 == 1 %}prayer shared{% else %}prayers shared{% endif %}
                             </p>
                           </td>
                         </tr>
@@ -334,10 +334,10 @@
                           <td align="center" valign="middle" class="inner-padding stat-card" style="padding: 24px 16px; height: 160px;">
                             <p style="margin: 0 0 4px; font-size: 28px; line-height: 1;">📖</p>
                             <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
-                              {% if has_personal_stats %}Your 2025 Scripture{% else %}Top 2025 Scripture{% endif %}
+                              {% if custom_attribute.${first_daily_saved} != blank %}Your 2025 Scripture{% else %}Top 2025 Scripture{% endif %}
                             </p>
                             <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 400; color: #ffffff; line-height: 1.3; font-style: italic;">
-                              {% if has_personal_stats and custom_attribute.${first_daily_saved} != blank %}
+                              {% if custom_attribute.${first_daily_saved} != blank %}
                                 {{custom_attribute.${first_daily_saved}}}
                               {% else %}
                                 {{platform_top_scripture}}
@@ -361,17 +361,17 @@
                           <td align="center" valign="middle" class="inner-padding stat-card" style="padding: 24px 16px; height: 160px;">
                             <p style="margin: 0 0 4px; font-size: 28px; line-height: 1;">💬</p>
                             <p class="mobile-text-xs" style="margin: 0 0 6px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
-                              {% if has_personal_stats %}Your AI Chats{% else %}Total AI Chats{% endif %}
+                              {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 > 0 %}Your AI Chats{% else %}Total AI Chat Sessions{% endif %}
                             </p>
                             <p class="stat-number-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 1;">
-                              {% if has_personal_stats and custom_attribute.${ai_count} != blank %}
+                              {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 > 0 %}
                                 {{custom_attribute.${ai_count} | round | number_with_delimiter}}
                               {% else %}
                                 {{platform_ai_sessions}}
                               {% endif %}
                             </p>
                             <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8;">
-                              {% if has_personal_stats and custom_attribute.${ai_count} | plus: 0 == 1 %}faith conversation{% else %}faith conversations{% endif %}
+                              {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 == 1 %}faith conversation{% else %}faith conversations{% endif %}
                             </p>
                           </td>
                         </tr>
@@ -419,10 +419,10 @@
                           <td align="center" valign="middle" class="inner-padding stat-card" style="padding: 20px 16px; height: 160px;">
                             <p style="margin: 0 0 4px; font-size: 32px; line-height: 1;">🎙️</p>
                             <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
-                              {% if has_personal_stats %}Your #1 Devotional{% else %}#1 Devotional{% endif %}
+                              {% if custom_attribute.${most_listened_podcast} != blank %}Your #1 Devotional{% else %}#1 Devotional{% endif %}
                             </p>
                             <p class="mobile-text-sm" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; font-weight: 700; color: #ffffff; line-height: 1.3;">
-                              {% if has_personal_stats and custom_attribute.${most_listened_podcast} != blank %}
+                              {% if custom_attribute.${most_listened_podcast} != blank %}
                                 {{custom_attribute.${most_listened_podcast}}}
                               {% else %}
                                 {{platform_top_podcast}}
@@ -446,10 +446,10 @@
                           <td align="center" valign="middle" class="inner-padding stat-card" style="padding: 20px 16px; height: 160px;">
                             <p style="margin: 0 0 4px; font-size: 32px; line-height: 1;">⭐</p>
                             <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
-                              {% if has_personal_stats %}Your Favorite Voice{% else %}Favorite Voice{% endif %}
+                              {% if custom_attribute.${most_listened_artist} != blank %}Your Favorite Voice{% else %}Favorite Voice{% endif %}
                             </p>
                             <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 20px; font-weight: 700; color: #ffffff; line-height: 1.3;">
-                              {% if has_personal_stats and custom_attribute.${most_listened_artist} != blank %}
+                              {% if custom_attribute.${most_listened_artist} != blank %}
                                 {{custom_attribute.${most_listened_artist}}}
                               {% else %}
                                 {{platform_top_artist}}
@@ -585,8 +585,11 @@
               <h2 style="margin: 0 0 12px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 28px; font-weight: 800; color: #ffffff; line-height: 1.2;">
                 Bible in a Year<br>Now with Video
               </h2>
-              <p class="mobile-text-sm" style="margin: 0 0 24px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #a0a0a8; line-height: 1.5;">
-                Visit your Preference Center, select Bible in a Year, and scroll down to save your preferences.
+              <p class="mobile-text-sm" style="margin: 0 0 12px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #a0a0a8; line-height: 1.5;">
+                Experience daily scripture with brand new video teachings from Jack Graham.
+              </p>
+              <p class="mobile-text-sm" style="margin: 0 0 24px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; line-height: 1.5;">
+                Visit your Preference Center, select Bible in a Year, and save your preferences.
               </p>
 
               <!-- CTA Button -->
