@@ -1,0 +1,598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+  <title>Your 2025 Year in Prayer 🙏</title>
+
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <style>
+    table { border-collapse: collapse; }
+    td, th, div, p, a, h1, h2, h3, h4, h5, h6 { font-family: Arial, sans-serif; }
+  </style>
+  <![endif]-->
+
+  <!--[if !mso]><!-->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!--<![endif]-->
+
+  <style type="text/css">
+    /* Client-specific resets */
+    body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+    img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
+    body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+    a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
+
+    /* Mobile styles */
+    @media only screen and (max-width: 620px) {
+      .wrapper { width: 100% !important; max-width: 100% !important; }
+      .mobile-padding { padding-left: 20px !important; padding-right: 20px !important; }
+      .mobile-stack { display: block !important; width: 100% !important; max-width: 100% !important; }
+      .mobile-stack-padding { padding-bottom: 12px !important; padding-right: 0 !important; }
+      .mobile-center { text-align: center !important; }
+      .mobile-hide { display: none !important; }
+      .stat-number-lg { font-size: 48px !important; }
+      .stat-number-md { font-size: 36px !important; }
+      .hero-title { font-size: 32px !important; }
+      .section-title { font-size: 20px !important; }
+    }
+  </style>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #212224; width: 100%; -webkit-font-smoothing: antialiased;">
+
+  <!-- ============================================
+       BRAZE LIQUID VARIABLES - Define at top for easy management
+       ============================================ -->
+  {% comment %}
+    Check if user has personal stats or should see platform-wide fallback stats.
+    A user "has data" if they have listened for at least 1 minute.
+  {% endcomment %}
+
+  {% assign has_personal_stats = false %}
+  {% if custom_attribute.${total_minutes_listened} != blank and custom_attribute.${total_minutes_listened} > 0 %}
+    {% assign has_personal_stats = true %}
+  {% endif %}
+
+  <!-- ============================================
+       PLATFORM-WIDE FALLBACK STATS (Update these values)
+       ============================================ -->
+  {% assign platform_total_minutes = "675,587,678" %}
+  {% assign platform_longest_streak = "2,106" %}
+  {% assign platform_prayers_shared = "1,401,956" %}
+  {% assign platform_ai_sessions = "232,644" %}
+  {% assign platform_top_scripture = "Philippians 4:7" %}
+  {% assign platform_top_podcast = "Bible in a Year with Jack Graham" %}
+  {% assign platform_top_artist = "Jack Graham" %}
+  {% assign platform_total_downloads = "267,000,000" %}
+
+  <!-- Wrapper Table -->
+  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color: #212224;">
+    <tr>
+      <td align="center" style="padding: 20px 10px;">
+
+        <!--[if (gte mso 9)|(IE)]>
+        <table role="presentation" cellpadding="0" cellspacing="0" width="600" align="center">
+        <tr>
+        <td>
+        <![endif]-->
+
+        <!-- Main Container -->
+        <table role="presentation" cellpadding="0" cellspacing="0" class="wrapper" style="max-width: 600px; width: 100%; background-color: #0b0c0e;">
+
+          <!-- ============================================
+               HEADER SECTION
+               ============================================ -->
+          <tr>
+            <td align="center" style="padding: 40px 40px 16px;">
+              <a href="https://pray.com?utm_source=email&utm_medium=year_in_prayer&utm_campaign=2025" target="_blank" style="text-decoration: none;">
+                <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/669141db9d0f83005959f2db/original.png?1720795611" alt="PRAY.COM" width="120" style="display: block; max-width: 120px; width: 100%;">
+              </a>
+            </td>
+          </tr>
+
+          <!-- Year Badge -->
+          <tr>
+            <td align="center" class="mobile-padding" style="padding: 0 40px 20px;">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center" style="background-color: #2a2518; padding: 8px 20px; border: 1px solid #4a3d2a;">
+                    <p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 12px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 2px;">
+                      ✨ 2025 Year in Review ✨
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Hero Title -->
+          <tr>
+            <td align="center" class="mobile-padding" style="padding: 0 40px 12px;">
+              <h1 class="hero-title" style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 42px; font-weight: 800; color: #ffffff; line-height: 1.1; letter-spacing: -1px;">
+                {% if has_personal_stats %}Your Year<br>in Prayer{% else %}Our Year<br>in Prayer{% endif %}
+              </h1>
+            </td>
+          </tr>
+
+          <!-- Personalized Greeting -->
+          <tr>
+            <td align="center" class="mobile-padding" style="padding: 0 40px 8px;">
+              <p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 18px; font-weight: 600; color: #e3af4a;">
+                {% if has_personal_stats %}{{${first_name} | default: 'Friend'}}'s Faith Journey{% else %}The Pray.com Community{% endif %}
+              </p>
+            </td>
+          </tr>
+
+          <!-- Member Since -->
+          <tr>
+            <td align="center" class="mobile-padding" style="padding: 0 40px 32px;">
+              <p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; color: #8e8e9d;">
+                {{content_blocks.${2024_year-in-prayer-member-date-HTML}}}
+              </p>
+            </td>
+          </tr>
+
+          <!-- Intro Text -->
+          <tr>
+            <td class="mobile-padding" style="padding: 0 40px 40px;">
+              <p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 18px; font-weight: 400; color: #ffffff; line-height: 1.6; text-align: center;">
+                {% if has_personal_stats %}
+                This year, you grew closer to God through prayer, scripture, and faith-filled content. Here's a look back at your journey — and the incredible impact we've made together.
+                {% else %}
+                This year, the Pray.com community came together in faith, prayer, and devotion. Here's a look back at what we accomplished together — and the incredible impact you helped make possible.
+                {% endif %}
+              </p>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               YOUR PRAYER STATS SECTION
+               ============================================ -->
+
+          <!-- Section Divider -->
+          <tr>
+            <td class="mobile-padding" style="padding: 0 40px 8px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td style="border-bottom: 2px solid #e3af4a; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" class="mobile-padding" style="padding: 16px 40px 24px;">
+              <h2 class="section-title" style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 24px; font-weight: 700; color: #ffffff;">
+                📊 {% if has_personal_stats %}Your Prayer Stats{% else %}Community Prayer Stats{% endif %}
+              </h2>
+            </td>
+          </tr>
+
+          <!-- PRIMARY STAT: Total Minutes Listened -->
+          <tr>
+            <td class="mobile-padding" style="padding: 0 40px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color: #1a1b1e; border: 1px solid #3d3528;">
+                <tr>
+                  <td align="center" style="padding: 32px 24px;">
+                    <p style="margin: 0 0 4px; font-size: 36px; line-height: 1;">🙏</p>
+                    <p style="margin: 0 0 8px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 2px;">
+                      Time Spent in the Word
+                    </p>
+                    <p class="stat-number-lg" style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 56px; font-weight: 800; color: #ffffff; line-height: 1;">
+                      {% if has_personal_stats %}
+                        {{custom_attribute.${total_minutes_listened} | round | number_with_delimiter}}
+                      {% else %}
+                        {{platform_total_minutes}}
+                      {% endif %}
+                    </p>
+                    <p style="margin: 8px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 18px; color: #a0a0a8;">
+                      minutes in prayer
+                    </p>
+                    {% if has_personal_stats and custom_attribute.${listen_minutes_ntile} != blank %}
+                    <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top: 16px;">
+                      <tr>
+                        <td style="background-color: #2a2518; padding: 6px 14px; border: 1px solid #4a3d2a;">
+                          <p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #e3af4a;">
+                            🏆 Top {{custom_attribute.${listen_minutes_ntile}}}% of listeners!
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                    {% endif %}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Stats Row: Streak + Prayers Shared (Equal Height) -->
+          <tr>
+            <td class="mobile-padding" style="padding: 0 40px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <!-- Longest Streak -->
+                  <td class="mobile-stack mobile-stack-padding" width="49%" valign="top" style="padding-right: 8px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" height="180" style="background-color: #1a1b1e; border: 1px solid #2a2a2e;">
+                      <tr>
+                        <td align="center" valign="middle" height="180" style="padding: 24px 16px;">
+                          <p style="margin: 0 0 4px; font-size: 28px; line-height: 1;">🔥</p>
+                          <p style="margin: 0 0 6px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
+                            Longest Streak
+                          </p>
+                          <p class="stat-number-md" style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 1;">
+                            {% if has_personal_stats and custom_attribute.${longest_streak} != blank %}
+                              {{custom_attribute.${longest_streak} | round | number_with_delimiter}}
+                            {% else %}
+                              {{platform_longest_streak}}
+                            {% endif %}
+                          </p>
+                          <p style="margin: 4px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; color: #a0a0a8;">
+                            days
+                          </p>
+                          {% if has_personal_stats and custom_attribute.${longest_streak_ntile} != blank %}
+                          <p style="margin: 10px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 600; color: #e3af4a;">
+                            🏆 Top {{custom_attribute.${longest_streak_ntile}}}%
+                          </p>
+                          {% endif %}
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <!--[if (gte mso 9)|(IE)]>
+                  </td><td width="2%" valign="top"></td><td width="49%" valign="top">
+                  <![endif]-->
+
+                  <!-- Prayers Shared -->
+                  <td class="mobile-stack" width="49%" valign="top" style="padding-left: 8px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" height="180" style="background-color: #1a1b1e; border: 1px solid #2a2a2e;">
+                      <tr>
+                        <td align="center" valign="middle" height="180" style="padding: 24px 16px;">
+                          <p style="margin: 0 0 4px; font-size: 28px; line-height: 1;">🤝</p>
+                          <p style="margin: 0 0 6px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
+                            Prayers Shared
+                          </p>
+                          <p class="stat-number-md" style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 1;">
+                            {% if has_personal_stats and custom_attribute.${prayers_shared} != blank %}
+                              {{custom_attribute.${prayers_shared} | round | number_with_delimiter}}
+                            {% else %}
+                              {{platform_prayers_shared}}
+                            {% endif %}
+                          </p>
+                          <p style="margin: 4px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; color: #a0a0a8;">
+                            prayers shared
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Stats Row: Scripture + AI Chat (Equal Height) -->
+          <tr>
+            <td class="mobile-padding" style="padding: 0 40px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <!-- Your 2025 Scripture -->
+                  <td class="mobile-stack mobile-stack-padding" width="49%" valign="top" style="padding-right: 8px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" height="160" style="background-color: #1a1b1e; border: 1px solid #2a2a2e;">
+                      <tr>
+                        <td align="center" valign="middle" height="160" style="padding: 24px 16px;">
+                          <p style="margin: 0 0 4px; font-size: 28px; line-height: 1;">📖</p>
+                          <p style="margin: 0 0 8px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
+                            {% if has_personal_stats %}Your 2025 Scripture{% else %}Top 2025 Scripture{% endif %}
+                          </p>
+                          <p style="margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 22px; font-weight: 400; color: #ffffff; line-height: 1.3; font-style: italic;">
+                            {% if has_personal_stats and custom_attribute.${first_daily_saved} != blank %}
+                              {{custom_attribute.${first_daily_saved}}}
+                            {% else %}
+                              {{platform_top_scripture}}
+                            {% endif %}
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <!--[if (gte mso 9)|(IE)]>
+                  </td><td width="2%" valign="top"></td><td width="49%" valign="top">
+                  <![endif]-->
+
+                  <!-- AI Chat Sessions -->
+                  <td class="mobile-stack" width="49%" valign="top" style="padding-left: 8px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" height="160" style="background-color: #1a1b1e; border: 1px solid #2a2a2e;">
+                      <tr>
+                        <td align="center" valign="middle" height="160" style="padding: 24px 16px;">
+                          <p style="margin: 0 0 4px; font-size: 28px; line-height: 1;">💬</p>
+                          <p style="margin: 0 0 6px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
+                            AI Chat Sessions
+                          </p>
+                          <p class="stat-number-md" style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 1;">
+                            {% if has_personal_stats and custom_attribute.${ai_count} != blank %}
+                              {{custom_attribute.${ai_count} | round | number_with_delimiter}}
+                            {% else %}
+                              {{platform_ai_sessions}}
+                            {% endif %}
+                          </p>
+                          <p style="margin: 4px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; color: #a0a0a8;">
+                            faith conversations
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               YOUR TOP CONTENT SECTION
+               ============================================ -->
+
+          <!-- Section Divider -->
+          <tr>
+            <td class="mobile-padding" style="padding: 24px 40px 8px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td style="border-bottom: 2px solid #e3af4a; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" class="mobile-padding" style="padding: 16px 40px 24px;">
+              <h2 class="section-title" style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 24px; font-weight: 700; color: #ffffff;">
+                🎧 {% if has_personal_stats %}Your Top Content{% else %}Community Favorites{% endif %}
+              </h2>
+            </td>
+          </tr>
+
+          <!-- Content Row: Podcast + Artist Side by Side -->
+          <tr>
+            <td class="mobile-padding" style="padding: 0 40px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <!-- Most Listened Podcast / Favorite Devotional -->
+                  <td class="mobile-stack mobile-stack-padding" width="49%" valign="top" style="padding-right: 8px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" height="160" style="background-color: #1a1b1e; border: 1px solid #2a2a2e;">
+                      <tr>
+                        <td align="center" valign="middle" height="160" style="padding: 20px 16px;">
+                          <p style="margin: 0 0 4px; font-size: 32px; line-height: 1;">🎙️</p>
+                          <p style="margin: 0 0 8px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
+                            {% if has_personal_stats %}Favorite Devotional{% else %}#1 Devotional{% endif %}
+                          </p>
+                          <p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 17px; font-weight: 700; color: #ffffff; line-height: 1.3;">
+                            {% if has_personal_stats and custom_attribute.${most_listened_podcast} != blank %}
+                              {{custom_attribute.${most_listened_podcast}}}
+                            {% else %}
+                              {{platform_top_podcast}}
+                            {% endif %}
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+
+                  <!--[if (gte mso 9)|(IE)]>
+                  </td><td width="2%" valign="top"></td><td width="49%" valign="top">
+                  <![endif]-->
+
+                  <!-- Favorite Voice -->
+                  <td class="mobile-stack" width="49%" valign="top" style="padding-left: 8px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" height="160" style="background-color: #1a1b1e; border: 1px solid #2a2a2e;">
+                      <tr>
+                        <td align="center" valign="middle" height="160" style="padding: 20px 16px;">
+                          <p style="margin: 0 0 4px; font-size: 32px; line-height: 1;">⭐</p>
+                          <p style="margin: 0 0 8px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
+                            Favorite Voice
+                          </p>
+                          <p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 20px; font-weight: 700; color: #ffffff; line-height: 1.3;">
+                            {% if has_personal_stats and custom_attribute.${most_listened_artist} != blank %}
+                              {{custom_attribute.${most_listened_artist}}}
+                            {% else %}
+                              {{platform_top_artist}}
+                            {% endif %}
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               COMMUNITY HIGHLIGHTS SECTION
+               ============================================ -->
+
+          <!-- Section Divider -->
+          <tr>
+            <td class="mobile-padding" style="padding: 24px 40px 8px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td style="border-bottom: 2px solid #e3af4a; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" class="mobile-padding" style="padding: 16px 40px 24px;">
+              <h2 class="section-title" style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 24px; font-weight: 700; color: #ffffff;">
+                🌍 Community Highlights
+              </h2>
+            </td>
+          </tr>
+
+          <!-- Community Highlights - Single Bold Card -->
+          <tr>
+            <td class="mobile-padding" style="padding: 0 40px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color: #1f1d18; border: 2px solid #3d3528;">
+                <tr>
+                  <td align="center" style="padding: 32px 24px;">
+                    <p style="margin: 0 0 8px; font-size: 48px; line-height: 1;">🎉</p>
+                    <p style="margin: 0 0 8px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 2px;">
+                      2025 Milestone
+                    </p>
+                    <p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 48px; font-weight: 800; color: #ffffff; line-height: 1.2;">
+                      {{platform_total_downloads}}+
+                    </p>
+                    <p style="margin: 8px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 18px; color: #ffffff; line-height: 1.4;">
+                      Total Podcast Downloads
+                    </p>
+                    <p style="margin: 16px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; color: #a0a0a8;">
+                      You helped make this happen! 🙌
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               SUBSCRIPTION PLUS MODULE
+               ============================================ -->
+
+          <!-- Section Divider -->
+          <tr>
+            <td class="mobile-padding" style="padding: 24px 40px 8px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td style="border-bottom: 2px solid #e3af4a; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="mobile-padding" style="padding: 16px 40px 16px;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color: #1f1d18; border: 2px solid #3d3528;">
+                <tr>
+                  <td align="center" style="padding: 32px 24px;">
+                    <p style="margin: 0 0 4px; font-size: 36px; line-height: 1;">🎁</p>
+                    <p style="margin: 0 0 8px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 2px;">
+                      Support a Ministry
+                    </p>
+                    <p style="margin: 0 0 16px; font-family: 'DM Sans', Arial, sans-serif; font-size: 26px; font-weight: 800; color: #ffffff; line-height: 1.2;">
+                      Start 2026 Strong
+                    </p>
+                    <p style="margin: 0 0 16px; font-family: 'DM Sans', Arial, sans-serif; font-size: 18px; color: #ffffff; line-height: 1.5;">
+                      Unlock ad-free PRAY Premium by supporting a ministry. Your generosity shares the message of Jesus and transforms lives.
+                    </p>
+                    <p style="margin: 0 0 24px; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; color: #a0a0a8; line-height: 1.5;">
+                      {% catalog_selection_items Subs_Plus_Leaders Subscription-Plus-Module %}{{ items[0].name }} of {{ items[0].ministry }}{{ items[1].name }}{{ items[1].ministry }}{{ items[2].name }}{{ items[2].ministry }} thanks you for your donation!
+                    </p>
+
+                    <!-- CTA Button -->
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td align="center">
+                          <!--[if mso]>
+                          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{% catalog_selection_items Subs_Plus_Leaders Subscription-Plus-Module %}{{ items[0].link }}{{ items[1].link }}{{ items[2].link }}&{{content_blocks.${pray_jwt_login_generator}}}" style="height:52px;v-text-anchor:middle;width:260px;" arcsize="15%" fillcolor="#e3af4a" stroke="f">
+                            <w:anchorlock/>
+                            <center style="color:#0b0c0e;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;text-transform:uppercase;">GIVE &amp; GO AD-FREE</center>
+                          </v:roundrect>
+                          <![endif]-->
+                          <!--[if !mso]><!-->
+                          <a href="{% catalog_selection_items Subs_Plus_Leaders Subscription-Plus-Module %}{{ items[0].link }}{{ items[1].link }}{{ items[2].link }}&{{content_blocks.${pray_jwt_login_generator}}}" target="_blank" style="display: inline-block; background-color: #e3af4a; color: #0b0c0e; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; padding: 16px 32px; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 8px;">
+                            Give &amp; Go Ad-Free
+                          </a>
+                          <!--<![endif]-->
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               CTA SECTION: Bible in a Year with Video
+               ============================================ -->
+          <tr>
+            <td align="center" class="mobile-padding" style="padding: 40px 40px 16px;">
+              <p style="margin: 0 0 4px; font-size: 36px; line-height: 1;">🎬</p>
+              <p style="margin: 0 0 8px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 2px;">
+                New for 2026
+              </p>
+              <h2 style="margin: 0 0 12px; font-family: 'DM Sans', Arial, sans-serif; font-size: 28px; font-weight: 800; color: #ffffff; line-height: 1.2;">
+                Bible in a Year<br>Now with Video
+              </h2>
+              <p style="margin: 0 0 24px; font-family: 'DM Sans', Arial, sans-serif; font-size: 18px; color: #a0a0a8; line-height: 1.5;">
+                Our most-loved devotional just got better. Experience daily scripture with brand new video teachings from Jack Graham.
+              </p>
+
+              <!-- CTA Button -->
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center">
+                    <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://pray.com/daily-prayer?deeplink=pray://page/daily&$desktop_url=https://www.pray.com/daily-prayer" style="height:52px;v-text-anchor:middle;width:220px;" arcsize="15%" fillcolor="#e3af4a" stroke="f">
+                      <w:anchorlock/>
+                      <center style="color:#0b0c0e;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;text-transform:uppercase;">SUBSCRIBE NOW</center>
+                    </v:roundrect>
+                    <![endif]-->
+                    <!--[if !mso]><!-->
+                    <a href="https://pray.com/daily-prayer?deeplink=pray://page/daily&$desktop_url=https://www.pray.com/daily-prayer" target="_blank" style="display: inline-block; background-color: #e3af4a; color: #0b0c0e; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; padding: 16px 48px; text-transform: uppercase; letter-spacing: 0.5px; border-radius: 8px;">
+                      Subscribe Now
+                    </a>
+                    <!--<![endif]-->
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ============================================
+               FOOTER
+               ============================================ -->
+          <tr>
+            <td class="mobile-padding" style="padding: 40px 40px 0;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td style="border-bottom: 1px solid #3a3a42; font-size: 1px; line-height: 1px;">&nbsp;</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding: 0;">
+              {{content_blocks.${NEW_footer_dark}}}
+            </td>
+          </tr>
+
+        </table>
+        <!-- End Main Container -->
+
+        <!--[if (gte mso 9)|(IE)]>
+        </td>
+        </tr>
+        </table>
+        <![endif]-->
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
