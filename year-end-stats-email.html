@@ -160,7 +160,7 @@
           <tr>
             <td align="center" class="mobile-padding" style="padding: 0 40px 8px;">
               <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; font-weight: 600; color: #e3af4a; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
-                {% if has_personal_stats %}{% if ${first_name} != blank %}{{${first_name}}}'s Faith Journey{% else %}Your Faith Journey{% endif %}{% else %}The PRAY&zwnj;.&zwnj;COM Community{% endif %}
+                {% if ${first_name} != blank %}{{${first_name}}}'s Faith Journey{% elsif has_personal_stats %}Your Faith Journey{% else %}The PRAY&zwnj;.&zwnj;COM Community{% endif %}
               </p>
             </td>
           </tr>
@@ -306,19 +306,19 @@
                           <td align="center" valign="middle" class="inner-padding stat-card-tall" width="100%" style="padding: 24px 16px; height: 180px;">
                             <p style="margin: 0 0 4px; font-size: 28px; line-height: 150%; mso-line-height-rule: exactly;">🤝</p>
                             <p class="mobile-text-xs" style="margin: 0 0 6px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
-                              {% if custom_attribute.${prayers_shared} != blank and custom_attribute.${prayers_shared} | plus: 0 > 0 %}Your Prayers Shared{% else %}Total Prayers Shared{% endif %}
+                              {% if custom_attribute.${dailies_shared} != blank and custom_attribute.${dailies_shared} | plus: 0 > 0 %}Your Prayers Shared{% else %}Total Prayers Shared{% endif %}
                             </p>
                             <p class="stat-number-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 150%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
                               <a href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" target="_blank" style="text-decoration: none; color: #ffffff;">
-                              {% if custom_attribute.${prayers_shared} != blank and custom_attribute.${prayers_shared} | plus: 0 > 0 %}
-                                {{custom_attribute.${prayers_shared} | round | number_with_delimiter}}
+                              {% if custom_attribute.${dailies_shared} != blank and custom_attribute.${dailies_shared} | plus: 0 > 0 %}
+                                {{custom_attribute.${dailies_shared} | round | number_with_delimiter}}
                               {% else %}
                                 {{platform_prayers_shared}}
                               {% endif %}
                               </a>
                             </p>
                             <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
-                              {% if custom_attribute.${prayers_shared} != blank and custom_attribute.${prayers_shared} | plus: 0 == 1 %}prayer shared{% else %}prayers shared{% endif %}
+                              {% if custom_attribute.${dailies_shared} != blank and custom_attribute.${dailies_shared} | plus: 0 == 1 %}prayer shared{% else %}prayers shared{% endif %}
                             </p>
                             {% if has_personal_stats and custom_attribute.${longest_streak_ntile} != blank %}
                             <p style="margin: 10px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 600; color: transparent; mso-line-height-rule: exactly; line-height: 150%;">
