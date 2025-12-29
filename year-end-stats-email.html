@@ -62,7 +62,7 @@
   {% endcomment %}
 
   {% assign has_personal_stats = false %}
-  {% if custom_attribute.${total_minutes_listened} != blank and custom_attribute.${total_minutes_listened} > 0 %}
+  {% if custom_attribute.${total_minutes_listened} != blank and custom_attribute.${total_minutes_listened} | plus: 0 > 0 %}
     {% assign has_personal_stats = true %}
   {% endif %}
 
@@ -275,7 +275,7 @@
                             {% endif %}
                           </p>
                           <p style="margin: 4px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; color: #a0a0a8;">
-                            {% if has_personal_stats and custom_attribute.${prayers_shared} == 1 %}prayer shared{% else %}prayers shared{% endif %}
+                            {% if has_personal_stats and custom_attribute.${prayers_shared} | plus: 0 == 1 %}prayer shared{% else %}prayers shared{% endif %}
                           </p>
                         </td>
                       </tr>
@@ -333,7 +333,7 @@
                             {% endif %}
                           </p>
                           <p style="margin: 4px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; color: #a0a0a8;">
-                            {% if has_personal_stats and custom_attribute.${ai_count} == 1 %}faith conversation{% else %}faith conversations{% endif %}
+                            {% if has_personal_stats and custom_attribute.${ai_count} | plus: 0 == 1 %}faith conversation{% else %}faith conversations{% endif %}
                           </p>
                         </td>
                       </tr>
