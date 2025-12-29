@@ -34,10 +34,12 @@
     }
 
     /* Client-specific resets */
+    * { box-sizing: border-box; }
     body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
     table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
-    img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
-    body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+    img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100%; }
+    body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; overflow-x: hidden !important; }
+    html { overflow-x: hidden !important; }
 
     /* Prevent link color changes */
     a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
@@ -45,30 +47,33 @@
 
     /* Mobile styles */
     @media only screen and (max-width: 620px) {
+      body, html { overflow-x: hidden !important; }
+      table { table-layout: fixed !important; }
       .wrapper { width: 100% !important; max-width: 100% !important; }
       .mobile-padding { padding-left: 16px !important; padding-right: 16px !important; }
       .mobile-stack { display: block !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; }
       .mobile-stack-padding { padding-bottom: 12px !important; padding-right: 0 !important; padding-left: 0 !important; }
       .mobile-center { text-align: center !important; }
       .mobile-hide { display: none !important; }
-      .stat-number-lg { font-size: 40px !important; }
-      .stat-number-md { font-size: 32px !important; }
+      .stat-number-lg { font-size: 40px !important; word-break: break-word !important; }
+      .stat-number-md { font-size: 32px !important; word-break: break-word !important; }
       .hero-title { font-size: 28px !important; }
       .section-title { font-size: 18px !important; }
-      .stat-card { height: auto !important; min-height: 140px !important; }
-      .stat-card-tall { height: auto !important; min-height: 160px !important; }
+      .stat-card { height: auto !important; min-height: 140px !important; width: 100% !important; }
+      .stat-card-tall { height: auto !important; min-height: 160px !important; width: 100% !important; }
       .mobile-text-sm { font-size: 14px !important; }
       .mobile-text-xs { font-size: 12px !important; letter-spacing: 1px !important; }
-      .community-number { font-size: 36px !important; }
+      .community-number { font-size: 36px !important; word-break: break-word !important; }
       .inner-padding { padding: 20px 12px !important; }
+      p { word-wrap: break-word !important; overflow-wrap: break-word !important; }
     }
 
     @media only screen and (max-width: 480px) {
       .mobile-padding { padding-left: 12px !important; padding-right: 12px !important; }
-      .stat-number-lg { font-size: 36px !important; }
-      .stat-number-md { font-size: 28px !important; }
+      .stat-number-lg { font-size: 32px !important; }
+      .stat-number-md { font-size: 26px !important; }
       .hero-title { font-size: 24px !important; }
-      .community-number { font-size: 28px !important; }
+      .community-number { font-size: 26px !important; }
     }
   </style>
 </head>
@@ -141,7 +146,7 @@
                 <tr>
                   <td align="center" style="background-color: #2a2518; padding: 8px 20px; border: 1px solid #4a3d2a;">
                     <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 12px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 2px;">
-                      2025 Year in Review
+                      ✨ 2025 Year in Review ✨
                     </p>
                   </td>
                 </tr>
@@ -162,7 +167,7 @@
           <tr>
             <td align="center" class="mobile-padding" style="padding: 0 40px 8px;">
               <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; font-weight: 600; color: #e3af4a;">
-                {% if has_personal_stats %}{{${first_name} | default: 'Friend'}}'s Faith Journey{% else %}The Pray.com Community{% endif %}
+                {% if has_personal_stats %}{% if ${first_name} != blank %}{{${first_name}}}'s Faith Journey{% else %}Your Faith Journey{% endif %}{% else %}The PRAY.COM Community{% endif %}
               </p>
             </td>
           </tr>
@@ -181,9 +186,9 @@
             <td class="mobile-padding" style="padding: 0 40px 40px;">
               <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; font-weight: 400; color: #ffffff; line-height: 1.6; text-align: center;">
                 {% if has_personal_stats %}
-                This year, you grew closer to God through prayer, scripture, and faith-filled content. Here's a look back at your journey — and the incredible impact we've made together.
+                This year, you grew closer to God through prayer, Scripture, and faith-filled content. Here's a look back at your journey — and the incredible impact we've made together.
                 {% else %}
-                This year, the Pray.com community came together in faith, prayer, and devotion. Here's a look back at what we accomplished together — and the incredible impact you helped make possible.
+                This year, the PRAY.COM community came together in faith, prayer, and devotion. Here's a look back at what we accomplished together — and the incredible impact you helped make possible.
                 {% endif %}
               </p>
             </td>
@@ -586,10 +591,10 @@
                 Bible in a Year<br>Now with Video
               </h2>
               <p class="mobile-text-sm" style="margin: 0 0 12px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #a0a0a8; line-height: 1.5;">
-                Experience daily scripture with brand new video teachings from Jack Graham.
+                Experience daily Scripture with brand new video teachings from Jack Graham — delivered straight to your inbox.
               </p>
               <p class="mobile-text-sm" style="margin: 0 0 24px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; line-height: 1.5;">
-                Visit your Preference Center, select Bible in a Year, and save your preferences.
+                Subscribe to receive daily email devotionals by updating your Preference Center. Select "Bible in a Year" and save your preferences to start receiving daily inspiration.
               </p>
 
               <!-- CTA Button -->
