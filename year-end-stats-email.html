@@ -67,7 +67,9 @@
   {% endif %}
 
   <!-- ============================================
-       PLATFORM-WIDE FALLBACK STATS (Update these values)
+       PLATFORM-WIDE FALLBACK STATS
+       These are shown when users don't have enough personal data.
+       Values sourced from platform analytics.
        ============================================ -->
   {% assign platform_total_minutes = "675,587,678" %}
   {% assign platform_longest_streak = "2,106" %}
@@ -273,7 +275,7 @@
                             {% endif %}
                           </p>
                           <p style="margin: 4px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; color: #a0a0a8;">
-                            prayers shared
+                            {% if has_personal_stats and custom_attribute.${prayers_shared} == 1 %}prayer shared{% else %}prayers shared{% endif %}
                           </p>
                         </td>
                       </tr>
@@ -331,7 +333,7 @@
                             {% endif %}
                           </p>
                           <p style="margin: 4px 0 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; color: #a0a0a8;">
-                            faith conversations
+                            {% if has_personal_stats and custom_attribute.${ai_count} == 1 %}faith conversation{% else %}faith conversations{% endif %}
                           </p>
                         </td>
                       </tr>
@@ -370,14 +372,14 @@
             <td class="mobile-padding" style="padding: 0 40px 16px;">
               <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
                 <tr>
-                  <!-- Most Listened Podcast / Favorite Devotional -->
+                  <!-- Most Listened Podcast / #1 Devotional -->
                   <td class="mobile-stack mobile-stack-padding" width="49%" valign="top" style="padding-right: 8px;">
                     <table role="presentation" cellpadding="0" cellspacing="0" width="100%" height="160" style="background-color: #1a1b1e; border: 1px solid #2a2a2e;">
                       <tr>
                         <td align="center" valign="middle" height="160" style="padding: 20px 16px;">
                           <p style="margin: 0 0 4px; font-size: 32px; line-height: 1;">🎙️</p>
                           <p style="margin: 0 0 8px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px;">
-                            {% if has_personal_stats %}Favorite Devotional{% else %}#1 Devotional{% endif %}
+                            #1 Devotional
                           </p>
                           <p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 17px; font-weight: 700; color: #ffffff; line-height: 1.3;">
                             {% if has_personal_stats and custom_attribute.${most_listened_podcast} != blank %}
