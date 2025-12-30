@@ -55,27 +55,27 @@
       .mobile-stack-padding { padding-bottom: 12px !important; padding-right: 0 !important; padding-left: 0 !important; }
       .mobile-center { text-align: center !important; }
       .mobile-hide { display: none !important; }
-      .stat-number-lg { font-size: 48px !important; word-break: break-word !important; }
-      .stat-number-md { font-size: 40px !important; word-break: break-word !important; }
-      .hero-title { font-size: 44px !important; }
-      .section-title { font-size: 22px !important; }
+      .stat-number-lg { font-size: 52px !important; word-break: break-word !important; }
+      .stat-number-md { font-size: 44px !important; word-break: break-word !important; }
+      .hero-title { font-size: 44px !important; line-height: 115% !important; }
+      .section-title { font-size: 20px !important; }
       .stat-card { height: auto !important; min-height: 140px !important; width: 100% !important; max-width: 100% !important; }
       .stat-card-tall { height: auto !important; min-height: 180px !important; width: 100% !important; max-width: 100% !important; }
-      .mobile-text-sm { font-size: 16px !important; }
+      .mobile-text-sm { font-size: 18px !important; }
       .mobile-text-xs { font-size: 15px !important; letter-spacing: 1px !important; }
-      .community-number { font-size: 44px !important; word-break: break-word !important; }
+      .community-number { font-size: 48px !important; word-break: break-word !important; }
       .inner-padding { padding: 20px 16px !important; }
       p { word-wrap: break-word !important; overflow-wrap: break-word !important; }
     }
 
     @media only screen and (max-width: 480px) {
       .mobile-padding { padding-left: 12px !important; padding-right: 12px !important; }
-      .stat-number-lg { font-size: 40px !important; }
-      .stat-number-md { font-size: 34px !important; }
-      .hero-title { font-size: 32px !important; }
-      .section-title { font-size: 20px !important; }
-      .community-number { font-size: 36px !important; }
-      .mobile-text-sm { font-size: 15px !important; }
+      .stat-number-lg { font-size: 44px !important; }
+      .stat-number-md { font-size: 38px !important; }
+      .hero-title { font-size: 36px !important; line-height: 115% !important; }
+      .section-title { font-size: 18px !important; }
+      .community-number { font-size: 40px !important; }
+      .mobile-text-sm { font-size: 17px !important; }
       .mobile-text-xs { font-size: 15px !important; }
     }
   </style>
@@ -153,7 +153,7 @@
           <!-- Hero Title -->
           <tr>
             <td align="center" class="mobile-padding" style="padding: 0 40px 12px;">
-              <h1 class="hero-title" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 42px; font-weight: 800; color: #ffffff; line-height: 150%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
+              <h1 class="hero-title" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 42px; font-weight: 800; color: #ffffff; line-height: 115%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
                 {% if has_personal_stats %}Your Year<br>in Prayer{% else %}Our Year<br>in Prayer{% endif %}
               </h1>
             </td>
@@ -182,9 +182,9 @@
             <td class="mobile-padding" style="padding: 0 40px 40px;">
               <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; font-weight: 400; color: #ffffff; line-height: 150%; text-align: center; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
                 {% if has_personal_stats %}
-                This year, you grew closer to God through prayer, Scripture, and faith-filled content. Here's a look back at your journey — and the incredible impact we've made together.
+                This year, you grew closer to God through prayer, Scripture, and faith-filled content. Here's a look back at your journey — and the incredible impact we've made&nbsp;together.
                 {% else %}
-                This year, the PRAY&zwnj;.&zwnj;COM community came together in faith, prayer, and devotion. Here's a look back at what we accomplished together — and the incredible impact you helped make possible.
+                This year, the PRAY&zwnj;.&zwnj;COM community came together in faith, prayer, and devotion. Here's a look back at what we accomplished together — and the incredible impact you helped make&nbsp;possible.
                 {% endif %}
               </p>
             </td>
@@ -233,8 +233,8 @@
                         {% endif %}
                         </a>
                       </p>
-                      <p class="mobile-text-sm" style="margin: 8px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #a0a0a8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
-                        minutes in prayer
+                      <p class="mobile-text-sm" style="margin: 8px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #ffffff; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
+                        minutes in&nbsp;prayer
                       </p>
                       {% if has_personal_stats and custom_attribute.${listen_minutes_ntile} != blank %}
                       <table role="presentation" cellpadding="0" cellspacing="0" style="margin-top: 16px;">
@@ -283,7 +283,7 @@
                               {% endif %}
                               </a>
                             </p>
-                            <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
+                            <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #ffffff; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
                               days
                             </p>
                             {% if has_personal_stats and custom_attribute.${longest_streak_ntile} != blank %}
@@ -320,8 +320,8 @@
                               {% endif %}
                               </a>
                             </p>
-                            <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
-                              {% if custom_attribute.${dailies_shared} != blank and custom_attribute.${dailies_shared} | plus: 0 == 1 %}prayer shared{% else %}prayers shared{% endif %}
+                            <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #ffffff; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
+                              {% if custom_attribute.${dailies_shared} != blank and custom_attribute.${dailies_shared} | plus: 0 == 1 %}prayer&nbsp;shared{% else %}prayers&nbsp;shared{% endif %}
                             </p>
                             {% if has_personal_stats and custom_attribute.${longest_streak_ntile} != blank %}
                             <p style="margin: 10px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 600; color: transparent; mso-line-height-rule: exactly; line-height: 150%;">
@@ -400,8 +400,8 @@
                             {% endif %}
                             </a>
                           </p>
-                          <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
-                            {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 == 1 %}faith conversation{% else %}faith conversations{% endif %}
+                          <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #ffffff; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
+                            {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 == 1 %}faith&nbsp;conversation{% else %}faith&nbsp;conversations{% endif %}
                           </p>
                         </td>
                       </tr>
@@ -459,7 +459,7 @@
                           <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
                             {% if custom_attribute.${most_listened_podcast} != blank %}Your #1 Devotional{% else %}#1 Devotional{% endif %}
                           </p>
-                          <p class="mobile-text-sm" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; font-weight: 700; color: #ffffff; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
+                          <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 20px; font-weight: 700; color: #ffffff; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
                             <a universal="true" href="https://www.pray.com/series/bible-in-a-year-with-jack-graham?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/series/bible-in-a-year-with-jack-graham" target="_blank" style="text-decoration: none; color: #ffffff;">
                             {% if custom_attribute.${most_listened_podcast} != blank %}
                               {{custom_attribute.${most_listened_podcast}}}
@@ -547,10 +547,10 @@
                         <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" target="_blank" style="text-decoration: none; color: #ffffff;">{{platform_total_downloads}}+</a>
                       </p>
                       <p class="mobile-text-sm" style="margin: 8px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #ffffff; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
-                        Total Podcast Downloads
+                        Total Podcast&nbsp;Downloads
                       </p>
-                      <p class="mobile-text-sm" style="margin: 16px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
-                        You helped make this happen!
+                      <p class="mobile-text-sm" style="margin: 16px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #d0d0d8; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
+                        You helped make this&nbsp;happen!
                       </p>
                     </td>
                   </tr>
@@ -587,10 +587,10 @@
                       Start 2026 Strong
                     </p>
                     <p class="mobile-text-sm" style="margin: 0 0 16px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #ffffff; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
-                      Unlock ad-free PRAY Premium by supporting a ministry. Your generosity shares the message of Jesus and transforms lives.
+                      Unlock ad-free PRAY Premium by supporting a ministry. Your generosity shares the message of Jesus and transforms&nbsp;lives.
                     </p>
-                    <p class="mobile-text-sm" style="margin: 0 0 24px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
-                      {% catalog_selection_items Subs_Plus_Leaders Subscription-Plus-Module %}{{ items[0].name }}{{ items[1].name }}{{ items[2].name }} thanks you for your donation!
+                    <p class="mobile-text-sm" style="margin: 0 0 24px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #d0d0d8; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
+                      {% catalog_selection_items Subs_Plus_Leaders Subscription-Plus-Module %}{{ items[0].name }}{{ items[1].name }}{{ items[2].name }} thanks you for your&nbsp;donation!
                     </p>
 
                     <!-- CTA Button -->
@@ -629,11 +629,11 @@
               <h2 style="margin: 0 0 12px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 28px; font-weight: 800; color: #ffffff; line-height: 150%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
                 Bible in a Year<br>Now with Video
               </h2>
-              <p class="mobile-text-sm" style="margin: 0 0 12px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #a0a0a8; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
-                Experience daily Scripture with brand new video teachings from Jack Graham — delivered straight to your inbox.
+              <p class="mobile-text-sm" style="margin: 0 0 12px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #d0d0d8; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
+                Experience daily Scripture with brand new video teachings from Jack Graham — delivered straight to your&nbsp;inbox.
               </p>
-              <p class="mobile-text-sm" style="margin: 0 0 24px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #a0a0a8; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
-                Subscribe to receive daily email devotionals by updating your Preference Center. Select "Bible in a Year" and save your preferences to start receiving daily inspiration.
+              <p class="mobile-text-sm" style="margin: 0 0 24px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #d0d0d8; line-height: 150%; letter-spacing: 0.05px; mso-line-height-rule: exactly;">
+                Subscribe to receive daily email devotionals by updating your Preference Center. Select "Bible in a Year" and save your preferences to start receiving daily&nbsp;inspiration.
               </p>
 
               <!-- CTA Button -->
@@ -721,17 +721,17 @@
               <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="90%">
                 <tr>
                   <td>
-                    <div style="color:#a0a0a8;direction:ltr;font-family:Satoshi,Open Sans, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;letter-spacing:0.05px;line-height:150%;text-align:center;mso-line-height-alt:21px;">
-                      <p style="margin:0;margin-bottom:0">You received this email because you created a PRAY&zwnj;.&zwnj;COM account and now you are on your way to enriching your faith.</p>
+                    <div style="color:#d0d0d8;direction:ltr;font-family:Satoshi,Open Sans, Helvetica, Arial, sans-serif;font-size:15px;font-weight:400;letter-spacing:0.05px;line-height:150%;text-align:center;mso-line-height-alt:21px;">
+                      <p style="margin:0;margin-bottom:0">You received this email because you created a PRAY&zwnj;.&zwnj;COM account and now you are on your way to enriching your&nbsp;faith.</p>
                       <p style="margin:0;margin-bottom:0">&nbsp;</p>
-                      <p style="margin:0;margin-bottom:0">Do you want fewer emails or just a different devotional type? We have plenty to choose from.<br><span style="color: #a0a0a8;"><a href="{{preference_center.${PRAY-Preference-Center}}}" target="_blank" style="text-decoration: underline;font-weight: 600; color: #a0a0a8;">You can personalize&nbsp;your email&nbsp;preferences here</a></span>.</p>
+                      <p style="margin:0;margin-bottom:0">Do you want fewer emails or just a different devotional type? We have plenty to choose&nbsp;from.<br><span style="color: #d0d0d8;"><a href="{{preference_center.${PRAY-Preference-Center}}}" target="_blank" style="text-decoration: underline;font-weight: 600; color: #d0d0d8;">You can personalize&nbsp;your email&nbsp;preferences&nbsp;here</a></span>.</p>
                       <p style="margin:0;margin-bottom:0">&nbsp;</p>
                       <p style="margin:0;margin-bottom:0">
-                        <a href="{{preference_center.${PRAY-Preference-Center}}}" target="_blank" style="text-decoration: underline; color: #a0a0a8;" rel="noopener">Unsubscribe</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.pray.com/privacy-policy/" target="_blank" style="text-decoration: underline; color: #a0a0a8;" rel="noopener">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://help.pray.com/hc/en-us" target="_blank" style="text-decoration: underline; color: #a0a0a8;" rel="noopener">Help Center</a>
+                        <a href="{{preference_center.${PRAY-Preference-Center}}}" target="_blank" style="text-decoration: underline; color: #d0d0d8;" rel="noopener">Unsubscribe</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.pray.com/privacy-policy/" target="_blank" style="text-decoration: underline; color: #d0d0d8;" rel="noopener">Privacy&nbsp;Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://help.pray.com/hc/en-us" target="_blank" style="text-decoration: underline; color: #d0d0d8;" rel="noopener">Help&nbsp;Center</a>
                       </p>
                       <p style="margin:0;margin-bottom:0">&nbsp;</p>
-                      <p style="margin:0;margin-bottom:0;color:#a0a0a8;">
-                        46&zwnj;07 Lak&zwnj;eview Canyon R&zwnj;d. #4&zwnj;56<br>Westlake Village, CA 91361<br>ⓒ&nbsp;{{'now' | date: '%Y'}}&nbsp;PRAY&zwnj;.&zwnj;COM
+                      <p style="margin:0;margin-bottom:0;color:#d0d0d8;">
+                        4&zwnj;6&zwnj;0&zwnj;7 Lak&zwnj;evi&zwnj;ew Can&zwnj;yon R&zwnj;d. #&zwnj;4&zwnj;5&zwnj;6<br>West&zwnj;lake Vil&zwnj;lage, C&zwnj;A 9&zwnj;1&zwnj;3&zwnj;6&zwnj;1<br>ⓒ&nbsp;{{'now' | date: '%Y'}}&nbsp;PRAY&zwnj;.&zwnj;COM
                       </p>
                     </div>
                   </td>
