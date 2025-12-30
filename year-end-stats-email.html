@@ -60,7 +60,7 @@
       .hero-title { font-size: 47px !important; }
       .section-title { font-size: 29px !important; }
       .stat-card { height: auto !important; min-height: 140px !important; width: 100% !important; max-width: 100% !important; }
-      .stat-card-tall { height: auto !important; min-height: 160px !important; width: 100% !important; max-width: 100% !important; }
+      .stat-card-tall { height: auto !important; min-height: 180px !important; width: 100% !important; max-width: 100% !important; }
       .mobile-text-sm { font-size: 14px !important; }
       .mobile-text-xs { font-size: 12px !important; letter-spacing: 1px !important; }
       .community-number { font-size: 41px !important; word-break: break-word !important; }
@@ -352,9 +352,9 @@
                 <tr>
                   <!-- Your 2025 Scripture -->
                   <td class="mobile-stack mobile-stack-padding" width="49%" valign="top" style="padding-right: 8px;">
-                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card-tall" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 200px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card-tall" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 200px; min-height: 200px;">
                       <tr>
-                        <td align="center" valign="middle" class="inner-padding stat-card-tall" width="100%" style="padding: 24px 16px; height: 200px;">
+                        <td align="center" valign="middle" class="inner-padding stat-card-tall" width="100%" style="padding: 24px 16px; height: 200px; min-height: 200px;">
                           <p style="margin: 0 0 4px; font-size: 28px; line-height: 150%; mso-line-height-rule: exactly;">📖</p>
                           <p class="mobile-text-xs" style="margin: 0 0 8px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
                             {% if custom_attribute.${first_daily_saved} != blank %}Your 2025 Scripture{% else %}Top 2025 Scripture{% endif %}
@@ -381,9 +381,9 @@
 
                   <!-- AI Chat Sessions -->
                   <td class="mobile-stack" width="49%" valign="top" style="padding-left: 8px;">
-                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card-tall" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 200px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="stat-card-tall" style="background-color: #1a1b1e; border: 1px solid #2a2a2e; height: 200px; min-height: 200px;">
                       <tr>
-                        <td align="center" valign="middle" class="inner-padding stat-card-tall" width="100%" style="padding: 24px 16px; height: 200px;">
+                        <td align="center" valign="middle" class="inner-padding stat-card-tall" width="100%" style="padding: 24px 16px; height: 200px; min-height: 200px;">
                           <p style="margin: 0 0 4px; font-size: 28px; line-height: 150%; mso-line-height-rule: exactly;">💬</p>
                           <p class="mobile-text-xs" style="margin: 0 0 6px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
                             {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 > 0 %}Your AI Chats{% else %}Total AI Chat Sessions{% endif %}
@@ -432,7 +432,7 @@
           <tr>
             <td align="center" class="mobile-padding" style="padding: 16px 40px 24px;">
               <h2 class="section-title" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 24px; font-weight: 700; color: #ffffff; letter-spacing: 0.4px; mso-line-height-rule: exactly; line-height: 150%;">
-                💎 {% if has_personal_stats %}Your Top Content{% else %}Top Content{% endif %}
+                🎧 {% if has_personal_stats %}Your Top Content{% else %}Top Content{% endif %}
               </h2>
             </td>
           </tr>
@@ -635,6 +635,11 @@
                   </td>
                 </tr>
               </table>
+
+              <!-- Watch the Trailer Link -->
+              <p style="margin: 16px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; font-weight: 600; text-align: center; mso-line-height-rule: exactly; line-height: 150%;">
+                <a href="https://www.pray.com/series/bible-in-a-year-with-jack-graham?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/series/bible-in-a-year-with-jack-graham" target="_blank" style="text-decoration: underline; color: #e3af4a;">Watch the Trailer</a>
+              </p>
             </td>
           </tr>
 
