@@ -58,7 +58,7 @@
       .stat-number-lg { font-size: 52px !important; word-break: break-word !important; }
       .stat-number-md { font-size: 44px !important; word-break: break-word !important; }
       .hero-title { font-size: 44px !important; line-height: 115% !important; }
-      .section-title { font-size: 20px !important; }
+      .section-title { font-size: 24px !important; }
       .stat-card { height: auto !important; min-height: 140px !important; width: 100% !important; max-width: 100% !important; }
       .stat-card-tall { height: auto !important; min-height: 180px !important; width: 100% !important; max-width: 100% !important; }
       .mobile-text-sm { font-size: 18px !important; }
@@ -73,7 +73,7 @@
       .stat-number-lg { font-size: 44px !important; }
       .stat-number-md { font-size: 38px !important; }
       .hero-title { font-size: 36px !important; line-height: 115% !important; }
-      .section-title { font-size: 18px !important; }
+      .section-title { font-size: 22px !important; }
       .community-number { font-size: 40px !important; }
       .mobile-text-sm { font-size: 17px !important; }
       .mobile-text-xs { font-size: 15px !important; }
@@ -401,7 +401,7 @@
                             </a>
                           </p>
                           <p class="mobile-text-sm" style="margin: 4px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 18px; color: #ffffff; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
-                            {% if custom_attribute.${ai_count} != blank and custom_attribute.${ai_count} | plus: 0 == 1 %}faith&nbsp;conversation{% else %}faith&nbsp;conversations{% endif %}
+                            {% assign ai_num = custom_attribute.${ai_count} | plus: 0 %}{% if ai_num == 1 %}faith&nbsp;conversation{% else %}faith&nbsp;conversations{% endif %}
                           </p>
                         </td>
                       </tr>
