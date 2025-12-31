@@ -93,7 +93,7 @@
 
   {% assign has_personal_stats = false %}
   {% assign user_minutes = custom_attribute.${total_minutes_listened} | default: 0 | plus: 0 %}
-  {% assign user_streak = custom_attribute.${longest_streak} | default: 0 | plus: 0 %}
+  {% assign user_streak = custom_attribute.${max_streak_length} | default: 0 | plus: 0 %}
   {% assign show_personal_minutes = false %}
   {% assign show_personal_streak = false %}
 
@@ -102,7 +102,7 @@
     {% assign show_personal_minutes = true %}
   {% endif %}
 
-  {% if custom_attribute.${longest_streak} != blank and user_streak >= 3 %}
+  {% if custom_attribute.${max_streak_length} != blank and user_streak >= 3 %}
     {% assign show_personal_streak = true %}
   {% endif %}
 
@@ -282,12 +282,12 @@
                           <td align="center" valign="middle" class="inner-padding stat-card-tall" width="100%" style="padding: 24px 16px; height: 180px;">
                             <p style="margin: 0 0 4px; font-size: 28px; line-height: 150%; mso-line-height-rule: exactly;">🔥</p>
                             <p class="mobile-text-xs" style="margin: 0 0 6px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
-                              {% if show_personal_streak %}Your Longest Streak{% else %}Top Streak of All Time{% endif %}
+                              {% if show_personal_streak %}Your Longest Streak{% else %}Longest Streak of All Time{% endif %}
                             </p>
                             <p class="stat-number-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 150%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
                               <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" target="_blank" style="text-decoration: none; color: #ffffff;">
                               {% if show_personal_streak %}
-                                {{custom_attribute.${longest_streak} | round | number_with_delimiter}}
+                                {{custom_attribute.${max_streak_length} | round | number_with_delimiter}}
                               {% else %}
                                 {{platform_longest_streak}}
                               {% endif %}
