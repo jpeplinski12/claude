@@ -93,7 +93,7 @@
 
   {% assign has_personal_stats = false %}
   {% assign user_minutes = custom_attribute.${total_minutes_listened} | default: 0 | plus: 0 %}
-  {% assign user_streak = custom_attribute.${max_streak_length} | default: 0 | plus: 0 %}
+  {% assign user_streak = custom_attribute.${longest_streak} | default: 0 | plus: 0 %}
   {% assign show_personal_minutes = false %}
   {% assign show_personal_streak = false %}
 
@@ -102,7 +102,7 @@
     {% assign show_personal_minutes = true %}
   {% endif %}
 
-  {% if custom_attribute.${max_streak_length} != blank and user_streak >= 3 %}
+  {% if custom_attribute.${longest_streak} != blank and user_streak >= 3 %}
     {% assign show_personal_streak = true %}
   {% endif %}
 
@@ -118,7 +118,7 @@
   {% assign platform_top_scripture = "Philippians 4:7" %}
   {% assign platform_top_podcast = "Bible in a Year with Jack Graham" %}
   {% assign platform_top_artist = "Jack Graham" %}
-  {% assign platform_total_downloads = "267,000,000" %}
+  {% assign platform_total_downloads = "268,888,253" %}
 
   <!-- Wrapper Table -->
   <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color: #0b0c0e;">
@@ -181,7 +181,7 @@
           <!-- Member Since -->
           <tr>
             <td align="center" class="mobile-padding" style="padding: 0 40px 32px;">
-              <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 15px; color: #8e8e9d; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
+              <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; color: #f2f2f2; letter-spacing: 0.05px; mso-line-height-rule: exactly; line-height: 150%;">
                 {{content_blocks.${2024_year-in-prayer-member-date-HTML}}}
               </p>
             </td>
@@ -281,13 +281,13 @@
                         <tr>
                           <td align="center" valign="middle" class="inner-padding stat-card-tall" width="100%" style="padding: 24px 16px; height: 180px;">
                             <p style="margin: 0 0 4px; font-size: 28px; line-height: 150%; mso-line-height-rule: exactly;">🔥</p>
-                            <p class="mobile-text-xs" style="margin: 0 0 6px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 14px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.5px; mso-line-height-rule: exactly; line-height: 150%;">
-                              {% if show_personal_streak %}Your Longest Streak{% else %}Longest Streak of All Time{% endif %}
+                            <p class="mobile-text-xs" style="margin: 0 0 6px; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 13px; font-weight: 700; color: #e3af4a; text-transform: uppercase; letter-spacing: 1.2px; mso-line-height-rule: exactly; line-height: 150%;">
+                              {% if show_personal_streak %}Your Top Streak{% else %}Top Streak{% endif %}
                             </p>
                             <p class="stat-number-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 44px; font-weight: 800; color: #ffffff; line-height: 150%; letter-spacing: 0.4px; mso-line-height-rule: exactly;">
                               <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" target="_blank" style="text-decoration: none; color: #ffffff;">
                               {% if show_personal_streak %}
-                                {{custom_attribute.${max_streak_length} | round | number_with_delimiter}}
+                                {{custom_attribute.${longest_streak} | round | number_with_delimiter}}
                               {% else %}
                                 {{platform_longest_streak}}
                               {% endif %}
@@ -667,7 +667,7 @@
 
               <!-- Watch the Trailer Link -->
               <p style="margin: 16px 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif !important; font-size: 16px; font-weight: 600; text-align: center; mso-line-height-rule: exactly; line-height: 150%;">
-                <a universal="true" href="https://www.pray.com/series/bible-in-a-year-with-jack-graham?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/series/bible-in-a-year-with-jack-graham" target="_blank" style="text-decoration: underline; color: #e3af4a;">Watch the Trailer</a>
+                <a universal="true" href="https://www.pray.com/content/b12613d4-ab45-42e9-a06a-aa7be63543dc?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/content/b12613d4-ab45-42e9-a06a-aa7be63543dc" target="_blank" style="text-decoration: underline; color: #e3af4a;">Watch the Trailer</a>
               </p>
             </td>
           </tr>
