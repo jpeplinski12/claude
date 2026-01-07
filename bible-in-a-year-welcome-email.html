@@ -37,7 +37,6 @@
     }
   </style>
   <style type="text/css">
-    /* CLIENT-SPECIFIC RESETS */
     #outlook a { padding: 0; }
     body { margin: 0 !important; padding: 0 !important; width: 100% !important; min-width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; }
     table { border-spacing: 0; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
@@ -45,15 +44,10 @@
     img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }
     a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }
     #MessageViewBody a { color: inherit; text-decoration: none; font-size: inherit; font-family: inherit; font-weight: inherit; line-height: inherit; }
-
-    /* DARK MODE STYLES */
     :root { color-scheme: light dark; supported-color-schemes: light dark; }
-
-    /* BUTTON STYLES */
     .button-table { background-color: #D4A853 !important; }
     .button-link { color: #0a0a0b !important; text-decoration: none !important; }
 
-    /* RESPONSIVE STYLES */
     @media only screen and (max-width: 680px) {
       .email-container { width: 100% !important; }
       .fluid { width: 100% !important; max-width: 100% !important; height: auto !important; }
@@ -66,7 +60,6 @@
       .mobile-pt-sm { padding-top: 12px !important; }
       .mobile-pt-md { padding-top: 24px !important; }
       .mobile-pt-lg { padding-top: 32px !important; }
-      .mobile-spacer-lg { padding-top: 32px !important; }
       .button-td { width: 100% !important; }
       .button-table { width: 100% !important; max-width: 100% !important; }
       .button-td-inner { width: 100% !important; }
@@ -77,11 +70,8 @@
       .feature-icon-cell { width: 44px !important; height: 44px !important; font-size: 20px !important; line-height: 44px !important; }
       .feature-card-gap { padding-top: 12px !important; }
       .quote-card { padding: 24px !important; }
-      .podcast-btn { display: block !important; width: 100% !important; margin-bottom: 12px !important; }
-      .podcast-btn-table { width: 100% !important; }
     }
 
-    /* EXTRA SMALL SCREENS */
     @media only screen and (max-width: 480px) {
       .mobile-padding { padding-left: 16px !important; padding-right: 16px !important; }
       .mobile-text-lg { font-size: 26px !important; }
@@ -90,7 +80,6 @@
       .button-a { padding: 14px 16px !important; }
     }
 
-    /* DARK MODE OVERRIDES */
     @media (prefers-color-scheme: dark) {
       .button-table { background-color: #D4A853 !important; }
       .button-link { color: #0a0a0b !important; }
@@ -98,7 +87,6 @@
       .footer-link { color: #a0a0a5 !important; }
     }
 
-    /* OUTLOOK DARK MODE */
     [data-ogsc] .button-table { background-color: #D4A853 !important; }
     [data-ogsc] .button-link { color: #0a0a0b !important; }
     [data-ogsb] .button-table { background-color: #D4A853 !important; }
@@ -109,7 +97,6 @@
 <body style="margin: 0; padding: 0; background-color: #0a0a0b; width: 100% !important; min-width: 100% !important;">
   <center style="width: 100%; background-color: #0a0a0b;">
 
-  <!-- EMAIL WRAPPER -->
   <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #0a0a0b;" class="dark-bg">
     <tr>
       <td align="center" valign="top" style="padding: 0;">
@@ -122,7 +109,7 @@
 
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="640" class="email-container" style="margin: 0 auto; max-width: 640px; width: 100%;">
 
-          <!-- ========== HEADER / LOGO ========== -->
+          <!-- HEADER / LOGO -->
           <tr>
             <td align="center" style="padding: 30px 0px 10px 0px; background-color: #0a0a0b;">
               <a href="https://pray.com?deeplink=pray://page/listen" target="_blank">
@@ -131,116 +118,64 @@
             </td>
           </tr>
 
-          <!-- ========== PRESENTS BADGE ========== -->
+          <!-- WELCOME BADGE -->
           <tr>
             <td align="center" style="background-color: #0a0a0b; padding: 20px 40px 0 40px;" class="mobile-padding dark-bg">
-              <span style="font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 16px; font-weight: 600; color: #ffffff; text-transform: uppercase; letter-spacing: 3px;">PRESENTS</span>
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="background-color: #D4A853; border-radius: 20px; padding: 8px 20px;">
+                    <span style="font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 14px; font-weight: 700; color: #0a0a0b; text-transform: uppercase; letter-spacing: 1.5px;">&#10022; WELCOME &#10022;</span>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
 
-          <!-- ========== BIBLE IN A YEAR LOGO ========== -->
+          <!-- MAIN HEADLINE -->
           <tr>
-            <td align="center" style="background-color: #0a0a0b; padding: 16px 40px 0 40px;" class="mobile-padding dark-bg">
-              <a target="_blank" href="https://www.bibleinayear.com/">
-                <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/6397e8c65b55011cdd7ddfe9/original.png?1670899910" alt="Bible in a Year" style="display: block; border: 0; outline: none; text-decoration: none; max-width: 393px; width: 100%;" width="393">
-              </a>
-            </td>
-          </tr>
-
-          <!-- ========== DEVOTIONALS SUBTITLE ========== -->
-          <tr>
-            <td align="center" style="background-color: #0a0a0b; padding: 8px 40px 0 40px;" class="mobile-padding dark-bg">
-              <span style="font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 26px; font-weight: 700; color: #D4A853; text-transform: uppercase; letter-spacing: 4px;">DEVOTIONALS</span>
-            </td>
-          </tr>
-
-          <!-- ========== HERO IMAGE ========== -->
-          <tr>
-            <td align="center" style="background-color: #0a0a0b; padding: 30px 0 0 0;" class="dark-bg">
-              <a target="_blank" href="https://www.bibleinayear.com/">
-                <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/63a35c785b550170ba778adf/original.jpg?1671650424" alt="Bible in a Year with Jack Graham" style="display: block; border: 0; outline: none; text-decoration: none; width: 100%; max-width: 640px;" width="640" class="fluid">
-              </a>
-            </td>
-          </tr>
-
-          <!-- ========== MAIN HEADLINE ========== -->
-          <tr>
-            <td align="center" style="background-color: #0a0a0b; padding: 40px 40px 0 40px;" class="mobile-padding mobile-pt-md dark-bg">
-              <h1 class="mobile-text-lg" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 28px; font-weight: 700; line-height: 1.3; color: #ffffff; text-align: center;">
-                You're about to unlock a deeper, more meaningful understanding of God's Word.
+            <td align="center" style="background-color: #0a0a0b; padding: 20px 40px 0 40px;" class="mobile-padding mobile-pt-md dark-bg">
+              <h1 class="mobile-text-lg" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 36px; font-weight: 700; line-height: 1.2; color: #ffffff; text-align: center;">
+                You're Signed Up for<br>
+                <span style="color: #D4A853;">Bible in a Year</span>
               </h1>
             </td>
           </tr>
 
-          <!-- ========== DESCRIPTION TEXT ========== -->
+          <!-- SUB-HEADLINE -->
           <tr>
-            <td align="center" style="background-color: #0a0a0b; padding: 20px 40px 0 40px;" class="mobile-padding mobile-pt-sm dark-bg">
+            <td align="center" style="background-color: #0a0a0b; padding: 16px 40px 0 40px;" class="mobile-padding mobile-pt-sm dark-bg">
               <p class="mobile-text-sm" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 18px; line-height: 1.6; color: #a0a0a5; text-align: center;">
-                We're so excited to embark on a life-transforming journey with you! You will receive your devotional emails at 8 a.m. daily with Scripture, prayer prompts, and links to listen to the episodes that bring you through the Bible from Genesis to Revelation.
+                You're about to unlock a deeper, more meaningful understanding of God's Word. We're so excited to embark on this life-transforming journey with you!
               </p>
             </td>
           </tr>
 
+          <!-- HERO IMAGE -->
           <tr>
-            <td align="center" style="background-color: #0a0a0b; padding: 20px 40px 0 40px;" class="mobile-padding mobile-pt-sm dark-bg">
-              <p class="mobile-text-sm" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 18px; line-height: 1.6; color: #a0a0a5; text-align: center;">
-                You can listen to the complete Bible in a Year Podcast on your favorite podcast app.
-              </p>
+            <td align="center" style="background-color: #0a0a0b; padding: 30px 40px 0 40px;" class="mobile-padding mobile-pt-md dark-bg">
+              <a href="https://www.bibleinayear.com/" target="_blank" style="display: block; text-decoration: none;">
+                <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/63a35c785b550170ba778adf/original.jpg?1671650424" alt="Bible in a Year with Jack Graham" width="560" class="fluid" style="display: block; width: 100%; max-width: 560px; height: auto; border: 2px solid #2a2a2e; border-radius: 16px;">
+              </a>
             </td>
           </tr>
 
-          <!-- ========== PODCAST BUTTONS ========== -->
-          <tr>
-            <td style="background-color: #0a0a0b; padding: 30px 40px 0 40px;" class="mobile-padding mobile-pt-md dark-bg">
-              <!--[if mso]>
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="560" align="center">
-              <tr>
-              <td width="270" valign="top">
-              <![endif]-->
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                <tr>
-                  <td class="stack-column podcast-btn" width="48%" valign="top" style="padding-right: 10px;">
-                    <a target="_blank" href="https://link.chtbl.com/76lxrmyJ" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/63a5d7deb6ef717ae58c902b/original.png?1671813086" alt="Apple Podcast" style="display: block; border: 0; outline: none; text-decoration: none; width: 100%; max-width: 250px;" width="250" class="fluid">
-                    </a>
-                  </td>
-                  <!--[if mso]>
-                  </td>
-                  <td width="20"></td>
-                  <td width="270" valign="top">
-                  <![endif]-->
-                  <td class="stack-column podcast-btn" width="48%" valign="top" style="padding-left: 10px;">
-                    <a target="_blank" href="https://link.chtbl.com/J51c5UoT" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/63a5d7de5b55014624d15395/original.png?1671813086" alt="Spotify" style="display: block; border: 0; outline: none; text-decoration: none; width: 100%; max-width: 250px;" width="250" class="fluid">
-                    </a>
-                  </td>
-                </tr>
-              </table>
-              <!--[if mso]>
-              </td>
-              </tr>
-              </table>
-              <![endif]-->
-            </td>
-          </tr>
-
-          <!-- ========== LISTEN ON PRAY BUTTON ========== -->
+          <!-- PRIMARY CTA BUTTON -->
           <tr>
             <td align="center" style="background-color: #0a0a0b; padding: 32px 40px 0 40px;" class="mobile-padding mobile-pt-md dark-bg">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="button-td">
                 <tr>
                   <td align="center" class="button-td-inner">
                     <!--[if mso]>
-                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://link.pray.com/6AouJ5drbwb" style="height:52px;v-text-anchor:middle;width:280px;" arcsize="15%" strokecolor="#D4A853" fillcolor="#D4A853">
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://link.pray.com/6AouJ5drbwb" style="height:52px;v-text-anchor:middle;width:320px;" arcsize="15%" strokecolor="#D4A853" fillcolor="#D4A853">
                     <w:anchorlock/>
-                    <center style="color:#0a0a0b;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;">LISTEN ON PRAY</center>
+                    <center style="color:#0a0a0b;font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;">START DAY 1 NOW</center>
                     </v:roundrect>
                     <![endif]-->
                     <!--[if !mso]><!-->
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="button-table" style="border-radius: 8px; background-color: #D4A853;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="button-table" style="border-radius: 8px; background-color: #D4A853;">
                       <tr>
-                        <td class="button-a" style="padding: 15px 60px; border-radius: 8px; background-color: #D4A853;" align="center">
-                          <a href="https://link.pray.com/6AouJ5drbwb" target="_blank" class="button-link" style="font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #0a0a0b; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; display: block; text-align: center;">LISTEN ON PRAY</a>
+                        <td class="button-a" style="padding: 15px 40px; border-radius: 8px; background-color: #D4A853;" align="center">
+                          <a href="https://link.pray.com/6AouJ5drbwb" target="_blank" class="button-link" style="font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #0a0a0b; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; display: block; text-align: center;">START DAY 1 NOW</a>
                         </td>
                       </tr>
                     </table>
@@ -251,9 +186,9 @@
             </td>
           </tr>
 
-          <!-- ========== DIVIDER ========== -->
+          <!-- DIVIDER -->
           <tr>
-            <td style="background-color: #0a0a0b; padding: 50px 40px 0 40px;" class="mobile-padding mobile-pt-lg dark-bg">
+            <td style="background-color: #0a0a0b; padding: 40px 40px 0 40px;" class="mobile-padding mobile-pt-lg dark-bg">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
                   <td style="border-top: 1px solid #2a2a2e; font-size: 1px; line-height: 1px; height: 1px;">&nbsp;</td>
@@ -262,62 +197,154 @@
             </td>
           </tr>
 
-          <!-- ========== DAY 1 SECTION HEADER ========== -->
+          <!-- WHAT TO EXPECT SECTION HEADER -->
           <tr>
             <td align="center" style="background-color: #0a0a0b; padding: 50px 40px 0 40px;" class="mobile-padding mobile-pt-lg dark-bg">
+              <p style="margin: 0 0 8px 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 14px; font-weight: 600; color: #D4A853; text-transform: uppercase; letter-spacing: 2px; text-align: center;">
+                What to Expect
+              </p>
               <h2 class="mobile-text-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 26px; font-weight: 700; color: #ffffff; text-align: center;">
-                Complete Day 1 today!
+                Your Daily Faith Journey
               </h2>
             </td>
           </tr>
 
-          <!-- ========== DAY 1 DEVOTIONAL CARD ========== -->
+          <!-- FEATURE 1: Daily Emails -->
           <tr>
             <td style="background-color: #0a0a0b; padding: 32px 40px 0 40px;" class="mobile-padding mobile-pt-md dark-bg">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #141416; border-radius: 16px;">
                 <tr>
                   <td style="padding: 24px;" class="feature-card">
-                    <!--[if mso]>
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                    <tr>
-                    <td width="140" valign="top">
-                    <![endif]-->
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                       <tr>
-                        <td class="stack-column mobile-center" width="140" valign="top" style="padding-right: 24px; padding-bottom: 16px;">
-                          <a target="_blank" href="https://www.bibleinayear.com/devotionals/the-creation" style="text-decoration: none;">
-                            <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/6335bc1f8a98a454420ddc42/original.jpg?1664465951" alt="The Creation" style="display: block; border: 0; outline: none; text-decoration: none; border-radius: 12px; width: 140px; height: 140px;" width="140" height="140">
-                          </a>
-                        </td>
-                        <!--[if mso]>
+                        <td width="50" valign="top" style="padding-right: 20px;" class="feature-icon">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                              <td class="feature-icon-cell" style="width: 50px; height: 50px; background-color: #2d2518; border-radius: 12px; text-align: center; font-size: 24px; line-height: 50px;">
+                                &#9993;
+                              </td>
+                            </tr>
+                          </table>
                         </td>
                         <td valign="top">
-                        <![endif]-->
-                        <td class="stack-column mobile-center" valign="top">
-                          <h3 style="margin: 0 0 12px 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 24px; font-weight: 700; color: #D4A853;">
-                            The Creation
+                          <h3 style="margin: 0 0 8px 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 18px; font-weight: 700; color: #ffffff;">
+                            Daily Devotionals at 8 AM
                           </h3>
-                          <p style="margin: 0 0 16px 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 16px; line-height: 1.6; color: #a0a0a5;">
-                            The story of Creation shows that all God has to do is speak, for light, order, beauty, and life to be brought into existence.
+                          <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 15px; line-height: 1.6; color: #a0a0a5;">
+                            Each morning you'll receive an email with Scripture, prayer prompts, and links to listen to that day's episode—guiding you from Genesis to Revelation.
                           </p>
-                          <a href="https://www.bibleinayear.com/devotionals/the-creation" target="_blank" style="font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #D4A853; text-decoration: underline;">Listen on web</a>
                         </td>
                       </tr>
                     </table>
-                    <!--[if mso]>
-                    </td>
-                    </tr>
-                    </table>
-                    <![endif]-->
                   </td>
                 </tr>
               </table>
             </td>
           </tr>
 
-          <!-- ========== SCRIPTURE QUOTE ========== -->
+          <!-- FEATURE 2: Podcast -->
+          <tr>
+            <td style="background-color: #0a0a0b; padding: 12px 40px 0 40px;" class="mobile-padding feature-card-gap dark-bg">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #141416; border-radius: 16px;">
+                <tr>
+                  <td style="padding: 24px;" class="feature-card">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td width="50" valign="top" style="padding-right: 20px;" class="feature-icon">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                              <td class="feature-icon-cell" style="width: 50px; height: 50px; background-color: #2d2518; border-radius: 12px; text-align: center; font-size: 24px; line-height: 50px;">
+                                &#127911;
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td valign="top">
+                          <h3 style="margin: 0 0 8px 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 18px; font-weight: 700; color: #ffffff;">
+                            Listen with Jack Graham
+                          </h3>
+                          <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 15px; line-height: 1.6; color: #a0a0a5;">
+                            Pastor Jack Graham walks you through the entire Bible with insightful commentary and practical applications for your daily life.
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- FEATURE 3: Video -->
+          <tr>
+            <td style="background-color: #0a0a0b; padding: 12px 40px 0 40px;" class="mobile-padding feature-card-gap dark-bg">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #141416; border-radius: 16px;">
+                <tr>
+                  <td style="padding: 24px;" class="feature-card">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td width="50" valign="top" style="padding-right: 20px;" class="feature-icon">
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                              <td class="feature-icon-cell" style="width: 50px; height: 50px; background-color: #2d2518; border-radius: 12px; text-align: center; font-size: 24px; line-height: 50px;">
+                                &#127916;
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td valign="top">
+                          <h3 style="margin: 0 0 8px 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 18px; font-weight: 700; color: #ffffff;">
+                            NEW: Daily Video Series
+                          </h3>
+                          <p style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 15px; line-height: 1.6; color: #a0a0a5;">
+                            Each day's Scripture comes alive with stunning cinematic videos—a beautiful companion to your daily podcast listening.
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- LISTEN ON YOUR FAVORITE APP -->
           <tr>
             <td style="background-color: #0a0a0b; padding: 32px 40px 0 40px;" class="mobile-padding mobile-pt-lg dark-bg">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #141416; border-radius: 16px;">
+                <tr>
+                  <td style="padding: 32px;" align="center" class="feature-card">
+                    <h3 class="mobile-text-md" style="margin: 0 0 12px 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff; text-align: center;">
+                      Listen on Your Favorite App
+                    </h3>
+                    <p style="margin: 0 0 24px 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 15px; line-height: 1.6; color: #a0a0a5; text-align: center;">
+                      The complete Bible in a Year podcast is available wherever you listen.
+                    </p>
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                      <tr>
+                        <td align="center" style="padding-bottom: 12px;">
+                          <a target="_blank" href="https://link.chtbl.com/76lxrmyJ" style="text-decoration: none;">
+                            <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/63a5d7deb6ef717ae58c902b/original.png?1671813086" alt="Apple Podcast" style="display: block; border: 0; max-width: 220px; width: 100%;" width="220">
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center">
+                          <a target="_blank" href="https://link.chtbl.com/J51c5UoT" style="text-decoration: none;">
+                            <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/63a5d7de5b55014624d15395/original.png?1671813086" alt="Spotify" style="display: block; border: 0; max-width: 220px; width: 100%;" width="220">
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- SCRIPTURE QUOTE -->
+          <tr>
+            <td style="background-color: #0a0a0b; padding: 20px 40px 0 40px;" class="mobile-padding mobile-pt-lg dark-bg">
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #18181b; border-radius: 16px;">
                 <tr>
                   <td style="padding: 32px;" align="center" class="quote-card">
@@ -336,27 +363,71 @@
             </td>
           </tr>
 
-          <!-- ========== FINAL CTA ========== -->
+          <!-- DAY 1 CTA CARD -->
+          <tr>
+            <td style="background-color: #0a0a0b; padding: 20px 40px 0 40px;" class="mobile-padding mobile-pt-lg dark-bg">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="background-color: #141416; border-radius: 16px;">
+                <tr>
+                  <td style="padding: 32px;" align="center" class="feature-card">
+                    <p style="margin: 0 0 8px 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 14px; font-weight: 600; color: #D4A853; text-transform: uppercase; letter-spacing: 2px; text-align: center;">
+                      Day 1
+                    </p>
+                    <h3 class="mobile-text-md" style="margin: 0 0 12px 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 22px; font-weight: 700; color: #ffffff; text-align: center;">
+                      The Creation
+                    </h3>
+                    <p style="margin: 0 0 24px 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 15px; line-height: 1.6; color: #a0a0a5; text-align: center;">
+                      The story of Creation shows that all God has to do is speak, for light, order, beauty, and life to be brought into existence.
+                    </p>
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="button-td">
+                      <tr>
+                        <td align="center" class="button-td-inner">
+                          <!--[if mso]>
+                          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.bibleinayear.com/devotionals/the-creation" style="height:52px;v-text-anchor:middle;width:220px;" arcsize="15%" strokecolor="#D4A853" fillcolor="#D4A853">
+                          <w:anchorlock/>
+                          <center style="color:#0a0a0b;font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;">BEGIN DAY 1</center>
+                          </v:roundrect>
+                          <![endif]-->
+                          <!--[if !mso]><!-->
+                          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="button-table" style="border-radius: 8px; background-color: #D4A853;">
+                            <tr>
+                              <td class="button-a" style="padding: 15px 40px; border-radius: 8px; background-color: #D4A853;" align="center">
+                                <a href="https://www.bibleinayear.com/devotionals/the-creation" target="_blank" class="button-link" style="font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #0a0a0b; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; display: block; text-align: center;">BEGIN DAY 1</a>
+                              </td>
+                            </tr>
+                          </table>
+                          <!--<![endif]-->
+                        </td>
+                      </tr>
+                    </table>
+                    <p style="margin: 16px 0 0 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 13px; line-height: 1.5; color: #707075; text-align: center;">
+                      Or listen on <a href="https://link.pray.com/6AouJ5drbwb" target="_blank" style="color: #D4A853; text-decoration: underline;">PRAY</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- FINAL CTA SECTION -->
           <tr>
             <td align="center" style="background-color: #0a0a0b; padding: 40px 40px 0 40px;" class="mobile-padding mobile-pt-lg dark-bg">
               <h2 class="mobile-text-md" style="margin: 0; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 24px; font-weight: 700; color: #ffffff; text-align: center;">
-                Ready to Begin Your Journey?
+                Ready to Transform<br>Your Faith Journey?
               </h2>
-
               <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="button-td" style="padding-top: 20px;">
                 <tr>
                   <td align="center" class="button-td-inner">
                     <!--[if mso]>
                     <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.bibleinayear.com/devotionals/the-creation" style="height:52px;v-text-anchor:middle;width:280px;" arcsize="15%" strokecolor="#D4A853" fillcolor="#D4A853">
                     <w:anchorlock/>
-                    <center style="color:#0a0a0b;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;">START DAY 1 NOW</center>
+                    <center style="color:#0a0a0b;font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;text-transform:uppercase;letter-spacing:0.5px;">START YOUR JOURNEY</center>
                     </v:roundrect>
                     <![endif]-->
                     <!--[if !mso]><!-->
-                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" class="button-table" style="border-radius: 8px; background-color: #D4A853;">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="button-table" style="border-radius: 8px; background-color: #D4A853;">
                       <tr>
                         <td class="button-a" style="padding: 15px 40px; border-radius: 8px; background-color: #D4A853;" align="center">
-                          <a href="https://www.bibleinayear.com/devotionals/the-creation" target="_blank" class="button-link" style="font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #0a0a0b; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; display: block; text-align: center;">START DAY 1 NOW</a>
+                          <a href="https://www.bibleinayear.com/devotionals/the-creation" target="_blank" class="button-link" style="font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 16px; font-weight: 700; color: #0a0a0b; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px; display: block; text-align: center;">START YOUR JOURNEY</a>
                         </td>
                       </tr>
                     </table>
@@ -375,7 +446,7 @@
         </table>
         <![endif]-->
 
-        <!-- ========== FOOTER ========== -->
+        <!-- FOOTER -->
         <!--[if mso]>
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="640" align="center">
         <tr>
@@ -383,82 +454,22 @@
         <![endif]-->
 
         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="640" class="email-container" style="margin: 0 auto; max-width: 640px; width: 100%; background-color: #0a0a0b;">
-
-          <!-- DIVIDER -->
-          <tr>
-            <td style="background-color: #0a0a0b; padding: 50px 40px 0 40px;" class="mobile-padding">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                <tr>
-                  <td style="border-top: 1px solid #2a2a2e; font-size: 1px; line-height: 1px; height: 1px;">&nbsp;</td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <!-- FOOTER LOGO -->
-          <tr>
-            <td align="left" style="background-color: #0a0a0b; padding: 40px 40px 0 40px;" class="mobile-padding mobile-center">
-              <a href="https://pray.com?deeplink=pray://page/listen" target="_blank">
-                <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/64370fa262f41800586f0fd9/original.png?1681330082" alt="PRAY" style="display: block; border: 0; outline: none; text-decoration: none; max-width: 90px; width: 100%;" width="90">
-              </a>
-            </td>
-          </tr>
-
-          <!-- SOCIAL ICONS -->
-          <tr>
-            <td align="left" style="background-color: #0a0a0b; padding: 24px 40px 0 40px;" class="mobile-padding mobile-center">
-              <table role="presentation" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                  <td style="padding-right: 16px;">
-                    <a target="_blank" href="https://www.facebook.com/pray/" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/622a7f73a4943e1bce16f6f0/original.png?1646952307" alt="Facebook" style="display: block; border: 0; outline: none; text-decoration: none;" width="40" height="40">
-                    </a>
-                  </td>
-                  <td style="padding-right: 16px;">
-                    <a target="_blank" href="https://www.youtube.com/channel/UCNyNg5QgG5irAuFCs8L8BSg" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/622a7f7359344573bd4ccd3d/original.png?1646952307" alt="YouTube" style="display: block; border: 0; outline: none; text-decoration: none;" width="40" height="40">
-                    </a>
-                  </td>
-                  <td style="padding-right: 16px;">
-                    <a target="_blank" href="https://www.instagram.com/pray/" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/622a7f7359344574564ccff9/original.png?1646952307" alt="Instagram" style="display: block; border: 0; outline: none; text-decoration: none;" width="40" height="40">
-                    </a>
-                  </td>
-                  <td style="padding-right: 16px;">
-                    <a target="_blank" href="https://twitter.com/pray/" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/622a7f73a4943e1d4716f6e9/original.png?1646952307" alt="Twitter" style="display: block; border: 0; outline: none; text-decoration: none;" width="40" height="40">
-                    </a>
-                  </td>
-                  <td style="padding-right: 16px;">
-                    <a target="_blank" href="https://www.linkedin.com/company/pray.com" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/622a7f73fde9db4f948352c3/original.png?1646952307" alt="LinkedIn" style="display: block; border: 0; outline: none; text-decoration: none;" width="40" height="40">
-                    </a>
-                  </td>
-                  <td>
-                    <a target="_blank" href="https://www.tiktok.com/@pray?lang=en" style="text-decoration: none;">
-                      <img src="https://braze-images.com/appboy/communication/assets/image_assets/images/622a7f733e3a900d48a2ee82/original.png?1646952307" alt="TikTok" style="display: block; border: 0; outline: none; text-decoration: none;" width="40" height="40">
-                    </a>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-          <!-- FOOTER TEXT -->
           <tr>
             <td style="background-color: #0a0a0b; padding: 32px 40px 32px 40px;" class="mobile-padding">
               <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                 <tr>
                   <td>
-                    <div style="color: #a0a0a5; direction: ltr; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0; line-height: 150%; text-align: left;">
-                      <p style="margin: 0; margin-bottom: 16px;">You received this email because you created a PRAY&#8203;.&#8203;COM account and now you are on your way to enriching your faith.</p>
-                      <p style="margin: 0; margin-bottom: 16px;">
-                        <a href="{{${set_user_to_unsubscribed_url}}}" target="_blank" class="footer-link" style="text-decoration: underline; color: #a0a0a5;" rel="noopener">Unsubscribe</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.pray.com/privacy-policy/" target="_blank" class="footer-link" style="text-decoration: underline; color: #a0a0a5;" rel="noopener">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://help.pray.com/en/" target="_blank" class="footer-link" style="text-decoration: underline; color: #a0a0a5;" rel="noopener">Help Center</a>
+                    <div style="color: #a0a0a5; direction: ltr; font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', Helvetica, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0; line-height: 150%; text-align: center;">
+                      <p style="margin: 0; margin-bottom: 0;">You received this email because you created a PRAY&#8203;.&#8203;COM account and now you are on your way to enriching your faith.</p>
+                      <p style="margin: 0; margin-bottom: 0;">&nbsp;</p>
+                      <p style="margin: 0; margin-bottom: 0;">
+                        <a href="{{${set_user_to_unsubscribed_url}}}" target="_blank" class="footer-link" style="text-decoration: underline; color: #a0a0a5;" rel="noopener">Unsubscribe</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.pray.com/privacy-policy/" target="_blank" class="footer-link" style="text-decoration: underline; color: #a0a0a5;" rel="noopener">Privacy Policy</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://help.pray.com/hc/en-us" target="_blank" class="footer-link" style="text-decoration: underline; color: #a0a0a5;" rel="noopener">Help Center</a>
                       </p>
+                      <p style="margin: 0; margin-bottom: 0;">&nbsp;</p>
                       <p style="margin: 0; margin-bottom: 0; color: #707075;">
                         46&#8203;07 Lak&#8203;eview Canyon R&#8203;d. #4&#8203;56<br>
                         Westlake Village, CA 91361<br>
-                        &#9400;&nbsp;{{ 'now' | date: '%Y' }}&nbsp;Pray.com
+                        &#9400;&nbsp;{{ 'now' | date: '%Y' }}&nbsp;PRAY&#8203;.&#8203;COM
                       </p>
                     </div>
                   </td>
