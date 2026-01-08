@@ -436,6 +436,11 @@ table.es-social td {
 .desktop-link {
     display: none !important;
 }
+/* Reverse column order on mobile for Bible in a Year */
+.mobile-reverse tr {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+}
 }
 </style>
 <style type="text/css">
@@ -815,7 +820,7 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
           <td width="352" valign="middle">
           <![endif]-->
 
-          <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+          <table class="mobile-reverse" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
               <tr><!-- Column : BEGIN -->
                 <th valign="middle" width="55%" class="stack-column-center mobile-border-3" style="background-color:#fffffe"><table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" >
                     <tr>
