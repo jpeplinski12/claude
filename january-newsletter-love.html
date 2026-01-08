@@ -436,8 +436,86 @@ table.es-social td {
 .desktop-link {
     display: none !important;
 }
+/* Reverse column order on mobile for Bible in a Year */
+.mobile-reverse tr {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+}	
 }
 </style>
+<!-- Yahoo Mail Dark Mode Fix -->
+
+<style type="text/css">
+
+    /* Prevent Yahoo Mail dark mode from inverting white backgrounds */
+
+    [data-ogsc] .es-content-body,
+
+    [data-ogsc] td[bgcolor="#fffffe"],
+
+    [data-ogsc] th[style*="background-color:#fffffe"],
+
+    [data-ogsc] .es-content-body table {
+
+        background-color: #ffffff !important;
+
+    }
+
+    [data-ogsc] td[bgcolor="#F5F5F5"],
+
+    [data-ogsc] td[style*="background-color:#F5F5F5"] {
+
+        background-color: #F5F5F5 !important;
+
+    }
+
+    [data-ogsc] td[bgcolor="#E8E8E8"],
+
+    [data-ogsc] td[style*="background-color:#E8E8E8"],
+
+    [data-ogsc] td[style*="background-color: #E8E8E8"] {
+
+        background-color: #E8E8E8 !important;
+
+    }
+
+    [data-ogsc] td[bgcolor="#FADEDE"],
+
+    [data-ogsc] td[style*="background-color:#FADEDE"] {
+
+        background-color: #FADEDE !important;
+
+    }
+
+    [data-ogsc] td[bgcolor="#FDF5F5"],
+
+    [data-ogsc] td[style*="background-color:#FDF5F5"],
+
+    [data-ogsc] th[bgcolor="#FDF5F5"] {
+
+        background-color: #FDF5F5 !important;
+
+    }
+
+    /* Preserve text colors */
+
+    [data-ogsc] .es-content-body span,
+
+    [data-ogsc] .es-content-body td,
+
+    [data-ogsc] .es-content-body div {
+
+        color: #00000d !important;
+
+    }
+
+    [data-ogsc] h1, [data-ogsc] .es-m-txt-26 {
+
+        color: #fffffe !important;
+
+    }
+
+</style>	
 <style type="text/css">
     @media only screen and (max-width: 480px) {
         .lihide {
@@ -446,43 +524,6 @@ table.es-social td {
         .lishow {
             display: table-row !important;
         }
-    }
-</style>
-<!-- Yahoo Mail Dark Mode Fix -->
-<style type="text/css">
-    /* Prevent Yahoo Mail dark mode from inverting white backgrounds */
-    [data-ogsc] .es-content-body,
-    [data-ogsc] td[bgcolor="#fffffe"],
-    [data-ogsc] th[style*="background-color:#fffffe"],
-    [data-ogsc] .es-content-body table {
-        background-color: #ffffff !important;
-    }
-    [data-ogsc] td[bgcolor="#F5F5F5"],
-    [data-ogsc] td[style*="background-color:#F5F5F5"] {
-        background-color: #F5F5F5 !important;
-    }
-    [data-ogsc] td[bgcolor="#E8E8E8"],
-    [data-ogsc] td[style*="background-color:#E8E8E8"],
-    [data-ogsc] td[style*="background-color: #E8E8E8"] {
-        background-color: #E8E8E8 !important;
-    }
-    [data-ogsc] td[bgcolor="#FADEDE"],
-    [data-ogsc] td[style*="background-color:#FADEDE"] {
-        background-color: #FADEDE !important;
-    }
-    [data-ogsc] td[bgcolor="#FDF5F5"],
-    [data-ogsc] td[style*="background-color:#FDF5F5"],
-    [data-ogsc] th[bgcolor="#FDF5F5"] {
-        background-color: #FDF5F5 !important;
-    }
-    /* Preserve text colors */
-    [data-ogsc] .es-content-body span,
-    [data-ogsc] .es-content-body td,
-    [data-ogsc] .es-content-body div {
-        color: #00000d !important;
-    }
-    [data-ogsc] h1, [data-ogsc] .es-m-txt-26 {
-        color: #fffffe !important;
     }
 </style>
 {% assign today='now' | time_zone: ${time_zone}| date: "%Y-%m-%d" %}
@@ -510,13 +551,13 @@ table.es-social td {
               <tr>
                 <td align="center" valign="top" style="letter-spacing:0.01em !important;padding:0;Margin:0;width:680px"><table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px" role="presentation">
                     <tr>
-                      <td align="center" bgcolor="#1C1C1E" style="padding-top:20px; background-color: #1C1C1E;"><a universal="true" href="https://pray.com"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/66621fa029d6eb0059bcc330/original.png?1717706656" alt="Pray.com - Daily prayer and meditation app" width="169" border="0" style="display: block; width: 100%; max-width:152px; margin:0 auto; margin: 0 auto;"></a></td>
+                      <td align="center" bgcolor="#1C1C1E" style="padding-top:20px; background-color: #1C1C1E;"><a universal="true" href="https://www.pray.com/content/cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf?deeplink=pray://page/content?id=cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf&$desktop_url=https://www.pray.com/content/cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/66621fa029d6eb0059bcc330/original.png?1717706656" alt="Pray.com - Daily prayer and meditation app" width="169" border="0" style="display: block; width: 100%; max-width:152px; margin:0 auto; margin: 0 auto;"></a></td>
                     </tr>
                   </table></td>
               </tr>
               <tr>
                 <td align="center" class="es-m-p10r es-m-p0t es-m-p30r es-m-p30l" bgcolor="#1C1C1E" style="Margin:0;padding-top:0px;padding-left:40px;padding-right:40px;background-color:#1C1C1E"><h1 class="es-m-txt-26" style="font-family: Satoshi, Arial, Helvetica, sans-serif;font-size:30px;line-height:150%;mso-line-height-rule:exactly;font-weight:700;color:#fffffe">January Newsletter:<br>
-                    Walking in <a universal="true" href="https://pray.com" style="color:#E88B8B; text-decoration: underline">Love</a></h1></td>
+                    Walking in <a universal="true" href="https://www.pray.com/content/cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf?deeplink=pray://page/content?id=cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf&$desktop_url=https://www.pray.com/content/cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf" style="color:#E88B8B; text-decoration: underline">Love</a></h1></td>
               </tr>
               <tr>
                 <td bgcolor="#1C1C1E" align="center" class="es-m-txt-c es-m-p0l es-m-p0r es-m-p10l es-m-p10r" style="letter-spacing:0.01em !important;padding:0px 70px 30px 70px;Margin:0; background-color:#1C1C1E"><span class="es-m-txt-16" style="letter-spacing:.03em;font-size:18px;font-family:Georgia, Times, serif;color:#fffffe;font-weight:400;font-style:italic;line-height:150%;mso-line-height-rule:exactly" lang="en">“And now these three remain: faith, hope and love. But the greatest of these is&nbsp;love.”<br>
@@ -526,7 +567,7 @@ table.es-social td {
               <tr>
                 <td align="left" class="es-m-txt-c es-m-p20t es-m-p20r es-m-p20l" bgcolor="#fffffe" style="letter-spacing:0.01em !important;padding:0;Margin:0;padding-top:20px;padding-left:40px;padding-right:40px"><span class="es-m-txt-16" style="letter-spacing:.01em;font-size:18px; font-family:Satoshi, Arial, Helvetica, sans-serif;color:#00000d;line-height:150%;mso-line-height-rule:exactly; width:560px">
 As we begin this new year, we focus on the greatest fruit of the Spirit—Love. Why is love the greatest? Because God is love. His love transforms us from the inside out, empowering us to love others as He has loved us. Let’s pause and pray together:<br><br>
-<span class="es-m-txt-16" style="letter-spacing:.01em;font-size:17px;font-family:Georgia, Times, serif;font-weight:400;font-style:italic;line-height:150%;mso-line-height-rule:exactly" lang="en">Heavenly Father, thank You for Your unfailing love that never gives up on us. As we step into this new year, fill our hearts with Your love so that it overflows to everyone around us. Help us to be patient, kind, and selfless—reflecting Your love in all we do.<br>In Jesus’ Name,&nbsp;Amen</span>.</span></td>
+<span class="es-m-txt-16" style="letter-spacing:.01em;font-size:17px;font-family:Georgia, Times, serif;font-weight:400;font-style:italic;line-height:150%;mso-line-height-rule:exactly" lang="en">Heavenly Father, thank You for Your unfailing love that never gives up on us. As we step into this new year, fill our hearts with Your love so that it overflows to everyone around us. Help us to be patient, kind, and selfless—reflecting Your love in all we do. In Jesus’ Name,&nbsp;Amen</span>.</span></td>
               </tr>
                <tr>
           <td align="center" valign="top" style="letter-spacing:0.01em !important;padding-left: 20px; padding-right: 20px; padding-top: 20px;Margin:0;width:600px;" class="es-m-p0b"><table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
@@ -534,13 +575,13 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
                 <td align="center" class="es-m-p30b es-m-p0t es-m-p0r es-m-p0l" style="letter-spacing:0.01em !important;padding:10px 30px 30px 30px;Margin:0;border-radius: 0px 0px 10px 10px;">
 
 				  <!--[if mso]>
-				  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.pray.com/discover?tag=love" style="height:52px;v-text-anchor:middle;width:250px;" arcsize="15%" stroke="f" fillcolor="#00000d">
+				  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.pray.com/content/cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf?deeplink=pray://page/content?id=cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf&$desktop_url=https://www.pray.com/content/cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf" style="height:52px;v-text-anchor:middle;width:250px;" arcsize="15%" stroke="f" fillcolor="#00000d">
 				  <w:anchorlock/>
 				  <center style="color:#ffffff;font-family:Arial,sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;">EMBRACE LOVE</center>
 				  </v:roundrect>
 				  <![endif]-->
 				  <!--[if !mso]><!-- -->
-				  <!-- Desktop Button --><span class="msohide es-button-border desktop-link" style="letter-spacing:0.01em !important;display:inline-block;border-radius:10px;width:auto;mso-hide:all; background: #00000d"><a href="https://www.pray.com/discover?tag=love" class="btn-align" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;letter-spacing:0.03em !important;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly !important;color:#fffffe;font-size:16px;display:inline-block;border-radius:8px;font-family:Satoshi, Arial, Helvetica, sans-serif;font-weight:700;font-style:normal;line-height:150%;width:auto;text-align:center;padding:15px 30px;mso-padding-alt:0;mso-border-alt:10px solid #00000d;text-transform:uppercase; background: #00000d" aria-label="Explore Love content on Pray.com">Embrace Love</a></span><!-- Mobile Button --><span class="es-button-border" style="letter-spacing:0.01em !important;display:none;border-radius:10px;width:auto; background: #00000d"><a universal="true" href="https://pray.com?deeplink=pray%3A%2F%2Fpage%2Ftab%3Fname%3Dlisten%26tag%3Dlove" class="btn-align" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;letter-spacing:0.03em !important;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly !important;color:#fffffe;font-size:16px;display:inline-block;border-radius:8px;font-family:Satoshi, Arial, Helvetica, sans-serif;font-weight:700;font-style:normal;line-height:150%;width:auto;text-align:center;padding:15px 30px;mso-padding-alt:0;mso-border-alt:10px solid #00000d;text-transform:uppercase; background: #00000d" aria-label="Explore Love content on Pray.com">Embrace Love</a></span>
+				 <span class="es-button-border" style="letter-spacing:0.01em !important;border-radius:10px;width:auto; background: #00000d"><a universal="true" href="https://www.pray.com/content/cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf?deeplink=pray://page/content?id=cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf&$desktop_url=https://www.pray.com/content/cfaa2fd7-85f2-4b6c-8304-6d6d6ce81abf" class="btn-align" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;letter-spacing:0.03em !important;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly !important;color:#fffffe;font-size:16px;display:inline-block;border-radius:8px;font-family:Satoshi, Arial, Helvetica, sans-serif;font-weight:700;font-style:normal;line-height:150%;width:auto;text-align:center;padding:15px 30px;mso-padding-alt:0;mso-border-alt:10px solid #00000d;text-transform:uppercase; background: #00000d" aria-label="Explore Love content on Pray.com">Embrace Love</a></span>
 				  <!--<![endif]-->
 
 				  </td>
@@ -774,7 +815,7 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
               <tr>
                 <td align="center" valign="top" style="letter-spacing:0.01em !important;padding:0;Margin:0;width:640px;"><table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                     <tr>
-                      <td align="center" class="es-m-txt-16 es-m-txt-c es-m-p20l es-m-p20r es-m-p0b es-m-p0t" style="letter-spacing:0.01em !important; padding-bottom: 20px; padding-top: 0px; Margin:0;"><span class="es-m-txt-20" style="letter-spacing:1px !important;font-family:Satoshi, Arial, Helvetica, sans-serif;font-size:20px;line-height:150%;mso-line-height-rule:exactly;font-weight:700;color:#555555;text-transform:uppercase">NEW RELEASES ON&nbsp;PRAY</span></td>
+                      <td align="center" class="es-m-txt-16 es-m-txt-c es-m-p20l es-m-p20r es-m-p0b es-m-p0t" style="letter-spacing:0.01em !important; padding-bottom: 20px; padding-top: 0px; Margin:0;"><span class="es-m-txt-20" style="letter-spacing:1px !important;font-family:Satoshi, Arial, Helvetica, sans-serif;font-size:20px;line-height:150%;mso-line-height-rule:exactly;font-weight:700;color:#00000e;text-transform:uppercase">NEW RELEASES ON&nbsp;PRAY</span></td>
                     </tr>
                   </table></td>
               </tr>
@@ -807,7 +848,7 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
               <tr><!-- Column : BEGIN -->
                 <th width="50%" class="stack-column-center mobile-border" style="border-radius: 10px 0px 0px 10px;background-color:#fffffe"><table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
-                      <td  style="text-align: center; padding:20px 15px 15px 20px;border-radius: 10px 0px 0px 10px" class="module-image es-m-p0t es-m-p30b"><a universal="true" href="https://www.pray.com/series/66b22fbf-b162-4870-968b-c576a836819f?deeplink=pray://page/content-series?id=66b22fbf-b162-4870-968b-c576a836819f&$desktop_url=https://www.pray.com/series/66b22fbf-b162-4870-968b-c576a836819f" target="_blank" style="text-decoration: underline; color: #00000e;" rel="noopener"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/6958dcd2af59390068fe8d36/original.jpg?1767431378" width="290" alt="Heroes in the Bible: Paul podcast" border="0" style="width: 100%; max-width: 290px;border-radius:7px; background-color: #f0f0f0;"></a></td>
+                      <td  style="text-align: center; padding:20px 15px 15px 20px;border-radius: 10px 0px 0px 10px" class="module-image es-m-p0t es-m-p30b"><a universal="true" href="https://www.pray.com/series/66b22fbf-b162-4870-968b-c576a836819f?deeplink=pray://page/content-series?id=66b22fbf-b162-4870-968b-c576a836819f&$desktop_url=https://www.pray.com/series/66b22fbf-b162-4870-968b-c576a836819f" target="_blank" style="text-decoration: underline; color: #00000e;" rel="noopener"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/695fd7580cf5610063c6e0f4/original.jpg?1767888728" width="290" alt="Heroes in the Bible: Paul podcast" border="0" style="width: 100%; max-width: 290px;border-radius:7px; background-color: #f0f0f0;"></a></td>
                     </tr>
                   </table></th>
 
@@ -819,8 +860,8 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
                 <!-- Column : END --><!-- Column : BEGIN -->
                 <th valign="middle" width="50%" class="stack-column-center mobile-border-3" style="background-color:#fffffe"><table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" >
                     <tr>
-                      <td valign="top" style=" text-align: left; vertical-align:top; padding: 20px 30px 20px 10px;font-family: Satoshi, Arial, Helvetica, sans-serif; font-weight: 700; font-size: 20px; line-height: 150%;mso-line-height-rule:exactly; color: #00000e; " class="copy-2 es-m-p0 es-m-p20t">Heroes in the Bible: Paul
-                        <div style="letter-spacing:.01em;font-size:16px; font-family:Satoshi, Arial, Helvetica, sans-serif;color:#00000d;line-height:150%;mso-line-height-rule:exactly;padding-top:5px; font-weight: normal;">"Paul: To Die is Gain" is a high-stakes drama following Paul's extraordinary journey from fierce persecutor to passionate apostle. Hosted by world champion fighter Michael Chandler, each episode uncovers the deeper meaning behind Paul's trials and victories.</div>
+                      <td valign="top" style=" text-align: left; vertical-align:top; padding: 20px 30px 20px 10px;font-family: Satoshi, Arial, Helvetica, sans-serif; font-weight: 700; font-size: 20px; line-height: 150%;mso-line-height-rule:exactly; color: #00000e; " class="copy-2 es-m-p0">Heroes in the Bible: Paul
+                        <div style="letter-spacing:.01em;font-size:16px; font-family:Satoshi, Arial, Helvetica, sans-serif;color:#00000d;line-height:150%;mso-line-height-rule:exactly;padding-top:5px; font-weight: normal;">This podcast is a high-stakes drama following Paul’s extraordinary journey from fierce persecutor to passionate apostle. Hosted by world champion fighter Michael Chandler, each episode uncovers the deeper meaning behind Paul’s trials and victories.</div>
                         <div style="font-size:17px; color: #444444;font-family:Satoshi, Arial, Helvetica, sans-serif;text-transform:none;font-weight: 400;letter-spacing:0px;padding-top:5px;padding-bottom:0px;display:block" class="es-m-p0b"><a universal="true" href="https://www.pray.com/series/66b22fbf-b162-4870-968b-c576a836819f?deeplink=pray://page/content-series?id=66b22fbf-b162-4870-968b-c576a836819f&$desktop_url=https://www.pray.com/series/66b22fbf-b162-4870-968b-c576a836819f" style="text-decoration:underline;color:#9e6900; mso-line-height-rule:exactly;font-weight: bold;">Listen Now</a></div></td>
                     </tr>
                   </table></th>
@@ -838,7 +879,6 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
         </td>
         </tr>
 <!-- Heroes in the Bible Module : END -->
-
 <!-- Bible in a Year 2026 Section : BEGIN -->
         <!-- Bible in a Year Module : BEGIN -->
         <tr>
@@ -856,7 +896,7 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
               <tr><!-- Column : BEGIN -->
                 <th width="50%" class="stack-column-center mobile-border" style="border-radius: 10px 0px 0px 10px;background-color:#fffffe"><table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
-                      <td style="text-align: center; padding:20px 15px 15px 20px;border-radius: 10px 0px 0px 10px" class="module-image es-m-p0t es-m-p30b"><a universal="true" href="https://www.pray.com/content/b12613d4-ab45-42e9-a06a-aa7be63543dc?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/content/b12613d4-ab45-42e9-a06a-aa7be63543dc" target="_blank" style="text-decoration: underline; color: #00000e;" rel="noopener"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/6958dd6e6e3e2d0070ef4d2c/original.jpg?1767431534" width="290" alt="Bible in a Year 2026 with new video content" border="0" style="width: 100%; max-width: 290px;border-radius:7px; background-color: #f0f0f0;"></a></td>
+                      <td style="text-align: center; padding:20px 15px 15px 20px;border-radius: 10px 0px 0px 10px" class="module-image es-m-p0t es-m-p30b"><a universal="true" href="https://www.pray.com/content/b12613d4-ab45-42e9-a06a-aa7be63543dc?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/content/b12613d4-ab45-42e9-a06a-aa7be63543dc" target="_blank" style="text-decoration: underline; color: #00000e;" rel="noopener"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/695fd758be6a79006371fa6f/original.jpg?1767888728" width="290" alt="Bible in a Year 2026 with new video content" border="0" style="width: 100%; max-width: 290px;border-radius:7px; background-color: #f0f0f0;"></a></td>
                     </tr>
                   </table></th>
 
@@ -868,9 +908,9 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
                 <!-- Column : END --><!-- Column : BEGIN -->
                 <th valign="middle" width="50%" class="stack-column-center mobile-border-3" style="background-color:#fffffe"><table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" >
                     <tr>
-                      <td valign="top" style=" text-align: left; vertical-align:top; padding: 20px 30px 20px 10px;font-family: Satoshi, Arial, Helvetica, sans-serif; font-weight: 700; font-size: 20px; line-height: 150%;mso-line-height-rule:exactly; color: #00000e; " class="copy-2 es-m-p0 es-m-p20t">Bible in a Year: Now with Video!
+                      <td valign="top" style=" text-align: left; vertical-align:top; padding: 20px 30px 20px 10px;font-family: Satoshi, Arial, Helvetica, sans-serif; font-weight: 700; font-size: 20px; line-height: 150%;mso-line-height-rule:exactly; color: #00000e; " class="copy-2 es-m-p0">Bible in a Year: Now with Video!
                         <div style="letter-spacing:.01em;font-size:16px; font-family:Satoshi, Arial, Helvetica, sans-serif;color:#00000d;line-height:150%;mso-line-height-rule:exactly;padding-top:5px; font-weight: normal;">It's not too late to start! Our refreshed Bible in a Year with Jack Graham devotionals now include <strong>video content</strong> to deepen your understanding and bring Scripture to life like never before.</div>
-                        <div style="font-size:17px; color: #444444;font-family:Satoshi, Arial, Helvetica, sans-serif;text-transform:none;font-weight: 400;letter-spacing:0px;padding-top:5px;padding-bottom:0px;display:block" class="es-m-p0b"><a universal="true" href="https://www.pray.com/content/b12613d4-ab45-42e9-a06a-aa7be63543dc?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/content/b12613d4-ab45-42e9-a06a-aa7be63543dc" style="text-decoration:underline;color:#9e6900; mso-line-height-rule:exactly;font-weight: bold;">Watch Now</a><span style="color:#444444;"> &nbsp;|&nbsp; </span><a universal="true" href="https://www.pray.com/series/a94bb4d3-0fa7-4421-a821-3e5aef40ce92?deeplink=pray://page/content-series?id=a94bb4d3-0fa7-4421-a821-3e5aef40ce92&$desktop_url=https://www.pray.com/series/a94bb4d3-0fa7-4421-a821-3e5aef40ce92" style="text-decoration:underline;color:#9e6900; mso-line-height-rule:exactly;font-weight: bold;">Sign Up</a></div></td>
+                        <div style="font-size:17px; color: #444444;font-family:Satoshi, Arial, Helvetica, sans-serif;text-transform:none;font-weight: 400;letter-spacing:0px;padding-top:5px;padding-bottom:0px;display:block" class="es-m-p0b"><a universal="true" href="https://www.pray.com/content/b12613d4-ab45-42e9-a06a-aa7be63543dc?deeplink=pray://page/content?id=b12613d4-ab45-42e9-a06a-aa7be63543dc&$desktop_url=https://www.pray.com/content/b12613d4-ab45-42e9-a06a-aa7be63543dc" style="text-decoration:underline;color:#9e6900; mso-line-height-rule:exactly;font-weight: bold;">Watch Now</a><br><a href="https://www.pray.com/newsletter/bibleinayear" style="text-decoration:underline;color:#9e6900; mso-line-height-rule:exactly;font-weight: bold;">Sign Up for Daily Devotions</a></div></td>
                     </tr>
                   </table></th>
                 <!-- Column : END --></tr>
@@ -887,6 +927,7 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
         </td>
         </tr>
 <!-- Bible in a Year Module : END -->
+
 
 <!-- The Daily Pursuit with Tim Tebow Section : BEGIN -->
         <!-- Daily Pursuit Module : BEGIN -->
@@ -905,7 +946,7 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
               <tr><!-- Column : BEGIN -->
                 <th width="50%" class="stack-column-center mobile-border" style="border-radius: 10px 0px 0px 10px;background-color:#fffffe"><table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                     <tr>
-                      <td  style="text-align: center; padding:20px 15px 15px 20px;border-radius: 10px 0px 0px 10px" class="module-image es-m-p0t es-m-p30b"><a universal="true" href="https://www.pray.com/series/3a58daa6-dba9-4186-8b8c-bd3960495e72?deeplink=pray://page/content-series?id=3a58daa6-dba9-4186-8b8c-bd3960495e72&$desktop_url=https://www.pray.com/series/3a58daa6-dba9-4186-8b8c-bd3960495e72" target="_blank" style="text-decoration: underline; color: #00000e;" rel="noopener"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/6958de3e6e3e2d0070ef4fbc/original.jpg?1767431742" width="290" alt="The Daily Pursuit podcast with Tim Tebow" border="0" style="width: 100%; max-width: 290px;border-radius:7px; background-color: #f0f0f0;"></a></td>
+                      <td  style="text-align: center; padding:20px 15px 15px 20px;border-radius: 10px 0px 0px 10px" class="module-image es-m-p0t es-m-p30b"><a universal="true" href="https://www.pray.com/series/3a58daa6-dba9-4186-8b8c-bd3960495e72?deeplink=pray://page/content-series?id=3a58daa6-dba9-4186-8b8c-bd3960495e72&$desktop_url=https://www.pray.com/series/3a58daa6-dba9-4186-8b8c-bd3960495e72" target="_blank" style="text-decoration: underline; color: #00000e;" rel="noopener"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/695fd758b929bd0063d79d89/original.jpg?1767888728" width="290" alt="The Daily Pursuit podcast with Tim Tebow" border="0" style="width: 100%; max-width: 290px;border-radius:7px; background-color: #f0f0f0;"></a></td>
                     </tr>
                   </table></th>
 
@@ -917,7 +958,7 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
                 <!-- Column : END --><!-- Column : BEGIN -->
                 <th valign="middle" width="50%" class="stack-column-center mobile-border-3" style="background-color:#fffffe"><table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" >
                     <tr>
-                      <td valign="top" style=" text-align: left; vertical-align:top; padding: 20px 30px 20px 10px;font-family: Satoshi, Arial, Helvetica, sans-serif; font-weight: 700; font-size: 20px; line-height: 150%;mso-line-height-rule:exactly; color: #00000e; " class="copy-2 es-m-p0 es-m-p20t">The Daily Pursuit with Tim Tebow
+                      <td valign="top" style=" text-align: left; vertical-align:top; padding: 20px 30px 20px 10px;font-family: Satoshi, Arial, Helvetica, sans-serif; font-weight: 700; font-size: 20px; line-height: 150%;mso-line-height-rule:exactly; color: #00000e; " class="copy-2 es-m-p0">The Daily Pursuit with Tim&nbsp;Tebow
                         <div style="letter-spacing:.01em;font-size:16px; font-family:Satoshi, Arial, Helvetica, sans-serif;color:#00000d;line-height:150%;mso-line-height-rule:exactly;padding-top:5px; font-weight: normal;">Life is a grind, but blessed are those who rise up and embrace the challenge. Join Tim Tebow daily for 365 heartfelt prayers and devotions drawing from Scripture, biblical truths, and spiritual insights to help you find your purpose and stay motivated for the challenges ahead.</div>
                         <div style="font-size:17px; color: #444444;font-family:Satoshi, Arial, Helvetica, sans-serif;text-transform:none;font-weight: 400;letter-spacing:0px;padding-top:5px;padding-bottom:0px;display:block" class="es-m-p0b"><a universal="true" href="https://www.pray.com/series/3a58daa6-dba9-4186-8b8c-bd3960495e72?deeplink=pray://page/content-series?id=3a58daa6-dba9-4186-8b8c-bd3960495e72&$desktop_url=https://www.pray.com/series/3a58daa6-dba9-4186-8b8c-bd3960495e72" style="text-decoration:underline;color:#9e6900; mso-line-height-rule:exactly;font-weight: bold;">Listen Now</a></div></td>
                     </tr>
@@ -1035,7 +1076,7 @@ As we begin this new year, we focus on the greatest fruit of the Spirit—Love. 
                     </tr>
                     <!-- Title : END --><!-- Main Copy : BEGIN -->
                     <tr>
-                      <td align="center" style="font-size:18px;font-family:Satoshi, Arial, Helvetica, sans-serif;line-height:150%;mso-line-height-rule:exactly; font-weight: 400; letter-spacing: 0; font-size: 16px; text-align: center; color: #000000; letter-spacing:0.0em; padding-left: 30px; padding-right: 30px; padding-top:10px" class="scripture-module">In 1 Corinthians 13:4-7, Paul describes 15 characteristics of love: patient, kind, does not envy, does not boast, is not proud, does not dishonor others, is not self-seeking, is not easily angered, keeps no record of wrongs, does not delight in evil, rejoices with the truth, always protects, always trusts, always hopes, and always perseveres.</td>
+                      <td align="center" style="font-size:18px;font-family:Satoshi, Arial, Helvetica, sans-serif;line-height:150%;mso-line-height-rule:exactly; font-weight: 400; letter-spacing: 0; font-size: 16px; text-align: center; color: #000000; letter-spacing:0.0em; padding-left: 30px; padding-right: 30px; padding-top:10px" class="scripture-module es-m-p10">In 1 Corinthians 13:4-7, Paul describes 15 characteristics of love: patient, kind, does not envy, does not boast, is not proud, does not dishonor others, is not self-seeking, is not easily angered, keeps no record of wrongs, does not delight in evil, rejoices with the truth, always protects, always trusts, always hopes, and always perseveres.</td>
                     </tr>
                   </table>
                   <!-- Solid Border Inner Table : END --></td>
