@@ -448,6 +448,43 @@ table.es-social td {
         }
     }
 </style>
+<!-- Yahoo Mail Dark Mode Fix -->
+<style type="text/css">
+    /* Prevent Yahoo Mail dark mode from inverting white backgrounds */
+    [data-ogsc] .es-content-body,
+    [data-ogsc] td[bgcolor="#fffffe"],
+    [data-ogsc] th[style*="background-color:#fffffe"],
+    [data-ogsc] .es-content-body table {
+        background-color: #ffffff !important;
+    }
+    [data-ogsc] td[bgcolor="#F5F5F5"],
+    [data-ogsc] td[style*="background-color:#F5F5F5"] {
+        background-color: #F5F5F5 !important;
+    }
+    [data-ogsc] td[bgcolor="#E8E8E8"],
+    [data-ogsc] td[style*="background-color:#E8E8E8"],
+    [data-ogsc] td[style*="background-color: #E8E8E8"] {
+        background-color: #E8E8E8 !important;
+    }
+    [data-ogsc] td[bgcolor="#FADEDE"],
+    [data-ogsc] td[style*="background-color:#FADEDE"] {
+        background-color: #FADEDE !important;
+    }
+    [data-ogsc] td[bgcolor="#FDF5F5"],
+    [data-ogsc] td[style*="background-color:#FDF5F5"],
+    [data-ogsc] th[bgcolor="#FDF5F5"] {
+        background-color: #FDF5F5 !important;
+    }
+    /* Preserve text colors */
+    [data-ogsc] .es-content-body span,
+    [data-ogsc] .es-content-body td,
+    [data-ogsc] .es-content-body div {
+        color: #00000d !important;
+    }
+    [data-ogsc] h1, [data-ogsc] .es-m-txt-26 {
+        color: #fffffe !important;
+    }
+</style>
 {% assign today='now' | time_zone: ${time_zone}| date: "%Y-%m-%d" %}
 </head>
 
