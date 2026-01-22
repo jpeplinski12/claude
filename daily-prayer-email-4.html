@@ -114,32 +114,23 @@ a[x-apple-data-detectors] {
   background-color: #7a5200 !important;
 }
 
-/* Featured Prayer Block */
-.featured-prayer {
-  background: linear-gradient(135deg, #faf8f5 0%, #f5f0e8 100%);
-  border-radius: 12px;
-  padding: 24px 26px;
-  margin: 20px 0;
-  text-align: center;
+/* Prayer Quote */
+.prayer-quote {
+  background-color: #faf8f5;
+  border-left: 4px solid #9e6900;
+  padding: 24px 28px;
+  margin: 25px 0;
+  border-radius: 0 8px 8px 0;
 }
 
-.featured-label {
-  font-family: Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #9e6900;
-  margin: 0 0 15px 0;
-}
-
-.featured-prayer-text {
+.prayer-quote p {
   font-family: Satoshi, Georgia, 'Times New Roman', serif;
   font-size: 18px;
   font-style: italic;
   line-height: 1.7;
-  color: #2c2c2c;
+  color: #3d3d3d;
   margin: 0;
+  letter-spacing: 0.01em;
 }
 
 /* Promise List */
@@ -193,14 +184,12 @@ a[x-apple-data-detectors] {
 }
 
 /* Gmail dark mode specific overrides */
-u + .body .featured-prayer-text,
-u + .body .featured-prayer p {
+u + .body .prayer-quote p {
   color: #ffffff !important;
 }
 
 /* Outlook/Gmail data attribute dark mode */
-[data-ogsc] .featured-prayer-text,
-[data-ogsc] .featured-prayer p {
+[data-ogsc] .prayer-quote p {
   color: #ffffff !important;
 }
 
@@ -218,15 +207,9 @@ u + .body .featured-prayer p {
   p,
   td { color: #ffffff !important; }
 
-  /* Featured prayer - explicit white text */
-  .featured-prayer { background: #3d3d3d !important; }
-  .featured-prayer p,
-  .featured-prayer-text,
-  .featured-prayer .featured-prayer-text {
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-  }
-  .featured-label { color: #c9a227 !important; }
+  /* Prayer quote */
+  .prayer-quote { background-color: #3d3d3d !important; }
+  .prayer-quote p { color: #ffffff !important; }
 
   /* Promise items */
   .promise-item { color: #ffffff !important; }
@@ -326,18 +309,12 @@ u + .body .featured-prayer p {
     line-height: 1.65 !important;
   }
 
-  /* Featured prayer */
-  .featured-prayer {
-    padding: 12px 13px !important;
-    margin: 10px 0 !important;
+  /* Prayer quote */
+  .prayer-quote {
+    padding: 12px 14px !important;
+    margin: 0 0 12px 0 !important;
   }
-
-  .featured-label {
-    font-size: 16px !important;
-    margin-bottom: 10px !important;
-  }
-
-  .featured-prayer-text {
+  .prayer-quote p {
     font-size: 16px !important;
   }
 
@@ -447,14 +424,11 @@ u + .body .featured-prayer p {
               </td>
             </tr>
 
-            <!-- Featured Prayer -->
+            <!-- Prayer Quote Block -->
             <tr>
-              <td class="content-padding featured-padding" style="padding: 0 45px 18px 45px; background-color:#ffffff;">
-                <div class="featured-prayer" style="background:linear-gradient(135deg, #faf8f5 0%, #f5f0e8 100%); border-radius:12px; padding:24px 26px; text-align:center;">
-                  <p class="featured-label" style="font-family:Satoshi, sans-serif; font-size:16px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#9e6900; margin:0 0 15px 0;">
-                    Today's Prayer
-                  </p>
-                  <p class="featured-prayer-text" style="font-family:Satoshi, Georgia, serif; font-size:18px; font-style:italic; line-height:1.7; color:#2c2c2c; margin:0;">
+              <td class="content-padding" style="padding: 0 45px 18px 45px; background-color:#ffffff;">
+                <div class="prayer-quote" style="background-color:#faf8f5; border-left:4px solid #9e6900; padding:24px 28px; margin:0 0 18px 0; border-radius:0 8px 8px 0;">
+                  <p style="font-family:Satoshi, Georgia, 'Times New Roman', serif; font-size:18px; font-style:italic; line-height:1.7; color:#3d3d3d; margin:0;">
                     {{content_blocks.${get_dynamic_daily_v2}}}{{content_blocks.${dynamic_daily_or_nightly_v3_quote_truncate}}}
                   </p>
                 </div>
