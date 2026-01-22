@@ -47,7 +47,7 @@ st.markdown("""
         margin-bottom: 0.5rem;
     }
     .sub-header {
-        color: #d0d0d8;
+        color: #ffffff;
         font-size: 1.1rem;
         margin-bottom: 2rem;
     }
@@ -65,9 +65,13 @@ st.markdown("""
         margin: 12px 0;
     }
     .hypothesis {
-        color: #888;
+        color: #666;
         font-size: 0.85rem;
         font-style: italic;
+    }
+    /* Make all Streamlit text white on dark background */
+    .stMarkdown, .stText, p, span, label {
+        color: #ffffff !important;
     }
     .preview-frame {
         background: white;
