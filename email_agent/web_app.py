@@ -9,7 +9,15 @@ Run with: streamlit run web_app.py
 
 import streamlit as st
 import json
+import sys
+import os
 from datetime import datetime
+from pathlib import Path
+
+# Add the current directory to path for imports
+current_dir = Path(__file__).parent.absolute()
+if str(current_dir) not in sys.path:
+    sys.path.insert(0, str(current_dir))
 
 from template_generator import EmailTemplateGenerator
 from subject_line_factory import SubjectLineFactory

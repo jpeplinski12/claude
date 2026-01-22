@@ -1,0 +1,4 @@
+# PRAY.COM Email Template Generator
+# Web interface dependencies
+
+streamlit>=1.28.0
