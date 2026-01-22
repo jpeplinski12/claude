@@ -200,9 +200,14 @@ a[x-apple-data-detectors] {
     padding-right: 24px !important;
   }
 
-  /* Hero section: 10px 50px 25px → 8px 24px 16px */
+  /* Hero section: 10px 50px 25px → 8px 24px 12px */
   .hero-padding {
-    padding: 8px 24px 16px 24px !important;
+    padding: 8px 24px 12px 24px !important;
+  }
+
+  /* Quote section: 0 50px 25px → 0 24px 12px */
+  .quote-padding {
+    padding: 0 24px 12px 24px !important;
   }
 
   /* CTA section: 0 40px → 0 24px */
@@ -247,13 +252,13 @@ a[x-apple-data-detectors] {
     line-height: 1.65 !important;
   }
 
-  /* Prayer quote: 24px 28px → 14px 16px */
+  /* Prayer quote: 24px 28px → 12px 14px */
   .prayer-quote {
-    padding: 14px 16px !important;
-    margin: 16px 0 !important;
+    padding: 12px 14px !important;
+    margin: 0 0 12px 0 !important;
   }
   .prayer-quote p {
-    font-size: 17px !important;
+    font-size: 16px !important;
   }
 
   /* CTA Button */
@@ -341,7 +346,37 @@ a[x-apple-data-detectors] {
                 A prayer is waiting for you every&nbsp;morning
                 </h1>
 
+                <p class="body-text" style="font-family:Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size:18px; line-height:1.7; color:#2c2c2c; margin:0 0 20px 0;">
+                  {{${first_name} | default: 'Hi there'}}, {% if {{custom_attribute.${created_datetime} | date: "%B %Y"}} %}you joined PRAY&zwnj;.COM back in {{custom_attribute.${created_datetime} | date: "%B %Y"}}, but there's something you might not know about.{% else %}you're part of the PRAY&zwnj;.COM family, but there's something you might not know about.{% endif %}
+                </p>
 
+                <p class="body-text" style="font-family:Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size:18px; line-height:1.7; color:#2c2c2c; margin:0 0 20px 0;">
+                  Every morning, we send the Daily Prayer to over 4 million people. It includes an inspirational quote, a prayer, Scripture, and a devotional to start your day grounded in faith.
+                </p>
+
+                <p class="body-text" style="font-family:Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size:18px; line-height:1.7; color:#2c2c2c; margin:0 0 5px 0;">
+                  Here's a sample of what you'd wake up to:
+                </p>
+
+              </td>
+            </tr>
+
+            <!-- Prayer Quote Block -->
+            <tr>
+              <td class="content-padding quote-padding" style="padding: 0 50px 25px 50px; background-color:#ffffff;">
+
+                <div class="prayer-quote" style="background-color:#faf8f5; border-left:4px solid #9e6900; padding:24px 28px; margin:0 0 25px 0; border-radius:0 8px 8px 0;">
+                  <p style="font-family:Satoshi, Georgia, 'Times New Roman', serif; font-size:18px; font-style:italic; line-height:1.7; color:#3d3d3d; margin:0;">
+                 {{content_blocks.${get_dynamic_daily_v2}}}{{content_blocks.${dynamic_daily_or_nightly_v3_quote_truncate}}}
+                  </p>
+                </div>
+
+                <p class="body-text" style="font-family:Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size:18px; line-height:1.7; color:#2c2c2c; margin:0 0 0px 0;">
+                  If that's something you'd like in your inbox each morning, it's one tap away.
+                </p>
+
+              </td>
+            </tr>
 
             <!-- CTA Button -->
             <tr>
@@ -439,8 +474,8 @@ a[x-apple-data-detectors] {
                   <a href="{{preference_center.${PRAY-Preference-Center}}}" target="_blank" style="color:#9e6900; text-decoration:underline;">Unsubscribe</a>
                 </p>
                 <p class="footer-address" style="font-family:Satoshi, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size:14px; line-height:1.6; color:#9b9b9b; margin:0;">
-                  4607 Lakeview Canyon Rd. #456<br>
-                  Westlake Village, CA 91361<br>
+                  4607 &zwnj;Lakeview Canyon Rd. &zwnj;#456<br>
+                  Westlake Village, &zwnj;CA 91361<br>
                   © {{'now' | date: '%Y'}} PRAY&#8203;.&#8203;COM
                 </p>
               </td>
