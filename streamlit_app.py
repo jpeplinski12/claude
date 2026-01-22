@@ -57,12 +57,14 @@ st.markdown("""
         border-radius: 8px;
         margin: 8px 0;
         border-left: 3px solid #e3af4a;
+        color: #000000 !important;
     }
     .ab-variant {
         background-color: #ffffff;
         padding: 16px;
         border-radius: 8px;
         margin: 12px 0;
+        color: #000000 !important;
     }
     .hypothesis {
         color: #666;
