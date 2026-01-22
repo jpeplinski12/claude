@@ -192,6 +192,18 @@ a[x-apple-data-detectors] {
   supported-color-schemes: light dark;
 }
 
+/* Gmail dark mode specific overrides */
+u + .body .featured-prayer-text,
+u + .body .featured-prayer p {
+  color: #ffffff !important;
+}
+
+/* Outlook/Gmail data attribute dark mode */
+[data-ogsc] .featured-prayer-text,
+[data-ogsc] .featured-prayer p {
+  color: #ffffff !important;
+}
+
 @media (prefers-color-scheme: dark) {
   /* Backgrounds */
   .email-body,
@@ -206,9 +218,14 @@ a[x-apple-data-detectors] {
   p,
   td { color: #ffffff !important; }
 
-  /* Featured prayer */
-  .featured-prayer { background: linear-gradient(135deg, #3d3d3d 0%, #333333 100%) !important; }
-  .featured-prayer-text { color: #ffffff !important; }
+  /* Featured prayer - explicit white text */
+  .featured-prayer { background: #3d3d3d !important; }
+  .featured-prayer p,
+  .featured-prayer-text,
+  .featured-prayer .featured-prayer-text {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
   .featured-label { color: #c9a227 !important; }
 
   /* Promise items */
