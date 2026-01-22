@@ -6,6 +6,8 @@
 <meta name="x-apple-disable-message-reformatting">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="telephone=no" name="format-detection">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
 <title>A Prayer is Waiting for You Every Morning</title>
 <!--[if mso]>
 <style>
@@ -163,14 +165,44 @@ a[x-apple-data-detectors] {
   mso-hide: all;
 }
 
+/* Dark mode support for iOS Mail and other clients */
+:root {
+  color-scheme: light dark;
+  supported-color-schemes: light dark;
+}
+
 @media (prefers-color-scheme: dark) {
-  .email-body { background-color: #1a1a1a !important; }
-  .email-container { background-color: #2c2c2c !important; }
-  .body-text, .headline { color: #ffffff !important; }
+  /* Backgrounds */
+  .email-body,
+  .email-body table { background-color: #1a1a1a !important; }
+  .email-container,
+  .email-container td { background-color: #2c2c2c !important; }
+
+  /* All text elements - explicit targeting */
+  .body-text,
+  .headline,
+  h1,
+  p,
+  td { color: #ffffff !important; }
+
+  /* Prayer quote */
   .prayer-quote { background-color: #3d3d3d !important; }
   .prayer-quote p { color: #ffffff !important; }
+
+  /* Secondary text */
   .preference-text { color: #d0d0d0 !important; }
+
+  /* Footer text - slightly muted */
+  .footer-text,
+  .footer-links,
+  .footer-address { color: #b0b0b0 !important; }
+
+  /* Divider */
   .divider { border-top-color: #4a4a4a !important; }
+
+  /* Links */
+  a { color: #c9a227 !important; }
+  .cta-button { color: #ffffff !important; }
 }
 
 /* ============================================
