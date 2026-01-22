@@ -52,14 +52,14 @@ st.markdown("""
         margin-bottom: 2rem;
     }
     .subject-line {
-        background-color: #1a1a1c;
+        background-color: #ffffff;
         padding: 12px 16px;
         border-radius: 8px;
         margin: 8px 0;
         border-left: 3px solid #e3af4a;
     }
     .ab-variant {
-        background-color: #1a1a1c;
+        background-color: #ffffff;
         padding: 16px;
         border-radius: 8px;
         margin: 12px 0;
@@ -76,7 +76,7 @@ st.markdown("""
         overflow: hidden;
     }
     .stat-card {
-        background-color: #1a1a1c;
+        background-color: #ffffff;
         padding: 20px;
         border-radius: 12px;
         text-align: center;
