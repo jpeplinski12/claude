@@ -144,10 +144,36 @@ Body: Hi {{first_name}}, we noticed you started to join PRAY Premium...
         )
 
     with col2:
+        # Import template types
+        from template_generator import TEMPLATE_TYPES
+
+        # Create friendly display names
+        template_options = {
+            "plain_text": "📄 Plain Text / Triggered",
+            "premium": "✨ Premium / Subscription",
+            "sponsored": "🤝 Sponsored / Partner",
+            "holiday": "🎄 Holiday / Seasonal",
+            "cart_abandonment": "🛒 Cart Abandonment",
+            "newsletter": "📰 Newsletter / Digest",
+            "announcement": "📢 Announcement / News"
+        }
+
         template_type = st.selectbox(
             "Template Type",
-            ["promotional", "newsletter", "announcement", "transactional"],
+            list(template_options.keys()),
+            format_func=lambda x: template_options[x],
             help="Choose the type of email template"
+        )
+
+        # Show template description
+        if template_type in TEMPLATE_TYPES:
+            st.info(TEMPLATE_TYPES[template_type]["description"])
+
+        # Theme selector
+        theme = st.selectbox(
+            "Theme",
+            ["auto", "light", "dark"],
+            help="auto = use template type's recommended theme"
         )
 
         num_variants = st.number_input(
@@ -165,12 +191,41 @@ Body: Hi {{first_name}}, we noticed you started to join PRAY Premium...
         else:
             with st.spinner("Generating your email package..."):
                 try:
-                    agent = EmailAgent()
-                    result = agent.generate_from_brief(brief, template_type)
+                    # Determine theme to use
+                    theme_to_use = None if theme == "auto" else theme
 
-                    st.session_state.generated_html = result["html_template"]
-                    st.session_state.generated_subjects = result["subject_lines"]
-                    st.session_state.campaign_name = result["parsed_brief"].get("campaign_name", "campaign")
+                    # Generate with theme
+                    generator = EmailTemplateGenerator(theme=theme if theme != "auto" else TEMPLATE_TYPES[template_type]["theme"])
+                    factory = SubjectLineFactory()
+
+                    # Parse brief
+                    from campaign_parser import CampaignBriefParser
+                    parser = CampaignBriefParser()
+                    parsed = parser.parse(brief)
+
+                    # Generate HTML
+                    html = generator.generate(
+                        campaign_name=parsed.get("campaign_name", "Campaign"),
+                        headline=parsed.get("headline", ""),
+                        subheadline=parsed.get("subheadline", ""),
+                        body_content=parsed.get("body_content", []),
+                        cta_text=parsed.get("cta_text", "Learn More"),
+                        cta_url=parsed.get("cta_url", "https://pray.com"),
+                        template_type=template_type,
+                        theme=theme_to_use
+                    )
+
+                    # Generate subjects
+                    subjects = factory.generate(
+                        context=parsed.get("context", brief),
+                        segment=parsed.get("segment", "general"),
+                        tone=parsed.get("tone", "inspiring"),
+                        num_variants=num_variants
+                    )
+
+                    st.session_state.generated_html = html
+                    st.session_state.generated_subjects = subjects
+                    st.session_state.campaign_name = parsed.get("campaign_name", "campaign")
 
                     st.success("✅ Email package generated successfully!")
                 except Exception as e:
@@ -342,10 +397,30 @@ def show_custom_template():
         cta_text = st.text_input("CTA Button Text", value="Learn More", placeholder="Start Your Journey")
         cta_url = st.text_input("CTA URL", value="https://pray.com", placeholder="https://pray.com/premium")
 
+        # Import template types
+        from template_generator import TEMPLATE_TYPES
+
+        template_options = {
+            "plain_text": "📄 Plain Text / Triggered",
+            "premium": "✨ Premium / Subscription",
+            "sponsored": "🤝 Sponsored / Partner",
+            "holiday": "🎄 Holiday / Seasonal",
+            "cart_abandonment": "🛒 Cart Abandonment",
+            "newsletter": "📰 Newsletter / Digest",
+            "announcement": "📢 Announcement / News"
+        }
+
         template_type = st.selectbox(
             "Template Type",
-            ["promotional", "newsletter", "announcement"],
+            list(template_options.keys()),
+            format_func=lambda x: template_options[x],
             help="Choose template style"
+        )
+
+        theme = st.selectbox(
+            "Theme",
+            ["auto", "light", "dark"],
+            help="auto = use template type's recommended theme"
         )
 
         use_personalization = st.checkbox("Use First Name Personalization", value=True)
@@ -357,7 +432,11 @@ def show_custom_template():
         else:
             with st.spinner("Generating template..."):
                 try:
-                    generator = EmailTemplateGenerator()
+                    # Determine theme
+                    theme_to_use = None if theme == "auto" else theme
+                    actual_theme = theme if theme != "auto" else TEMPLATE_TYPES[template_type]["theme"]
+
+                    generator = EmailTemplateGenerator(theme=actual_theme)
 
                     body_content = [p for p in [body_para_1, body_para_2, body_para_3] if p.strip()]
 
@@ -385,7 +464,8 @@ def show_custom_template():
                         cta_url=cta_url,
                         template_type=template_type,
                         personalization=personalization,
-                        sections=sections
+                        sections=sections,
+                        theme=theme_to_use
                     )
 
                     st.session_state.generated_html = html
