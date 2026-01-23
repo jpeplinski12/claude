@@ -143,24 +143,43 @@ def show_full_generation():
     col1, col2 = st.columns([3, 1])
     with col1:
         st.markdown("### Campaign Brief")
+
+        # Show expandable brief tips
+        with st.expander("💡 How to write a high-scoring brief (click to expand)"):
+            st.markdown("""
+**For AI to generate great copy (80+ score), your brief needs:**
+
+✅ **SPECIFIC NUMBERS**: "387 minutes", "30-day streak", not just "usage stats"
+✅ **CONCRETE DETAILS**: "Pastor Rick Warren's devotionals", not just "content"
+✅ **EMOTIONAL CONTEXT**: "feeling overwhelmed in busy mornings", not just "target engaged users"
+✅ **REAL EXAMPLES**: "Sarah's story: 5 mins changed her anxiety", not just "testimonials"
+
+**Example of a HIGH-SCORING brief:**
+```
+Year in Prayer email for engaged users. Show their specific numbers:
+387 minutes prayed this year, maintained 30-day streak in October,
+listened to Pastor Rick Warren 15 times. Target busy professionals
+(ages 28-45) who've been consistent but may feel stressed/overwhelmed.
+Tone: celebratory but acknowledging their journey hasn't been easy.
+Emphasize that God sees every single moment of their 387 minutes.
+CTA: View My Full Year
+```
+
+**Why this works:**
+- Includes actual numbers (387, 30, 15)
+- Names specific people (Pastor Rick Warren)
+- Describes emotional state (stressed, overwhelmed)
+- Has concrete CTA with specific action
+            """)
+
         brief = st.text_area(
             "Paste your campaign brief here",
             height=400,
-            placeholder="""Example brief:
-
-Project Title: Abandon Cart Email Series - PRAY.COM Premium Subscription
-
-Overview: 3-email automated sequence to re-engage users who didn't complete their premium subscription purchase.
-
-Target Audience: Age 30-65, spiritually curious to practicing Christians, hesitant at checkout.
-
-Email 1 (1 Hour): Gentle reminder
-Subject: You're so close to unlimited prayer & peace
-Body: Hi {{first_name}}, we noticed you started to join PRAY Premium...
-
-[Include full email copy, CTAs, and desired structure]
-""",
-            help="Include campaign objective, target audience, tone, key messages, and CTAs"
+            placeholder="""Example: Year in Prayer email for engaged users. Show specific numbers:
+387 minutes prayed, 30-day streak, listened to Pastor Rick Warren 15 times.
+Target busy professionals feeling stressed. Tone: celebratory but acknowledging
+their journey. Emphasize God sees every moment. CTA: View My Full Year""",
+            help="Include specific numbers, concrete details, and emotional context for best results"
         )
 
     with col2:

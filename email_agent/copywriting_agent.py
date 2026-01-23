@@ -50,16 +50,59 @@ class CopywritingAgent:
         Returns:
             Dictionary with headline, subheadline, body_paragraphs, and cta_text
         """
+        # STEP 1: Extract specific details first
+        extraction_prompt = f"""Read this campaign brief and extract SPECIFIC CONCRETE DETAILS:
+
+BRIEF: {campaign_brief}
+
+Extract and list:
+- Numbers (millions, thousands, prices, timeframes, percentages, counts)
+- Names (people, products, features)
+- Dollar amounts
+- Timeframes (60 seconds, 1 hour, 30 days)
+- Quantities (10,000+ prayers, 10M+ users)
+
+Output ONLY a bulleted list of these specific details, nothing else."""
+
+        extraction_response = self.client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=256,
+            temperature=0.3,
+            messages=[{"role": "user", "content": extraction_prompt}]
+        )
+
+        extracted_details = extraction_response.content[0].text.strip()
+
+        # STEP 2: Generate copy that MUST use these specifics
         prompt = f"""{self.brand_voice.get_copywriting_prompt(campaign_type, campaign_brief, segment)}
 
-Based on the campaign brief, generate:
+EXTRACTED SPECIFIC DETAILS FROM YOUR BRIEF:
+{extracted_details}
 
-1. HEADLINE: A compelling, benefit-driven headline (5-10 words max)
-2. SUBHEADLINE: Optional supporting text (one sentence, or leave blank if not needed)
-3. BODY: 2-3 concise paragraphs of email body copy
-4. CTA: Call-to-action button text (2-4 words)
+CRITICAL INSTRUCTION: You MUST use AT LEAST 2-3 of these specific details in your copy.
+Do NOT write generic copy. Do NOT use forbidden phrases.
 
-Format your response as JSON:
+Now generate the email copy. Follow these rules STRICTLY:
+
+1. HEADLINE (5-10 words):
+   ❌ NEVER use: "Welcome", "Discover", "Introducing", "Check Out", "New Feature"
+   ✅ MUST include: A specific number, name, or detail from the list above
+   ✅ Example: "Your $49.99 Premium is waiting" or "60 seconds to 10,000+ prayers"
+
+2. SUBHEADLINE (one sentence or empty):
+   - Include another specific detail from the list
+   - Use contractions (you've, we're) to sound conversational
+
+3. BODY (2-3 paragraphs):
+   ❌ FORBIDDEN phrases: "we're excited", "pleased to announce", "we have", "feature", "functionality", "check out", "discover"
+   ✅ REQUIRED: Start paragraphs with "You" or reference their specific situation
+   ✅ MUST include: AT LEAST ONE specific detail from the list above PER PARAGRAPH
+
+4. CTA (2-4 words):
+   ❌ NEVER: "Learn More", "Get Started", "Discover"
+   ✅ Use: Specific action with detail (e.g., "Complete My $49.99", "Unlock 10,000+ Prayers", "Finish in 60 Seconds")
+
+Format as JSON:
 {{
     "headline": "Your headline here",
     "subheadline": "Optional subheadline or empty string",
@@ -67,18 +110,16 @@ Format your response as JSON:
     "cta_text": "Button Text"
 }}
 
-Remember:
-- Write like a compassionate pastor crossed with a tech-forward friend
-- Be warm and conversational, not corporate
-- Meet the user where they are emotionally
-- Empower rather than preach
-- Make it mobile-friendly and concise
-- Include specific next steps"""
+SELF-CHECK BEFORE RESPONDING:
+- Did headline include a specific number/detail? If no, REWRITE.
+- Did body paragraphs each include specific details? If no, REWRITE.
+- Did you use "we're excited", "we have", or "discover"? If yes, REWRITE.
+- Did you use contractions? If no, ADD THEM."""
 
         try:
             response = self.client.messages.create(
                 model="claude-sonnet-4-20250514",
-                max_tokens=1024,
+                max_tokens=1500,
                 temperature=0.7,
                 messages=[{
                     "role": "user",
@@ -132,16 +173,42 @@ Remember:
         Returns:
             Dictionary with primary subject lines and A/B variants
         """
+        # STEP 1: Extract key details from context
+        extraction_prompt = f"""Read this campaign brief and extract SPECIFIC CONCRETE DETAILS (numbers, names, amounts, timeframes):
+
+BRIEF: {context}
+
+List out ONLY the specific details (numbers, dollar amounts, people's names, specific timeframes, specific features):
+- Example: "10M+ believers", "$49.99/year", "Matthew McConaughey", "60 seconds", "10,000+ prayers"
+
+Output ONLY a bulleted list of specific details, nothing else."""
+
+        extraction_response = self.client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=256,
+            temperature=0.3,
+            messages=[{"role": "user", "content": extraction_prompt}]
+        )
+
+        extracted_details = extraction_response.content[0].text.strip()
+
+        # STEP 2: Generate subject lines that MUST use these details
         prompt = f"""{self.brand_voice.get_subject_line_prompt(context, tone, segment)}
 
-Generate {num_variants} distinct subject lines that embody PRAY.COM's brand voice.
+EXTRACTED SPECIFIC DETAILS FROM THE BRIEF:
+{extracted_details}
 
-Each line should:
-- Be under 50 characters for mobile
-- Create curiosity or offer clear benefit
-- Use warm, conversational language
-- Feel like it's from a trusted friend, not a company
-- Can optionally include Braze personalization: {{{{custom_attribute.${{first_name}}}}}}
+CRITICAL REQUIREMENT: Each subject line MUST include AT LEAST ONE of the specific details above.
+Do NOT use generic language. Do NOT use: "Discover", "Introducing", "Check Out", "New", "Welcome"
+
+Generate {num_variants} distinct subject lines. EACH LINE MUST CONTAIN A SPECIFIC DETAIL FROM THE LIST ABOVE.
+
+Examples of SPECIFIC vs GENERIC:
+❌ BAD: "Discover peace today" (no specifics)
+❌ BAD: "Your Premium awaits" (no specifics)
+✅ GOOD: "Your $49.99 Premium saved 💛" (includes price)
+✅ GOOD: "Join 10M believers - cart saved" (includes number)
+✅ GOOD: "60 seconds to 10,000+ prayers" (includes timeframe and number)
 
 Output ONLY the subject lines, one per line, no numbering or explanations."""
 
@@ -149,7 +216,7 @@ Output ONLY the subject lines, one per line, no numbering or explanations."""
             response = self.client.messages.create(
                 model="claude-sonnet-4-20250514",
                 max_tokens=512,
-                temperature=0.8,
+                temperature=0.8,  # Lower temperature for more instruction-following
                 messages=[{
                     "role": "user",
                     "content": prompt
@@ -158,6 +225,21 @@ Output ONLY the subject lines, one per line, no numbering or explanations."""
 
             content = response.content[0].text
             subject_lines = [line.strip() for line in content.strip().split("\n") if line.strip()]
+
+            # STEP 3: Validate each line contains a number or specific detail
+            validated_lines = []
+            for line in subject_lines[:num_variants]:
+                # Check if line contains at least one digit or specific word from context
+                has_number = any(char.isdigit() for char in line)
+                # Extract some key words from extracted details
+                detail_words = [word.strip('- ') for word in extracted_details.lower().split() if len(word) > 3]
+                has_specific = any(word in line.lower() for word in detail_words[:10])
+
+                if has_number or has_specific:
+                    validated_lines.append(line)
+
+            # If we don't have enough validated lines, use what we have
+            subject_lines = validated_lines if len(validated_lines) >= 3 else subject_lines[:num_variants]
 
             # Generate A/B variants
             ab_variants = []
@@ -179,7 +261,7 @@ Format as JSON:
                 variant_response = self.client.messages.create(
                     model="claude-sonnet-4-20250514",
                     max_tokens=256,
-                    temperature=0.7,
+                    temperature=0.8,
                     messages=[{
                         "role": "user",
                         "content": variant_prompt
