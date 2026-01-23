@@ -50,31 +50,57 @@ class CopywritingAgent:
         Returns:
             Dictionary with headline, subheadline, body_paragraphs, and cta_text
         """
+        # STEP 1: Extract specific details first
+        extraction_prompt = f"""Read this campaign brief and extract SPECIFIC CONCRETE DETAILS:
+
+BRIEF: {campaign_brief}
+
+Extract and list:
+- Numbers (millions, thousands, prices, timeframes, percentages, counts)
+- Names (people, products, features)
+- Dollar amounts
+- Timeframes (60 seconds, 1 hour, 30 days)
+- Quantities (10,000+ prayers, 10M+ users)
+
+Output ONLY a bulleted list of these specific details, nothing else."""
+
+        extraction_response = self.client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=256,
+            temperature=0.3,
+            messages=[{"role": "user", "content": extraction_prompt}]
+        )
+
+        extracted_details = extraction_response.content[0].text.strip()
+
+        # STEP 2: Generate copy that MUST use these specifics
         prompt = f"""{self.brand_voice.get_copywriting_prompt(campaign_type, campaign_brief, segment)}
 
-CRITICAL INSTRUCTION: Even if the brief contains sample copy or existing email text,
-DO NOT copy it directly. Use it for context only. You must write completely NEW copy
-from scratch that achieves the same goals but in your own words, using PRAY.COM's voice.
+EXTRACTED SPECIFIC DETAILS FROM YOUR BRIEF:
+{extracted_details}
+
+CRITICAL INSTRUCTION: You MUST use AT LEAST 2-3 of these specific details in your copy.
+Do NOT write generic copy. Do NOT use forbidden phrases.
 
 Now generate the email copy. Follow these rules STRICTLY:
 
 1. HEADLINE (5-10 words):
    ❌ NEVER use: "Welcome", "Discover", "Introducing", "Check Out", "New Feature"
-   ✅ MUST include: Specific numbers, names, or concrete details from the brief
-   ✅ Example: "Your 387 minutes in prayer this year" (uses actual number)
+   ✅ MUST include: A specific number, name, or detail from the list above
+   ✅ Example: "Your $49.99 Premium is waiting" or "60 seconds to 10,000+ prayers"
 
 2. SUBHEADLINE (one sentence or empty):
-   - Add specific context that makes it personal
+   - Include another specific detail from the list
    - Use contractions (you've, we're) to sound conversational
 
 3. BODY (2-3 paragraphs):
-   ❌ FORBIDDEN phrases: "we're excited", "pleased to announce", "we have", "feature", "functionality"
+   ❌ FORBIDDEN phrases: "we're excited", "pleased to announce", "we have", "feature", "functionality", "check out", "discover"
    ✅ REQUIRED: Start paragraphs with "You" or reference their specific situation
-   ✅ MUST include: At least one specific number, name, or concrete detail per paragraph
+   ✅ MUST include: AT LEAST ONE specific detail from the list above PER PARAGRAPH
 
 4. CTA (2-4 words):
    ❌ NEVER: "Learn More", "Get Started", "Discover"
-   ✅ Use: Specific action related to brief (e.g., "See My 387 Minutes", "Continue My Journey")
+   ✅ Use: Specific action with detail (e.g., "Complete My $49.99", "Unlock 10,000+ Prayers", "Finish in 60 Seconds")
 
 Format as JSON:
 {{
@@ -84,17 +110,17 @@ Format as JSON:
     "cta_text": "Button Text"
 }}
 
-BEFORE YOU RESPOND:
-- Check: Did you use ANY forbidden phrases? If yes, rewrite.
-- Check: Did you include specific details from the brief? If no, add them.
-- Check: Does it sound like a friend texting, or a company email? If company, rewrite.
-- Check: Did you use contractions? If no, add them."""
+SELF-CHECK BEFORE RESPONDING:
+- Did headline include a specific number/detail? If no, REWRITE.
+- Did body paragraphs each include specific details? If no, REWRITE.
+- Did you use "we're excited", "we have", or "discover"? If yes, REWRITE.
+- Did you use contractions? If no, ADD THEM."""
 
         try:
             response = self.client.messages.create(
                 model="claude-3-5-sonnet-20241022",
                 max_tokens=1500,
-                temperature=0.9,  # Higher temperature for more creative, specific copy
+                temperature=0.7,  # Lower temperature for better instruction-following
                 messages=[{
                     "role": "user",
                     "content": prompt
@@ -147,16 +173,42 @@ BEFORE YOU RESPOND:
         Returns:
             Dictionary with primary subject lines and A/B variants
         """
+        # STEP 1: Extract key details from context
+        extraction_prompt = f"""Read this campaign brief and extract SPECIFIC CONCRETE DETAILS (numbers, names, amounts, timeframes):
+
+BRIEF: {context}
+
+List out ONLY the specific details (numbers, dollar amounts, people's names, specific timeframes, specific features):
+- Example: "10M+ believers", "$49.99/year", "Matthew McConaughey", "60 seconds", "10,000+ prayers"
+
+Output ONLY a bulleted list of specific details, nothing else."""
+
+        extraction_response = self.client.messages.create(
+            model="claude-3-5-sonnet-20241022",
+            max_tokens=256,
+            temperature=0.3,
+            messages=[{"role": "user", "content": extraction_prompt}]
+        )
+
+        extracted_details = extraction_response.content[0].text.strip()
+
+        # STEP 2: Generate subject lines that MUST use these details
         prompt = f"""{self.brand_voice.get_subject_line_prompt(context, tone, segment)}
 
-Generate {num_variants} distinct subject lines that embody PRAY.COM's brand voice.
+EXTRACTED SPECIFIC DETAILS FROM THE BRIEF:
+{extracted_details}
 
-Each line should:
-- Be under 50 characters for mobile
-- Create curiosity or offer clear benefit
-- Use warm, conversational language
-- Feel like it's from a trusted friend, not a company
-- Can optionally include Braze personalization: {{{{custom_attribute.${{first_name}}}}}}
+CRITICAL REQUIREMENT: Each subject line MUST include AT LEAST ONE of the specific details above.
+Do NOT use generic language. Do NOT use: "Discover", "Introducing", "Check Out", "New", "Welcome"
+
+Generate {num_variants} distinct subject lines. EACH LINE MUST CONTAIN A SPECIFIC DETAIL FROM THE LIST ABOVE.
+
+Examples of SPECIFIC vs GENERIC:
+❌ BAD: "Discover peace today" (no specifics)
+❌ BAD: "Your Premium awaits" (no specifics)
+✅ GOOD: "Your $49.99 Premium saved 💛" (includes price)
+✅ GOOD: "Join 10M believers - cart saved" (includes number)
+✅ GOOD: "60 seconds to 10,000+ prayers" (includes timeframe and number)
 
 Output ONLY the subject lines, one per line, no numbering or explanations."""
 
@@ -164,7 +216,7 @@ Output ONLY the subject lines, one per line, no numbering or explanations."""
             response = self.client.messages.create(
                 model="claude-3-5-sonnet-20241022",
                 max_tokens=512,
-                temperature=1.0,  # High temperature for diverse, creative subject lines
+                temperature=0.8,  # Lower temperature for more instruction-following
                 messages=[{
                     "role": "user",
                     "content": prompt
@@ -173,6 +225,21 @@ Output ONLY the subject lines, one per line, no numbering or explanations."""
 
             content = response.content[0].text
             subject_lines = [line.strip() for line in content.strip().split("\n") if line.strip()]
+
+            # STEP 3: Validate each line contains a number or specific detail
+            validated_lines = []
+            for line in subject_lines[:num_variants]:
+                # Check if line contains at least one digit or specific word from context
+                has_number = any(char.isdigit() for char in line)
+                # Extract some key words from extracted details
+                detail_words = [word.strip('- ') for word in extracted_details.lower().split() if len(word) > 3]
+                has_specific = any(word in line.lower() for word in detail_words[:10])
+
+                if has_number or has_specific:
+                    validated_lines.append(line)
+
+            # If we don't have enough validated lines, use what we have
+            subject_lines = validated_lines if len(validated_lines) >= 3 else subject_lines[:num_variants]
 
             # Generate A/B variants
             ab_variants = []
