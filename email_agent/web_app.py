@@ -14,6 +14,8 @@ import base64
 from email_agent import EmailAgent
 from subject_line_factory import SubjectLineFactory
 from template_generator import EmailTemplateGenerator
+from copywriting_agent import CopywritingAgent
+import os
 
 
 # Page configuration
@@ -81,6 +83,8 @@ def main():
         st.session_state.generated_subjects = None
     if 'campaign_name' not in st.session_state:
         st.session_state.campaign_name = ""
+    if 'use_ai_copywriting' not in st.session_state:
+        st.session_state.use_ai_copywriting = bool(os.getenv("ANTHROPIC_API_KEY"))
 
     # Header
     st.markdown('<div class="main-header">✉️ PRAY.COM Email Template Generator</div>', unsafe_allow_html=True)
@@ -96,6 +100,22 @@ def main():
             ["📧 Full Email Generation", "✏️ Subject Lines Only", "🎨 Custom Template"],
             help="Choose what you want to generate"
         )
+
+        st.markdown("---")
+
+        # AI Copywriting toggle
+        api_key_set = bool(os.getenv("ANTHROPIC_API_KEY"))
+        if api_key_set:
+            st.session_state.use_ai_copywriting = st.checkbox(
+                "🤖 Use AI Copywriting",
+                value=True,
+                help="Uses Claude AI to generate brand-aligned copy that matches PRAY.COM's tone of voice"
+            )
+            if st.session_state.use_ai_copywriting:
+                st.success("✨ AI copywriting enabled")
+        else:
+            st.warning("⚠️ Set ANTHROPIC_API_KEY to enable AI copywriting")
+            st.session_state.use_ai_copywriting = False
 
         st.markdown("---")
         st.markdown("### 📚 Resources")
@@ -193,34 +213,88 @@ Body: Hi {{first_name}}, we noticed you started to join PRAY Premium...
                 try:
                     # Determine theme to use
                     theme_to_use = None if theme == "auto" else theme
+                    actual_theme = theme if theme != "auto" else TEMPLATE_TYPES[template_type]["theme"]
 
-                    # Generate with theme
-                    generator = EmailTemplateGenerator(theme=theme if theme != "auto" else TEMPLATE_TYPES[template_type]["theme"])
-                    factory = SubjectLineFactory()
-
-                    # Parse brief
+                    # Parse brief first
                     from campaign_parser import CampaignBriefParser
                     parser = CampaignBriefParser()
                     parsed = parser.parse(brief)
 
-                    # Generate HTML
+                    # Use AI copywriting if enabled
+                    if st.session_state.use_ai_copywriting:
+                        try:
+                            copywriter = CopywritingAgent()
+
+                            # Generate AI copy
+                            copy_result = copywriter.generate_email_copy(
+                                campaign_brief=brief,
+                                campaign_type=template_type,
+                                segment=parsed.get("segment", "general"),
+                                tone=parsed.get("tone", "inspiring")
+                            )
+
+                            # Use AI-generated copy
+                            headline = copy_result["headline"]
+                            subheadline = copy_result["subheadline"]
+                            body_content = copy_result["body_paragraphs"]
+                            cta_text = copy_result["cta_text"]
+
+                            # Generate AI subject lines
+                            subjects = copywriter.generate_subject_lines(
+                                context=brief,
+                                segment=parsed.get("segment", "general"),
+                                tone=parsed.get("tone", "inspiring"),
+                                num_variants=num_variants
+                            )
+
+                            # Show validation score
+                            if copy_result["validation"]["score"] >= 80:
+                                st.success(f"✨ AI copywriting quality score: {copy_result['validation']['score']}/100")
+                            elif copy_result["validation"]["score"] >= 60:
+                                st.info(f"💡 AI copywriting quality score: {copy_result['validation']['score']}/100")
+                            else:
+                                st.warning(f"⚠️ Quality score: {copy_result['validation']['score']}/100 - May need refinement")
+
+                        except Exception as e:
+                            st.warning(f"AI generation failed: {str(e)}. Using template-based generation.")
+                            headline = parsed.get("headline", "")
+                            subheadline = parsed.get("subheadline", "")
+                            body_content = parsed.get("body_content", [])
+                            cta_text = parsed.get("cta_text", "Learn More")
+
+                            factory = SubjectLineFactory()
+                            subjects = factory.generate(
+                                context=parsed.get("context", brief),
+                                segment=parsed.get("segment", "general"),
+                                tone=parsed.get("tone", "inspiring"),
+                                num_variants=num_variants
+                            )
+                    else:
+                        # Use template-based generation
+                        headline = parsed.get("headline", "")
+                        subheadline = parsed.get("subheadline", "")
+                        body_content = parsed.get("body_content", [])
+                        cta_text = parsed.get("cta_text", "Learn More")
+
+                        factory = SubjectLineFactory()
+                        subjects = factory.generate(
+                            context=parsed.get("context", brief),
+                            segment=parsed.get("segment", "general"),
+                            tone=parsed.get("tone", "inspiring"),
+                            num_variants=num_variants
+                        )
+
+                    # Generate HTML template
+                    generator = EmailTemplateGenerator(theme=actual_theme)
                     html = generator.generate(
                         campaign_name=parsed.get("campaign_name", "Campaign"),
-                        headline=parsed.get("headline", ""),
-                        subheadline=parsed.get("subheadline", ""),
-                        body_content=parsed.get("body_content", []),
-                        cta_text=parsed.get("cta_text", "Learn More"),
+                        headline=headline,
+                        subheadline=subheadline,
+                        body_content=body_content,
+                        cta_text=cta_text,
                         cta_url=parsed.get("cta_url", "https://pray.com"),
                         template_type=template_type,
                         theme=theme_to_use
-                    )
-
-                    # Generate subjects
-                    subjects = factory.generate(
-                        context=parsed.get("context", brief),
-                        segment=parsed.get("segment", "general"),
-                        tone=parsed.get("tone", "inspiring"),
-                        num_variants=num_variants
                     )
 
                     st.session_state.generated_html = html
@@ -335,8 +409,24 @@ def show_subject_lines():
         else:
             with st.spinner("Generating subject lines..."):
                 try:
-                    factory = SubjectLineFactory()
-                    subjects = factory.generate(context, segment, tone, num_variants)
+                    # Use AI copywriting if enabled
+                    if st.session_state.use_ai_copywriting:
+                        try:
+                            copywriter = CopywritingAgent()
+                            subjects = copywriter.generate_subject_lines(
+                                context=context,
+                                segment=segment,
+                                tone=tone,
+                                num_variants=num_variants
+                            )
+                            st.success("✅ AI-generated subject lines ready!")
+                        except Exception as e:
+                            st.warning(f"AI generation failed: {str(e)}. Using template-based generation.")
+                            factory = SubjectLineFactory()
+                            subjects = factory.generate(context, segment, tone, num_variants)
+                    else:
+                        factory = SubjectLineFactory()
+                        subjects = factory.generate(context, segment, tone, num_variants)
 
                     st.session_state.generated_subjects = subjects
                     st.success("✅ Subject lines generated successfully!")

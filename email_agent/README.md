@@ -4,40 +4,63 @@ An AI-powered agent that generates EAA-compliant, mobile-responsive HTML email t
 
 ## Features
 
-### 1. Email Template Generator
-- **Mobile-Responsive**: Optimized for all devices with 660px and 480px breakpoints
+### 1. **NEW:** AI-Powered Copywriting ✨
+- **Brand Voice Integration**: Uses Claude AI to generate copy that matches PRAY.COM's tone
+- **Quality Scoring**: Automatic validation to ensure copy meets brand standards (aim for 80+/100)
+- **Conversational Tone**: Writes like "a compassionate pastor crossed with a tech-forward friend"
+- **Smart Fallbacks**: Automatically uses template-based generation if AI is unavailable
+
+### 2. Email Template Generator
+- **Template Types**: Plain Text, Premium, Sponsored, Holiday, Cart Abandonment, Newsletter, Announcement
+- **Light/Dark Themes**: Automatic theme selection (600px light, 680px dark) or manual override
+- **Mobile-Responsive**: Optimized for all devices with mobile breakpoints
 - **Braze-Ready**: Full Liquid templating support with personalization
 - **Outlook Compatible**: VML fallbacks for buttons and shapes
-- **PRAY.COM Branded**: Dark theme with gold accents, Satoshi font
-- **Component Library**: Reusable components for stats, features, testimonials
+- **PRAY.COM Branded**: Professional themes with Satoshi font
 
-### 2. Subject Line Factory
-- **Benefit-Driven**: Focus on user value and outcomes
-- **Curiosity-Sparking**: Hook formats like "What happens when you pray before bed?"
+### 3. Subject Line Factory
+- **AI-Generated**: Creates benefit-driven, curiosity-sparking subject lines
 - **A/B Test Variants**: Automatic generation with testing hypotheses
 - **Segment-Aware**: Tailored for new users, engaged, lapsed, premium
+- **Under 50 Characters**: Mobile-optimized length
 - **Personalization**: First name and custom attribute support
 
 ## Installation
 
 ```bash
-cd email_agent
-# No external dependencies required - uses Python standard library
+# Install dependencies
+pip install -r requirements.txt
+
+# Set up API key for AI copywriting (required for best results)
+export ANTHROPIC_API_KEY="your-api-key-here"
 ```
+
+Get your API key from: https://console.anthropic.com/
 
 ## Quick Start
 
-### Interactive Mode
+### Web Interface (Recommended)
+```bash
+streamlit run email_agent/web_app.py
+```
+
+Then:
+1. Toggle "🤖 Use AI Copywriting" in the sidebar (if API key is set)
+2. Enter your campaign brief
+3. Select template type and theme
+4. Generate high-quality, brand-aligned content
+
+### CLI - Interactive Mode
 ```bash
 python email_agent.py interactive
 ```
 
-### Generate from Brief
+### CLI - Generate from Brief
 ```bash
 python email_agent.py generate --brief "Launch campaign for our new Bible in a Year reading plan. Target engaged users who have completed at least one devotional. Highlight guided daily readings and community aspect. Tone: inspiring. CTA: Start Your Journey"
 ```
 
-### Generate Subject Lines Only
+### CLI - Generate Subject Lines Only
 ```bash
 python email_agent.py subjects --context "New meditation feature launch" --segment engaged --tone curious
 ```
@@ -168,17 +191,58 @@ TEMPLATES = {
 }
 ```
 
+## AI Copywriting vs Template-Based
+
+### ✨ With AI Copywriting (Recommended)
+**Good Example:**
+> "Look how far you've come. Your 387 minutes in prayer this year show a heart seeking God — and He sees every moment."
+
+- Professional copywriting matching PRAY.COM's brand voice
+- Warm, conversational tone that creates emotional connection
+- Automatic quality scoring (aim for 80+/100)
+- Empowering language that guides rather than preaches
+
+### 📝 Without AI Copywriting (Fallback)
+**Bad Example:**
+> "View your annual statistics and usage metrics for the previous calendar year."
+
+- Uses template-based generation with predefined phrases
+- Generic copy that may feel corporate or sales-y
+- Requires manual editing to match brand voice
+- Good for quick testing when API is unavailable
+
+## PRAY.COM Brand Voice
+
+Your content should embody:
+- **Faithful and Reverent**: Emphasizes God's presence and biblical truth
+- **Encouraging and Uplifting**: Offers hope, peace, and strength
+- **Warm and Conversational**: Like a trusted friend, not a corporation
+- **Modern and Accessible**: Digital-first, mobile-optimized
+- **Guiding and Empowering**: Empowers action rather than preaching
+
+**Writing Principles:**
+- ✅ Speak directly using "you" language
+- ✅ Meet users where they are emotionally (stress, fatigue, spiritual hunger)
+- ✅ Include specific, actionable next steps
+- ✅ Use simple, mobile-friendly language
+- ❌ Don't use corporate jargon (leverage, utilize, synergy, platform)
+- ❌ Don't preach or lecture
+- ❌ Don't be vague or overly formal
+
 ## File Structure
 
 ```
 email_agent/
-├── email_agent.py        # Main CLI agent
-├── template_generator.py # HTML template generation
+├── web_app.py              # Streamlit web interface
+├── copywriting_agent.py    # NEW: AI-powered copywriting
+├── brand_voice.py          # NEW: Brand voice configuration
+├── email_agent.py          # Main CLI agent
+├── template_generator.py   # HTML template generation
 ├── subject_line_factory.py # Subject line generation
-├── campaign_parser.py    # Brief parsing
-├── components.py         # Reusable email components
-├── README.md            # This file
-└── output/              # Generated files (created on first run)
+├── campaign_parser.py      # Brief parsing
+├── requirements.txt        # Dependencies
+├── README.md              # This file
+└── output/                # Generated files (created on first run)
 ```
 
 ## Examples
@@ -213,13 +277,33 @@ python email_agent.py subjects \
 
 ## Best Practices
 
-1. **Always test** - Preview in Litmus or Email on Acid
-2. **Check personalization** - Ensure Liquid variables exist in Braze
-3. **Mobile first** - Test on mobile devices
-4. **Subject length** - Keep under 50 characters for mobile
-5. **Preheader** - Always include a compelling preheader
+1. **Enable AI Copywriting** - Set `ANTHROPIC_API_KEY` for much better results
+2. **Provide Detailed Briefs** - Include objective, audience, tone, and key messages
+3. **Check Quality Scores** - Aim for 80+/100 on the validation scoring
+4. **Always test** - Preview in Litmus or Email on Acid
+5. **Check personalization** - Ensure Liquid variables exist in Braze
+6. **Mobile first** - Test on mobile devices
+7. **Subject length** - Keep under 50 characters for mobile
+8. **Preheader** - Always include a compelling preheader
 
 ## Troubleshooting
+
+### "AI copywriting not available" warning
+- **Solution**: Set `ANTHROPIC_API_KEY` environment variable
+- Get your key from: https://console.anthropic.com/
+- For Streamlit Cloud: Add as a secret in app settings
+- App will fall back to template-based generation automatically
+
+### Copy quality score is low (< 60)
+- **Solution**: Provide more detailed campaign brief
+- Specify tone, audience segment, and key messages
+- Include specific CTAs and personalization requirements
+- Review PRAY.COM brand voice guidelines above
+
+### Generic/corporate-sounding copy
+- **Solution**: Enable AI copywriting (requires API key)
+- Without AI: Copy may need significant manual editing
+- Check that brief includes emotional context (stress, hunger for peace, etc.)
 
 ### Template not rendering in Outlook
 - Ensure VML fallbacks are included (automatic with `cta_button`)
@@ -231,6 +315,6 @@ python email_agent.py subjects \
 - Test with preview users
 
 ### Mobile layout issues
-- Check `class="mobile-stack"` on columns
-- Verify `class="mobile-padding"` on content cells
-- Test responsive breakpoints
+- Check responsive breakpoints in template
+- Test on actual mobile devices
+- Verify padding and font sizes are mobile-friendly
