@@ -77,7 +77,7 @@ Remember:
 
         try:
             response = self.client.messages.create(
-                model="claude-3-5-sonnet-20241022",
+                model="claude-sonnet-4-20250514",
                 max_tokens=1024,
                 temperature=0.7,
                 messages=[{
@@ -147,7 +147,7 @@ Output ONLY the subject lines, one per line, no numbering or explanations."""
 
         try:
             response = self.client.messages.create(
-                model="claude-3-5-sonnet-20241022",
+                model="claude-sonnet-4-20250514",
                 max_tokens=512,
                 temperature=0.8,
                 messages=[{
@@ -177,7 +177,7 @@ Format as JSON:
 }}"""
 
                 variant_response = self.client.messages.create(
-                    model="claude-3-5-sonnet-20241022",
+                    model="claude-sonnet-4-20250514",
                     max_tokens=256,
                     temperature=0.7,
                     messages=[{
@@ -259,7 +259,7 @@ Output ONLY the revised copy, no explanations."""
 
         try:
             response = self.client.messages.create(
-                model="claude-3-5-sonnet-20241022",
+                model="claude-sonnet-4-20250514",
                 max_tokens=1024,
                 temperature=0.7,
                 messages=[{
@@ -321,7 +321,7 @@ Output ONLY the preheader text, no explanations."""
 
         try:
             response = self.client.messages.create(
-                model="claude-3-5-sonnet-20241022",
+                model="claude-sonnet-4-20250514",
                 max_tokens=128,
                 temperature=0.7,
                 messages=[{
