@@ -52,14 +52,18 @@ class CopywritingAgent:
         """
         prompt = f"""{self.brand_voice.get_copywriting_prompt(campaign_type, campaign_brief, segment)}
 
-Based on the campaign brief, generate:
+Based on the creative brief above, generate:
 
-1. HEADLINE: A compelling, benefit-driven headline (5-10 words max)
-2. SUBHEADLINE: Optional supporting text (one sentence, or leave blank if not needed)
-3. BODY: 2-3 concise paragraphs of email body copy
-4. CTA: Call-to-action button text (2-4 words)
+1. HEADLINE: Compelling and specific to THIS campaign (5-10 words). Not generic like "Welcome" or "Discover More"
+2. SUBHEADLINE: Supporting detail that adds context (one sentence, or empty string if not needed)
+3. BODY: 2-3 short paragraphs. Each paragraph should:
+   - Reference specific details from the brief
+   - Use conversational, everyday language
+   - Show you understand their situation
+   - Feel personal, not like a mass email
+4. CTA: Action-oriented button text (2-4 words) that's specific to what they'll do
 
-Format your response as JSON:
+Format as JSON:
 {{
     "headline": "Your headline here",
     "subheadline": "Optional subheadline or empty string",
@@ -67,19 +71,18 @@ Format your response as JSON:
     "cta_text": "Button Text"
 }}
 
-Remember:
-- Write like a compassionate pastor crossed with a tech-forward friend
-- Be warm and conversational, not corporate
-- Meet the user where they are emotionally
-- Empower rather than preach
-- Make it mobile-friendly and concise
-- Include specific next steps"""
+CRITICAL REMINDERS:
+- Use specific details from the brief (don't be vague!)
+- Write like you're texting a friend, not writing a press release
+- Show empathy for their situation
+- Reference God's presence naturally
+- Make every word count (mobile users are busy)"""
 
         try:
             response = self.client.messages.create(
                 model="claude-3-5-sonnet-20241022",
-                max_tokens=1024,
-                temperature=0.7,
+                max_tokens=1500,
+                temperature=0.9,  # Higher temperature for more creative, specific copy
                 messages=[{
                     "role": "user",
                     "content": prompt
@@ -149,7 +152,7 @@ Output ONLY the subject lines, one per line, no numbering or explanations."""
             response = self.client.messages.create(
                 model="claude-3-5-sonnet-20241022",
                 max_tokens=512,
-                temperature=0.8,
+                temperature=1.0,  # High temperature for diverse, creative subject lines
                 messages=[{
                     "role": "user",
                     "content": prompt
@@ -179,7 +182,7 @@ Format as JSON:
                 variant_response = self.client.messages.create(
                     model="claude-3-5-sonnet-20241022",
                     max_tokens=256,
-                    temperature=0.7,
+                    temperature=0.8,
                     messages=[{
                         "role": "user",
                         "content": variant_prompt

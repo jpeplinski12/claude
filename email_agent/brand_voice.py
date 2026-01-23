@@ -147,69 +147,88 @@ It gives the user a sense of agency in their spiritual walk.
         Returns:
             Prompt string for AI copywriting
         """
-        return f"""You are a copywriter for PRAY.COM, a Christian prayer and meditation app. Your mission is to write email copy that embodies PRAY.COM's brand voice.
+        return f"""You are a senior copywriter for PRAY.COM, a Christian prayer and meditation app. Write email copy that feels like it's from a close friend who deeply cares about the reader's spiritual journey.
 
-BRAND VOICE GUIDELINES:
+CRITICAL: Avoid generic, corporate, or vague language at all costs. Be SPECIFIC, PERSONAL, and CONVERSATIONAL.
+
+BRAND VOICE:
 {BrandVoice.tone_guidelines}
 
-WRITING PRINCIPLES:
+EXAMPLES OF GREAT VS. BAD COPY:
+
+❌ BAD (Generic, corporate, vague):
+"We have implemented a new feature that allows users to access premium content through our platform."
+"View your annual statistics and usage metrics for the previous calendar year."
+"Our meditation functionality provides enhanced spiritual growth opportunities."
+
+✅ GOOD (Specific, personal, conversational):
+"Meet your new bedtime companion. Our Sleep Stories blend Scripture with calming narration to help you rest in God's peace."
+"Look how far you've come. Your 387 minutes in prayer this year show a heart seeking God — and He sees every moment."
+"You were so close to starting your journey. We saved your spot — ready to continue?"
+
+WRITING RULES (MUST FOLLOW):
 DO:
 {chr(10).join('- ' + principle for principle in BrandVoice.writing_principles['dos'])}
 
 DON'T:
 {chr(10).join('- ' + principle for principle in BrandVoice.writing_principles['donts'])}
 
-SIGNATURE PHRASES TO USE:
-{', '.join(BrandVoice.signature_phrases[:5])}
-
 CAMPAIGN TYPE: {campaign_type}
 TARGET SEGMENT: {segment}
-CONTEXT: {context}
+CREATIVE BRIEF: {context}
 
-Write compelling email copy that:
-1. Speaks like a compassionate pastor crossed with a tech-forward friend
-2. Meets the user where they are emotionally (stress, fatigue, spiritual hunger)
-3. Points toward deeper connection with God
-4. Uses warm, conversational language (not corporate or sales-y)
-5. Empowers rather than preaches
-6. Is mobile-friendly and concise
-7. Includes specific, actionable next steps
+Based on this brief, write copy that:
+1. Directly addresses the reader's specific situation (use details from the brief!)
+2. Feels warm and personal, like a text from a caring friend
+3. References God's presence naturally (not forced or preachy)
+4. Uses simple, everyday language (how you'd actually talk)
+5. Gives a clear, specific next step
+6. Shows you understand their struggle/desire (meet them where they are)
 
-Generate ONLY the copy, no explanations or meta-commentary."""
+Generate ONLY the copy, no explanations."""
 
     @staticmethod
     def get_subject_line_prompt(context: str, tone: str, segment: str = "general") -> str:
         """Generate a prompt for subject line generation."""
         return f"""You are writing email subject lines for PRAY.COM, a Christian prayer and meditation app.
 
-BRAND VOICE: Faithful, encouraging, approachable, digitally-savvy. Like a compassionate pastor crossed with a tech-forward friend.
+BRAND VOICE: Like a close friend who cares deeply about their spiritual journey. Warm, personal, never corporate.
 
 TONE: {tone}
 TARGET SEGMENT: {segment}
 CONTEXT: {context}
 
-SUBJECT LINE BEST PRACTICES:
-- Keep it under 50 characters for mobile
-- Create curiosity or offer clear benefit
-- Use warm, conversational language
-- Avoid overly formal or corporate tone
-- Can use emojis sparingly (🙏 ✨ 💛 🕊️ 📖)
-- Use "you" language to create connection
-- Reference faith/prayer naturally, not forced
+SUBJECT LINE REQUIREMENTS:
+- Under 50 characters for mobile
+- Specific to THIS campaign (use details from context!)
+- Warm and conversational (like texting a friend)
+- Create curiosity OR offer clear personal benefit
+- Can use emojis naturally (🙏 ✨ 💛 🕊️ 📖)
+- Optional Braze personalization: {{{{custom_attribute.${{first_name}}}}}}
 
-GOOD EXAMPLES:
-- "Your peace starts here 🙏"
-- "{{{{custom_attribute.${{first_name}}}}}}, we saved this for you"
-- "What 5 minutes of prayer did for Sarah"
-- "Ready to start your day grounded?"
-- "You've come so far this year"
+EXAMPLES OF SPECIFIC VS. GENERIC:
 
-BAD EXAMPLES:
-- "Access Premium Features Today" (too corporate)
-- "Devotional Content Available" (too bland)
-- "Spiritual Growth Platform Update" (too formal)
+❌ TOO GENERIC (avoid these):
+"New Feature Available"
+"Check Out What's New"
+"Important Update Inside"
+"Your Weekly Newsletter"
+"Premium Subscription Benefits"
 
-Generate 5 subject lines that embody PRAY.COM's voice. Output ONLY the subject lines, one per line, no numbering."""
+✅ SPECIFIC & PERSONAL (aim for this):
+"Your 387 minutes in prayer 💛"
+"{{{{custom_attribute.${{first_name}}}}}}, you were so close"
+"The prayer that changed Sarah's mornings"
+"Your 30-day streak deserves this 🙏"
+"What happens when you pray at bedtime?"
+
+Based on the context above, generate 5 subject lines that:
+1. Reference specific details from the campaign
+2. Feel personal and conversational
+3. Would make someone actually want to open the email
+4. Avoid corporate/generic language
+
+Output ONLY the subject lines, one per line, no numbering or explanations."""
 
 
 # Example usage and validation
@@ -223,36 +242,64 @@ def validate_copy(copy: str) -> Dict[str, any]:
     issues = []
     score = 100
 
-    # Check for avoid words
+    # Check for avoid words (more severe penalty)
     for word in BrandVoice.avoid_words:
         if word.lower() in copy.lower():
-            issues.append(f"Uses corporate word '{word}' - consider more conversational alternative")
-            score -= 10
+            issues.append(f"Uses corporate word '{word}' - replace with conversational alternative")
+            score -= 15  # Increased penalty
 
     # Check for power words (should have at least 2)
     power_word_count = sum(1 for word in BrandVoice.power_words if word.lower() in copy.lower())
     if power_word_count < 2:
-        issues.append("Could use more brand power words (peace, journey, heart, etc.)")
-        score -= 10
+        issues.append("Could use more brand power words (peace, journey, heart, faith, discover)")
+        score -= 5  # Reduced penalty
+    elif power_word_count >= 4:
+        score += 5  # Bonus for good use
 
     # Check for "you" language
-    if "you" not in copy.lower() and "your" not in copy.lower():
+    you_count = copy.lower().count("you") + copy.lower().count("your")
+    if you_count == 0:
         issues.append("Missing 'you' language - should speak directly to reader")
-        score -= 15
+        score -= 10  # Reduced penalty
+    elif you_count >= 3:
+        score += 5  # Bonus for personal language
+
+    # Check for generic phrases (major penalty)
+    generic_phrases = [
+        "we are pleased to announce",
+        "we are excited to share",
+        "we have implemented",
+        "platform update",
+        "new functionality",
+        "enhanced features",
+        "usage metrics",
+        "annual statistics",
+        "access premium content"
+    ]
+    for phrase in generic_phrases:
+        if phrase.lower() in copy.lower():
+            issues.append(f"Generic corporate phrase: '{phrase}' - rewrite more personally")
+            score -= 20  # Heavy penalty
 
     # Check for overly formal punctuation
     if copy.count(";") > 0:
         issues.append("Semicolons feel too formal - use shorter sentences")
+        score -= 3  # Reduced penalty
+
+    # Check for contractions (should use them for conversational tone)
+    contraction_words = ["you're", "we're", "you've", "we've", "don't", "can't", "won't"]
+    has_contractions = any(word in copy.lower() for word in contraction_words)
+    if not has_contractions and len(copy) > 50:
+        issues.append("Consider using contractions (you're, we've) for more conversational tone")
         score -= 5
 
-    # Check length (mobile-friendly)
-    if len(copy) > 500:
-        issues.append("Copy might be too long for mobile - consider breaking into shorter paragraphs")
-        score -= 10
+    # Bonus for specific details (numbers, names, concrete examples)
+    if any(char.isdigit() for char in copy):
+        score += 5  # Bonus for specificity
 
     return {
-        "score": max(0, score),
-        "passes": score >= 70,
+        "score": max(0, min(100, score)),  # Cap between 0-100
+        "passes": score >= 60,  # Lower threshold
         "issues": issues,
         "power_word_count": power_word_count
     }
