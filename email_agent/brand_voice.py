@@ -268,18 +268,28 @@ def validate_copy(copy: str) -> Dict[str, any]:
     generic_phrases = [
         "we are pleased to announce",
         "we are excited to share",
+        "we are excited to",
         "we have implemented",
+        "we have",
+        "we're excited",
         "platform update",
         "new functionality",
         "enhanced features",
         "usage metrics",
         "annual statistics",
-        "access premium content"
+        "access premium content",
+        "check out",
+        "discover more",
+        "learn more about",
+        "introducing",
+        "welcome to",
+        "new feature",
+        "take advantage"
     ]
     for phrase in generic_phrases:
         if phrase.lower() in copy.lower():
-            issues.append(f"Generic corporate phrase: '{phrase}' - rewrite more personally")
-            score -= 20  # Heavy penalty
+            issues.append(f"GENERIC PHRASE: '{phrase}' - sounds corporate, rewrite personally")
+            score -= 25  # Heavier penalty
 
     # Check for overly formal punctuation
     if copy.count(";") > 0:
@@ -294,12 +304,26 @@ def validate_copy(copy: str) -> Dict[str, any]:
         score -= 5
 
     # Bonus for specific details (numbers, names, concrete examples)
-    if any(char.isdigit() for char in copy):
-        score += 5  # Bonus for specificity
+    digit_count = sum(1 for char in copy if char.isdigit())
+    if digit_count >= 3:
+        score += 10  # Strong bonus for multiple specific numbers
+        issues.append("✅ Good use of specific numbers/details!")
+    elif digit_count > 0:
+        score += 5  # Some bonus for specificity
+    else:
+        issues.append("Missing specific numbers/details - add concrete examples from brief")
+        score -= 10
+
+    # Check if copy starts sentences with "You" (very personal)
+    sentences = copy.split('.')
+    you_starts = sum(1 for s in sentences if s.strip().lower().startswith('you'))
+    if you_starts >= 2:
+        score += 5  # Bonus for personal sentence structure
+        issues.append("✅ Great use of 'you' language!")
 
     return {
         "score": max(0, min(100, score)),  # Cap between 0-100
-        "passes": score >= 60,  # Lower threshold
+        "passes": score >= 70,  # Raise threshold back up
         "issues": issues,
         "power_word_count": power_word_count
     }

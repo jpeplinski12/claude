@@ -52,16 +52,25 @@ class CopywritingAgent:
         """
         prompt = f"""{self.brand_voice.get_copywriting_prompt(campaign_type, campaign_brief, segment)}
 
-Based on the creative brief above, generate:
+Now generate the email copy. Follow these rules STRICTLY:
 
-1. HEADLINE: Compelling and specific to THIS campaign (5-10 words). Not generic like "Welcome" or "Discover More"
-2. SUBHEADLINE: Supporting detail that adds context (one sentence, or empty string if not needed)
-3. BODY: 2-3 short paragraphs. Each paragraph should:
-   - Reference specific details from the brief
-   - Use conversational, everyday language
-   - Show you understand their situation
-   - Feel personal, not like a mass email
-4. CTA: Action-oriented button text (2-4 words) that's specific to what they'll do
+1. HEADLINE (5-10 words):
+   ❌ NEVER use: "Welcome", "Discover", "Introducing", "Check Out", "New Feature"
+   ✅ MUST include: Specific numbers, names, or concrete details from the brief
+   ✅ Example: "Your 387 minutes in prayer this year" (uses actual number)
+
+2. SUBHEADLINE (one sentence or empty):
+   - Add specific context that makes it personal
+   - Use contractions (you've, we're) to sound conversational
+
+3. BODY (2-3 paragraphs):
+   ❌ FORBIDDEN phrases: "we're excited", "pleased to announce", "we have", "feature", "functionality"
+   ✅ REQUIRED: Start paragraphs with "You" or reference their specific situation
+   ✅ MUST include: At least one specific number, name, or concrete detail per paragraph
+
+4. CTA (2-4 words):
+   ❌ NEVER: "Learn More", "Get Started", "Discover"
+   ✅ Use: Specific action related to brief (e.g., "See My 387 Minutes", "Continue My Journey")
 
 Format as JSON:
 {{
@@ -71,12 +80,11 @@ Format as JSON:
     "cta_text": "Button Text"
 }}
 
-CRITICAL REMINDERS:
-- Use specific details from the brief (don't be vague!)
-- Write like you're texting a friend, not writing a press release
-- Show empathy for their situation
-- Reference God's presence naturally
-- Make every word count (mobile users are busy)"""
+BEFORE YOU RESPOND:
+- Check: Did you use ANY forbidden phrases? If yes, rewrite.
+- Check: Did you include specific details from the brief? If no, add them.
+- Check: Does it sound like a friend texting, or a company email? If company, rewrite.
+- Check: Did you use contractions? If no, add them."""
 
         try:
             response = self.client.messages.create(
