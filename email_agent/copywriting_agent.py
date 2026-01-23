@@ -52,6 +52,10 @@ class CopywritingAgent:
         """
         prompt = f"""{self.brand_voice.get_copywriting_prompt(campaign_type, campaign_brief, segment)}
 
+CRITICAL INSTRUCTION: Even if the brief contains sample copy or existing email text,
+DO NOT copy it directly. Use it for context only. You must write completely NEW copy
+from scratch that achieves the same goals but in your own words, using PRAY.COM's voice.
+
 Now generate the email copy. Follow these rules STRICTLY:
 
 1. HEADLINE (5-10 words):
