@@ -25,6 +25,13 @@ from subject_line_factory import SubjectLineFactory
 from campaign_parser import CampaignBriefParser
 from components import EmailComponents
 
+# Import deliverability module
+try:
+    from deliverability.streamlit_ui import render_deliverability_dashboard
+    DELIVERABILITY_AVAILABLE = True
+except ImportError:
+    DELIVERABILITY_AVAILABLE = False
+
 
 # Page configuration
 st.set_page_config(
@@ -119,9 +126,13 @@ def main():
         st.image("https://pray-email-assets.s3.amazonaws.com/pray-logo-white.png", width=120)
         st.markdown("---")
 
+        modes = ["📧 Full Email Generator", "✍️ Subject Lines Only", "🧩 Component Builder"]
+        if DELIVERABILITY_AVAILABLE:
+            modes.append("📊 Deliverability Monitor")
+
         mode = st.radio(
             "Mode",
-            ["📧 Full Email Generator", "✍️ Subject Lines Only", "🧩 Component Builder"],
+            modes,
             index=0
         )
 
@@ -142,6 +153,8 @@ def main():
         render_full_generator()
     elif mode == "✍️ Subject Lines Only":
         render_subject_generator()
+    elif mode == "📊 Deliverability Monitor":
+        render_deliverability_dashboard()
     else:
         render_component_builder()
 
