@@ -575,6 +575,53 @@ table.es-social td {
 [data-ogsc] a[style*="color: #F5C26B"] {
     color: #F5C26B !important;
 }
+
+/* Outlook 365 Dark Mode Fix */
+@media (prefers-color-scheme: dark) {
+    /* Force button text to stay white */
+    .es-button-border,
+    .es-button-border a,
+    a.es-button,
+    .es-button,
+    [class="es-button-border"],
+    [class="es-button-border"] a {
+        color: #ffffff !important;
+        background-color: #00000d !important;
+    }
+
+    /* Preserve white backgrounds in content area */
+    .es-content-body,
+    .es-content-body td,
+    .es-content-body th {
+        background-color: #ffffff !important;
+    }
+
+    /* Preserve dark text on light backgrounds */
+    .es-content-body td,
+    .es-content-body th,
+    .es-content-body p,
+    .es-content-body span,
+    .es-content-body div {
+        color: #000000 !important;
+    }
+
+    /* Dark header sections stay dark with white text */
+    td[bgcolor="#1C1C1E"],
+    td[bgcolor="#1C1C1E"] *,
+    td[bgcolor="#212224"],
+    td[bgcolor="#212224"] * {
+        background-color: #1C1C1E !important;
+        color: #ffffff !important;
+    }
+}
+
+/* Windows Outlook Dark Mode - uses [data-ogsb] and specific classes */
+[data-ogsb] .es-button-border,
+[data-ogsb] .es-button-border a,
+[data-ogsb] a.es-button {
+    color: #ffffff !important;
+    background-color: #00000d !important;
+}
 </style>
 <style type="text/css">
     @media only screen and (max-width: 480px) {
@@ -605,9 +652,9 @@ table.es-social td {
       <td width="680">
       <![endif]-->
 
-      <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#212224" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#fffffe;width:100%;max-width:680px" role="presentation">
+      <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#fffffe" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#fffffe;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');background-repeat:repeat;width:100%;max-width:680px" role="presentation">
         <tr>
-          <td align="left" bgcolor="#fffffe" style="letter-spacing:0.01em !important;padding:0;Margin:0;background-color:#fffffe"><table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px" role="presentation">
+          <td align="left" bgcolor="#fffffe" style="letter-spacing:0.01em !important;padding:0;Margin:0;background-color:#fffffe;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');background-repeat:repeat"><table width="100%" cellspacing="0" cellpadding="0" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px" role="presentation">
               <tr>
                 <td align="center" valign="top" style="letter-spacing:0.01em !important;padding:0;Margin:0;width:680px"><table cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px" role="presentation">
                     <tr>
@@ -625,7 +672,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
               </tr>
 
               <tr>
-                <td align="left" class="es-m-txt-c es-m-p20t es-m-p20r es-m-p20l" bgcolor="#fffffe" style="letter-spacing:0.01em !important;padding:0;Margin:0;padding-top:20px;padding-left:40px;padding-right:40px"><span class="es-m-txt-16" style="letter-spacing:.01em;font-size:18px; font-family:Satoshi, Arial, Helvetica, sans-serif;color:#00000d;line-height:150%;mso-line-height-rule:exactly; width:560px">
+                <td align="left" class="es-m-txt-c es-m-p20t es-m-p20r es-m-p20l" bgcolor="#fffffe" style="letter-spacing:0.01em !important;padding:0;Margin:0;padding-top:20px;padding-left:40px;padding-right:40px;background-color:#fffffe;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');background-repeat:repeat"><span class="es-m-txt-16" style="letter-spacing:.01em;font-size:18px; font-family:Satoshi, Arial, Helvetica, sans-serif;color:#00000d;line-height:150%;mso-line-height-rule:exactly; width:560px">
 <strong>Are you ready to transform your February?</strong> We're challenging you to 28 days of intentional joy through daily prayer. Here's the simple challenge: listen to the <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" style="color:#9e6900; font-weight:bold; text-decoration:underline;">Daily Prayer</a> in the PRAY app every single day this month. Studies show that consistent prayer habits increase joy, reduce anxiety, and deepen your relationship with God. Let's pray for boldness to begin:<br><br>
 <span class="es-m-txt-16" style="letter-spacing:.01em;font-size:17px;font-family:Georgia, Times, serif;font-weight:400;font-style:italic;line-height:150%;mso-line-height-rule:exactly" lang="en">Lord, I accept this challenge. For the next 28 days, I commit to meeting You in prayer every morning. Use this daily rhythm to fill me with Your joy—a joy that isn't shaken by circumstances but flows from time spent in Your presence. In Jesus' Name,&nbsp;Amen</span>.</span></td>
               </tr>
@@ -641,7 +688,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
 				  </v:roundrect>
 				  <![endif]-->
 				  <!--[if !mso]><!-- -->
-				 <span class="es-button-border" style="letter-spacing:0.01em !important;border-radius:10px;width:auto; background: #00000d"><a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" class="btn-align" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;letter-spacing:0.03em !important;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly !important;color:#fffffe;font-size:16px;display:inline-block;border-radius:8px;font-family:Satoshi, Arial, Helvetica, sans-serif;font-weight:700;font-style:normal;line-height:150%;width:auto;text-align:center;padding:15px 30px;mso-padding-alt:0;mso-border-alt:10px solid #00000d;text-transform:uppercase; background: #00000d" aria-label="Start the 28-Day Joy Challenge">Start the Challenge</a></span>
+				 <span class="es-button-border" style="letter-spacing:0.01em !important;border-radius:10px;width:auto;background:#00000d;background-color:#00000d"><a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" class="btn-align es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;letter-spacing:0.03em !important;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly !important;color:#ffffff !important;font-size:16px;display:inline-block;border-radius:8px;font-family:Satoshi, Arial, Helvetica, sans-serif;font-weight:700;font-style:normal;line-height:150%;width:auto;text-align:center;padding:15px 30px;mso-padding-alt:0;mso-border-alt:10px solid #00000d;text-transform:uppercase;background:#00000d;background-color:#00000d" aria-label="Start the 28-Day Joy Challenge">Start the Challenge</a></span>
 				  <!--<![endif]-->
 				  <div style="padding-top:15px;"><a href="https://braze-images.com/appboy/communication/assets/image_assets/images/697b9b239d1c6400634b3fc3/original.jpg?1769708323" target="_blank" style="text-decoration:underline;color:#9e6900;font-family:Satoshi, Arial, Helvetica, sans-serif;font-size:18px;font-weight:bold;">Download Joy Tracker</a></div>
 
@@ -654,7 +701,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
         </tr>
         <!-- Scripture Trivia : BEGIN -->
         <tr>
-          <td align="center" bgcolor="#fffffe" style=" text-align: center; padding-left: 100px; padding-right: 100px; padding-top: 0px; padding-bottom: 30px;background-color:#fffffe;" class="scripture-container">
+          <td align="center" bgcolor="#fffffe" style=" text-align: center; padding-left: 100px; padding-right: 100px; padding-top: 0px; padding-bottom: 30px;background-color:#fffffe;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');background-repeat:repeat" class="scripture-container">
 
           <!--[if gte mso 9]>
           <table width="480" cellspacing="0" cellpadding="0" border="0" align="center">
@@ -853,7 +900,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
                 </v:roundrect>
                 <![endif]-->
                 <!--[if !mso]><!-- -->
-                <span class="msohide es-button-border" style="letter-spacing:0.01em !important;display:inline-block;border-radius:10px;width:auto;mso-hide:all; background: #00000d"><a href="https://braze-images.com/appboy/communication/assets/image_assets/images/697b9b239d1c6400634b3fc3/original.jpg?1769708323" class="btn-align" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;letter-spacing:0.03em !important;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly !important;color:#fffffe;font-size:16px;display:inline-block;border-radius:8px;font-family:Satoshi, Arial, Helvetica, sans-serif;font-weight:700;font-style:normal;line-height:150%;width:auto;text-align:center;padding:15px 30px;mso-padding-alt:0;mso-border-alt:10px solid #00000d;text-transform:uppercase; background: #00000d" aria-label="Download Joy Challenge Tracker">Download Tracker</a></span>
+                <span class="msohide es-button-border" style="letter-spacing:0.01em !important;display:inline-block;border-radius:10px;width:auto;mso-hide:all;background:#00000d;background-color:#00000d"><a href="https://braze-images.com/appboy/communication/assets/image_assets/images/697b9b239d1c6400634b3fc3/original.jpg?1769708323" class="btn-align es-button" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;letter-spacing:0.03em !important;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly !important;color:#ffffff !important;font-size:16px;display:inline-block;border-radius:8px;font-family:Satoshi, Arial, Helvetica, sans-serif;font-weight:700;font-style:normal;line-height:150%;width:auto;text-align:center;padding:15px 30px;mso-padding-alt:0;mso-border-alt:10px solid #00000d;text-transform:uppercase;background:#00000d;background-color:#00000d" aria-label="Download Joy Challenge Tracker">Download Tracker</a></span>
                 <!--<![endif]-->
 
                 </td>
@@ -864,7 +911,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
 
 <!-- New Releases on Pray Section : BEGIN -->
          <tr>
-          <td class="es-m-p30t" align="left" bgcolor="#fffffe" style="letter-spacing:0.01em !important;padding:0;Margin:0;padding: 30px 20px 0px 20px; background-color:#fffffe">
+          <td class="es-m-p30t" align="left" bgcolor="#fffffe" style="letter-spacing:0.01em !important;padding:0;Margin:0;padding: 30px 20px 0px 20px; background-color:#fffffe;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');background-repeat:repeat">
 
           <!--[if gte mso 9]>
           <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#fffffe">
@@ -897,7 +944,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
         <tr>
           <td align="center" class="" style="">
         <tr>
-          <td bgcolor="#fffffe" style="padding:0px 20px 20px 20px; background-color:#fffffe" class="es-m-p20l es-m-p20r">
+          <td bgcolor="#fffffe" style="padding:0px 20px 20px 20px; background-color:#fffffe;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');background-repeat:repeat" class="es-m-p20l es-m-p20r">
 
           <!--[if gte mso 9]>
           <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#fffffe">
@@ -946,7 +993,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
         <tr>
           <td align="center" class="" style="">
         <tr>
-          <td bgcolor="#fffffe" style="padding:0px 20px 20px 20px; background-color:#fffffe" class="es-m-p20l es-m-p20r">
+          <td bgcolor="#fffffe" style="padding:0px 20px 20px 20px; background-color:#fffffe;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');background-repeat:repeat" class="es-m-p20l es-m-p20r">
 
           <!--[if gte mso 9]>
           <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#fffffe">
@@ -994,7 +1041,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
         <tr>
           <td align="center" class="" style="">
         <tr>
-          <td bgcolor="#fffffe" style="padding:0px 20px 30px 20px; background-color:#fffffe" class="es-m-p20l es-m-p20r">
+          <td bgcolor="#fffffe" style="padding:0px 20px 30px 20px; background-color:#fffffe;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');background-repeat:repeat" class="es-m-p20l es-m-p20r">
 
           <!--[if gte mso 9]>
           <table width="640" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#fffffe">
@@ -1042,7 +1089,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
      {% if {{custom_attribute.${subscription_tier}}} == blank %}
     <!-- 2 Even Columns BLOCK 1 : BEGIN -->
     <tr>
-      <td bgcolor="fffffe" style="padding:20px 40px 40px 40px; background-color: #fffffe;" class="es-m-p0t es-m-p20r es-m-p20l">
+      <td bgcolor="#fffffe" style="padding:20px 40px 40px 40px; background-color: #fffffe;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');background-repeat:repeat" class="es-m-p0t es-m-p20r es-m-p20l">
 
       <!--[if gte mso 9]>
       <table width="600" cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#FFFDF5" style="border-radius:14px;">
@@ -1073,7 +1120,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
                       </v:roundrect>
                       <![endif]-->
                       <!--[if !mso]><!-- -->
-                      <span class="msohide es-button-border" style="letter-spacing:0.01em !important;border-style:solid;border-color:transparent;background:#00000d;border-width:0px;display:inline-block;border-radius:6px;width:auto;mso-hide:all"><a href="{% catalog_selection_items Subs_Plus_Leaders Subscription-Plus-Module %}{{ items[0].link }}&utm_campaign=monthnewsletter&intent=paywall&{{content_blocks.${pray_jwt_login_generator}}}" class="es-button es-button-1719191763021" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;letter-spacing:0.03em !important;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly !important;color:#fffffe;font-size:16px;display:inline-block;background:#00000d;border-radius:6px;font-family:Satoshi, Arial, Helvetica, sans-serif;font-weight:600;font-style:normal;line-height:150%;width:auto;text-align:center;padding:15px 20px;mso-padding-alt:0;mso-border-alt:10px solid #00000d;text-transform:uppercase">Start Your Journey</a></span>
+                      <span class="msohide es-button-border" style="letter-spacing:0.01em !important;border-style:solid;border-color:transparent;background:#00000d;background-color:#00000d;border-width:0px;display:inline-block;border-radius:6px;width:auto;mso-hide:all"><a href="{% catalog_selection_items Subs_Plus_Leaders Subscription-Plus-Module %}{{ items[0].link }}&utm_campaign=monthnewsletter&intent=paywall&{{content_blocks.${pray_jwt_login_generator}}}" class="es-button es-button-1719191763021" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;letter-spacing:0.03em !important;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly !important;color:#ffffff !important;font-size:16px;display:inline-block;background:#00000d;background-color:#00000d;border-radius:6px;font-family:Satoshi, Arial, Helvetica, sans-serif;font-weight:600;font-style:normal;line-height:150%;width:auto;text-align:center;padding:15px 20px;mso-padding-alt:0;mso-border-alt:10px solid #00000d;text-transform:uppercase">Start Your Journey</a></span>
                       <!--<![endif]-->
 
                       </td>
@@ -1117,7 +1164,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
 
 <!-- Trivia Answer : BEGIN -->
       <tr>
-          <td align="center" bgcolor="#fffffe" style="text-align: center; padding-left: 100px; padding-right: 100px; padding-top: 0px; padding-bottom: 30px;background-color:#fffffe;" class="scripture-container">
+          <td align="center" bgcolor="#fffffe" style="text-align: center; padding-left: 100px; padding-right: 100px; padding-top: 0px; padding-bottom: 30px;background-color:#fffffe;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');background-repeat:repeat" class="scripture-container">
 
           <!--[if gte mso 9]>
           <table width="480" cellspacing="0" cellpadding="0" border="0" align="center">
@@ -1156,7 +1203,7 @@ The <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page
 
 <!-- LiveIntent Ad : BEGIN -->
           <tr>
-      <td bgcolor="fffffe" style="padding:0px 40px 40px 40px; background-color: #fffffe;" class="es-m-p0t es-m-p20r es-m-p20l">
+      <td bgcolor="#fffffe" style="padding:0px 40px 40px 40px; background-color: #fffffe;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=');background-repeat:repeat" class="es-m-p0t es-m-p20r es-m-p20l">
         <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" data-lt-version="3.0.0">
     <tr><td colspan="2" align="center" style="line-height: 1px">
       <img src="https://sli.li-email.pray.com/imp?s=1164649&li={LIST_ID}&e={{${email_address}}}&p={{today}}&lctg={{${braze_id}}}&stpe=static" border="0" style="display: block; max-height: 12px !important" /></td></tr>
