@@ -443,15 +443,47 @@ table.es-social td {
 }
 }
 </style>
-<!-- Yahoo Mail Dark Mode Fix -->
+<!-- Yahoo Mail Dark Mode Fix - Using background-image hack to prevent color inversion -->
 <style type="text/css">
 /*
  * Yahoo Mail Dark Mode Prevention
- * Yahoo uses [data-ogsc] for color overrides and [data-ogsb] for background overrides
- * We force light mode and explicitly set all colors to prevent inversion
+ * Uses transparent background-image to block Yahoo's color inversion filter
+ * The 1x1 transparent PNG prevents the inversion algorithm from running
  */
 
-/* Force wrapper background */
+/* Block color inversion on white/light backgrounds using transparent background-image */
+[data-ogsc] .es-content-body,
+[data-ogsc] .es-content-body table,
+[data-ogsc] .es-content-body td,
+[data-ogsc] .es-content-body th,
+[data-ogsc] .es-content-body tr,
+[data-ogsc] .es-content-body div,
+[data-ogsc] .es-content-body p,
+[data-ogsc] .es-content-body span,
+[data-ogsc] .es-content-body a,
+[data-ogsc] .es-content-body h1,
+[data-ogsc] .es-content-body h2,
+[data-ogsc] .es-content-body h3 {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=') !important;
+    background-repeat: repeat !important;
+}
+
+/* Also target with data-ogsb */
+[data-ogsb] .es-content-body,
+[data-ogsb] .es-content-body table,
+[data-ogsb] .es-content-body td,
+[data-ogsb] .es-content-body th,
+[data-ogsb] .es-content-body tr {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=') !important;
+    background-repeat: repeat !important;
+}
+
+/* Explicitly preserve background colors */
+[data-ogsc] .es-content-body,
+[data-ogsb] .es-content-body {
+    background-color: #ffffff !important;
+}
+
 [data-ogsc] .es-wrapper-color,
 [data-ogsb] .es-wrapper-color,
 [data-ogsc] table.es-wrapper,
@@ -459,131 +491,89 @@ table.es-social td {
     background-color: #212224 !important;
 }
 
-/* Force content body white background */
-[data-ogsc] .es-content-body,
-[data-ogsb] .es-content-body,
-[data-ogsc] .es-content-body table,
-[data-ogsb] .es-content-body table,
-[data-ogsc] .es-content-body td,
-[data-ogsb] .es-content-body td,
-[data-ogsc] .es-content-body th,
-[data-ogsb] .es-content-body th {
+/* Preserve specific background colors - use bgcolor attribute targeting */
+[data-ogsc] td[bgcolor="#fffffe"],
+[data-ogsb] td[bgcolor="#fffffe"],
+[data-ogsc] th[bgcolor="#fffffe"],
+[data-ogsb] th[bgcolor="#fffffe"] {
     background-color: #ffffff !important;
 }
 
-/* Specific background color overrides */
-[data-ogsc] td[style*="background-color:#fffffe"],
-[data-ogsb] td[style*="background-color:#fffffe"],
-[data-ogsc] td[style*="background-color: #fffffe"],
-[data-ogsb] td[style*="background-color: #fffffe"],
-[data-ogsc] th[style*="background-color:#fffffe"],
-[data-ogsb] th[style*="background-color:#fffffe"] {
-    background-color: #ffffff !important;
-}
-
-/* Dark header section */
-[data-ogsc] td[style*="background-color:#1C1C1E"],
-[data-ogsb] td[style*="background-color:#1C1C1E"],
-[data-ogsc] td[style*="background-color: #1C1C1E"],
-[data-ogsb] td[style*="background-color: #1C1C1E"] {
+[data-ogsc] td[bgcolor="#1C1C1E"],
+[data-ogsb] td[bgcolor="#1C1C1E"] {
     background-color: #1C1C1E !important;
 }
 
-/* Gray sections */
-[data-ogsc] td[style*="background-color:#F5F5F5"],
-[data-ogsb] td[style*="background-color:#F5F5F5"],
-[data-ogsc] td[style*="background-color: #F5F5F5"],
-[data-ogsb] td[style*="background-color: #F5F5F5"] {
+[data-ogsc] td[bgcolor="#F5F5F5"],
+[data-ogsb] td[bgcolor="#F5F5F5"] {
     background-color: #F5F5F5 !important;
 }
 
-[data-ogsc] td[style*="background-color:#E8E8E8"],
-[data-ogsb] td[style*="background-color:#E8E8E8"],
-[data-ogsc] td[style*="background-color: #E8E8E8"],
-[data-ogsb] td[style*="background-color: #E8E8E8"] {
+[data-ogsc] td[bgcolor="#E8E8E8"],
+[data-ogsb] td[bgcolor="#E8E8E8"] {
     background-color: #E8E8E8 !important;
 }
 
-/* Yellow/cream sections */
-[data-ogsc] td[style*="background-color:#FFF8E6"],
-[data-ogsb] td[style*="background-color:#FFF8E6"],
-[data-ogsc] td[style*="background-color: #FFF8E6"],
-[data-ogsb] td[style*="background-color: #FFF8E6"] {
+[data-ogsc] td[bgcolor="#FFF8E6"],
+[data-ogsb] td[bgcolor="#FFF8E6"] {
     background-color: #FFF8E6 !important;
 }
 
-[data-ogsc] td[style*="background-color:#FFFDF5"],
-[data-ogsb] td[style*="background-color:#FFFDF5"],
-[data-ogsc] td[style*="background-color: #FFFDF5"],
-[data-ogsb] td[style*="background-color: #FFFDF5"],
-[data-ogsc] th[style*="background-color:#FFFDF5"],
-[data-ogsb] th[style*="background-color:#FFFDF5"] {
+[data-ogsc] td[bgcolor="#FFFDF5"],
+[data-ogsb] td[bgcolor="#FFFDF5"],
+[data-ogsc] th[bgcolor="#FFFDF5"],
+[data-ogsb] th[bgcolor="#FFFDF5"] {
     background-color: #FFFDF5 !important;
 }
 
-/* Text color overrides - dark text on light backgrounds */
-[data-ogsc] .es-content-body span,
+/* Preserve text colors */
+[data-ogsc] .es-content-body,
 [data-ogsc] .es-content-body td,
-[data-ogsc] .es-content-body div,
+[data-ogsc] .es-content-body th,
 [data-ogsc] .es-content-body p,
-[data-ogsc] .es-content-body th {
-    color: #00000d !important;
+[data-ogsc] .es-content-body div,
+[data-ogsc] .es-content-body span {
+    color: #000000 !important;
 }
 
-/* White text for dark header section */
-[data-ogsc] td[style*="background-color:#1C1C1E"] span,
-[data-ogsc] td[style*="background-color:#1C1C1E"] h1,
-[data-ogsc] td[style*="background-color:#1C1C1E"] a,
-[data-ogsc] td[style*="background-color: #1C1C1E"] span,
-[data-ogsc] td[style*="background-color: #1C1C1E"] h1,
-[data-ogsc] td[style*="background-color: #1C1C1E"] a {
+/* Dark sections need white text */
+[data-ogsc] td[bgcolor="#1C1C1E"],
+[data-ogsc] td[bgcolor="#1C1C1E"] *,
+[data-ogsc] td[bgcolor="#212224"],
+[data-ogsc] td[bgcolor="#212224"] * {
     color: #ffffff !important;
 }
 
-[data-ogsc] h1,
-[data-ogsc] .es-m-txt-26 {
+/* Footer */
+[data-ogsc] .es-footer-body,
+[data-ogsb] .es-footer-body,
+[data-ogsc] .es-footer-body td,
+[data-ogsb] .es-footer-body td {
+    background-color: #212224 !important;
     color: #ffffff !important;
 }
 
-/* Gold link color */
-[data-ogsc] a[style*="color:#F5C26B"],
-[data-ogsc] a[style*="color: #F5C26B"] {
-    color: #F5C26B !important;
-}
-
-[data-ogsc] a[style*="color:#9e6900"],
-[data-ogsc] a[style*="color: #9e6900"] {
-    color: #9e6900 !important;
-}
-
-/* Button backgrounds */
+/* Buttons */
 [data-ogsc] .es-button-border,
-[data-ogsb] .es-button-border,
-[data-ogsc] span[style*="background: #00000d"],
-[data-ogsb] span[style*="background: #00000d"],
-[data-ogsc] span[style*="background:#00000d"],
-[data-ogsb] span[style*="background:#00000d"] {
-    background: #00000d !important;
+[data-ogsb] .es-button-border {
     background-color: #00000d !important;
 }
 
 [data-ogsc] a.es-button,
 [data-ogsc] .es-button {
     color: #ffffff !important;
-    background: #00000d !important;
     background-color: #00000d !important;
 }
 
-/* Border colors for trivia boxes */
-[data-ogsc] td[style*="border: 2px solid #F5C26B"],
-[data-ogsc] td[style*="border: 3px solid #F5C26B"] {
-    border-color: #F5C26B !important;
+/* Links */
+[data-ogsc] a[style*="color:#9e6900"],
+[data-ogsc] a[style*="color: #9e6900"] {
+    color: #9e6900 !important;
 }
 
-/* Footer dark background */
-[data-ogsc] .es-footer-body,
-[data-ogsb] .es-footer-body {
-    background-color: #212224 !important;
+[data-ogsc] a[style*="color:#F5C26B"],
+[data-ogsc] a[style*="color: #F5C26B"] {
+    color: #F5C26B !important;
 }
 </style>
 <style type="text/css">
