@@ -44,6 +44,17 @@ color-scheme: light dark;
 supported-color-schemes: light dark;
 }
 
+/* Desktop default styles - hide mobile-only elements */
+tr.es-desk-hidden, td.es-desk-hidden, table.es-desk-hidden {
+    display: none !important;
+}
+.mobile-link {
+    display: none !important;
+}
+.desktop-link {
+    display: inline-block !important;
+}
+
 @media only screen and (max-width:550px) {
 p, ul li, ol li, a {
     line-height: 150%!important;
