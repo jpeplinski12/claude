@@ -44,11 +44,9 @@ color-scheme: light dark;
 supported-color-schemes: light dark;
 }
 
-/* Desktop default styles - hide mobile-only elements using max-height technique for better email client support */
+/* Hide mobile-only elements on desktop */
 tr.es-desk-hidden, td.es-desk-hidden, table.es-desk-hidden {
-    max-height: 0;
-    overflow: hidden;
-    mso-hide: all;
+    display: none !important;
 }
 .mobile-link {
     display: none !important;
