@@ -44,9 +44,9 @@ color-scheme: light dark;
 supported-color-schemes: light dark;
 }
 
-/* Desktop default styles - hide mobile-only elements */
+/* Desktop default styles - hide mobile-only elements (no !important so mobile can override) */
 tr.es-desk-hidden, td.es-desk-hidden, table.es-desk-hidden {
-    display: none !important;
+    display: none;
 }
 .mobile-link {
     display: none !important;
