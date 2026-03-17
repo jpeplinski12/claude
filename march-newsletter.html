@@ -44,9 +44,11 @@ color-scheme: light dark;
 supported-color-schemes: light dark;
 }
 
-/* Desktop default styles - hide mobile-only elements (no !important so mobile can override) */
+/* Desktop default styles - hide mobile-only elements using max-height technique for better email client support */
 tr.es-desk-hidden, td.es-desk-hidden, table.es-desk-hidden {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    mso-hide: all;
 }
 .mobile-link {
     display: none !important;
