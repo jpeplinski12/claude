@@ -54,6 +54,10 @@ tr.es-desk-hidden, td.es-desk-hidden, table.es-desk-hidden {
 .desktop-link {
     display: inline-block !important;
 }
+/* Desktop: show desktop-only elements */
+tr.es-mobile-hidden, td.es-mobile-hidden, table.es-mobile-hidden {
+    display: table-row !important;
+}
 
 @media only screen and (max-width:550px) {
 p, ul li, ol li, a {
@@ -526,6 +530,64 @@ table.es-social td {
 [data-ogsc] td[bgcolor="#1C1C1E"] h1,
 [data-ogsc] td[bgcolor="#1C1C1E"] span {
     color: #fefefe !important;
+}
+</style>
+<!-- iOS Mail Dark Mode Fix -->
+<style type="text/css">
+@media (prefers-color-scheme: dark) {
+    /* Prevent iOS from inverting light backgrounds */
+    .es-content-body,
+    .es-content-body table,
+    .es-content-body td,
+    .es-content-body th {
+        background-color: #fefefe !important;
+    }
+    td[bgcolor="#fefefe"],
+    th[bgcolor="#fefefe"] {
+        background-color: #fefefe !important;
+    }
+    td[bgcolor="#ffffff"],
+    th[bgcolor="#ffffff"] {
+        background-color: #ffffff !important;
+    }
+    td[bgcolor="#F5F5F5"] {
+        background-color: #F5F5F5 !important;
+    }
+    td[bgcolor="#E8F4FA"],
+    th[bgcolor="#E8F4FA"] {
+        background-color: #E8F4FA !important;
+    }
+    /* Keep dark header dark */
+    td[bgcolor="#1C1C1E"] {
+        background-color: #1C1C1E !important;
+    }
+    .es-wrapper-color,
+    table.es-wrapper {
+        background-color: #212224 !important;
+    }
+    /* Preserve text colors on light backgrounds */
+    .es-content-body span,
+    .es-content-body td,
+    .es-content-body div,
+    .es-content-body p {
+        color: #000000 !important;
+    }
+    /* Keep white text on dark backgrounds */
+    td[bgcolor="#1C1C1E"] h1,
+    td[bgcolor="#1C1C1E"] span,
+    td[bgcolor="#1C1C1E"] a {
+        color: #fefefe !important;
+    }
+    h1 {
+        color: #fefefe !important;
+    }
+    /* Link colors */
+    a {
+        color: #9e6900 !important;
+    }
+    td[bgcolor="#1C1C1E"] a {
+        color: #7EB8DA !important;
+    }
 }
 </style>
 <style type="text/css">
