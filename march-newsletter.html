@@ -6,8 +6,8 @@
 <meta name="x-apple-disable-message-reformatting">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="telephone=no" name="format-detection">
-<meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
 <!--[if gte mso 9]>
 <xml>
 <o:OfficeDocumentSettings>
@@ -40,8 +40,8 @@ td, th { mso-line-height-rule: exactly !important; }
 </style>
 <style>
 */:root {
-color-scheme: light dark;
-supported-color-schemes: light dark;
+color-scheme: light only;
+supported-color-schemes: light only;
 }
 
 .mobile-link {
@@ -530,6 +530,55 @@ tr.mobile-only-image {
 </style>
 <!-- iOS Mail Dark Mode Fix -->
 <style type="text/css">
+/* Force light mode for iOS Mail - prevents dark mode inversion */
+:root {
+ color-scheme: light only;
+ supported-color-schemes: light only;
+}
+
+/* Apple Mail specific selector (u + .body targets Apple Mail) */
+u + .body .es-content-body,
+u + .body .es-content-body table,
+u + .body .es-content-body td,
+u + .body .es-content-body th {
+ background-color: #ffffff !important;
+}
+u + .body td[bgcolor="#ffffff"],
+u + .body th[bgcolor="#ffffff"] {
+ background-color: #ffffff !important;
+}
+u + .body td[bgcolor="#E8F4FA"],
+u + .body th[bgcolor="#E8F4FA"] {
+ background-color: #E8F4FA !important;
+}
+u + .body td[bgcolor="#1C1C1E"] {
+ background-color: #1C1C1E !important;
+}
+u + .body .es-wrapper-color,
+u + .body table.es-wrapper {
+ background-color: #212224 !important;
+}
+/* Preserve text colors in Apple Mail */
+u + .body .es-content-body span,
+u + .body .es-content-body td,
+u + .body .es-content-body div,
+u + .body .es-content-body p {
+ color: #000000 !important;
+}
+u + .body td[bgcolor="#1C1C1E"] h1,
+u + .body td[bgcolor="#1C1C1E"] span {
+ color: #ffffff !important;
+}
+u + .body h1 {
+ color: #ffffff !important;
+}
+u + .body a {
+ color: #9e6900 !important;
+}
+u + .body td[bgcolor="#1C1C1E"] a {
+ color: #7EB8DA !important;
+}
+
 @media (prefers-color-scheme: dark) {
  /* Prevent iOS from inverting light backgrounds */
  .es-content-body,
