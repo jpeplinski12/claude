@@ -6,8 +6,8 @@
 <meta name="x-apple-disable-message-reformatting">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="telephone=no" name="format-detection">
-<meta name="color-scheme" content="light only">
-<meta name="supported-color-schemes" content="light only">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
 <!--[if gte mso 9]>
 <xml>
 <o:OfficeDocumentSettings>
@@ -40,16 +40,21 @@ td, th { mso-line-height-rule: exactly !important; }
 </style>
 <style>
 */:root {
-color-scheme: light only;
-supported-color-schemes: light only;
+color-scheme: light dark;
+supported-color-schemes: light dark;
 }
 
 .mobile-link {
- display: none !important;
+ display: inline !important;
+ max-height: none !important;
+ overflow: visible !important;
 }
 .desktop-link {
- display: inline-block !important;
+ display: none !important;
+ max-height: 0 !important;
+ overflow: hidden !important;
 }
+
 
 @media only screen and (max-width:550px) {
 p, ul li, ol li, a {
@@ -89,8 +94,8 @@ h1, h2, h3, h1 a, h2 a, h3 a {
  mso-line-height-rule: exactly!important
 }
 h1 {
- font-size: 26px!important;
- font-weight: 700!important;
+ font-size: 24px!important;
+ font-weight: 600!important;
  text-align: center;
  letter-spacing: 0.01em
 }
@@ -443,11 +448,16 @@ table.es-social td {
 }
 /* Mobile/Desktop link visibility */
 .mobile-link {
- display: inline-block !important;
+ display: inline !important;
+ max-height: none !important;
+ overflow: visible !important;
 }
 .desktop-link {
  display: none !important;
+ max-height: 0 !important;
+ overflow: hidden !important;
 }
+
 /* Reverse column order on mobile for Bible in a Year */
 .mobile-reverse tr {
  display: flex !important;
@@ -530,55 +540,6 @@ tr.mobile-only-image {
 </style>
 <!-- iOS Mail Dark Mode Fix -->
 <style type="text/css">
-/* Force light mode for iOS Mail - prevents dark mode inversion */
-:root {
- color-scheme: light only;
- supported-color-schemes: light only;
-}
-
-/* Apple Mail specific selector (u + .body targets Apple Mail) */
-u + .body .es-content-body,
-u + .body .es-content-body table,
-u + .body .es-content-body td,
-u + .body .es-content-body th {
- background-color: #ffffff !important;
-}
-u + .body td[bgcolor="#ffffff"],
-u + .body th[bgcolor="#ffffff"] {
- background-color: #ffffff !important;
-}
-u + .body td[bgcolor="#E8F4FA"],
-u + .body th[bgcolor="#E8F4FA"] {
- background-color: #E8F4FA !important;
-}
-u + .body td[bgcolor="#1C1C1E"] {
- background-color: #1C1C1E !important;
-}
-u + .body .es-wrapper-color,
-u + .body table.es-wrapper {
- background-color: #212224 !important;
-}
-/* Preserve text colors in Apple Mail */
-u + .body .es-content-body span,
-u + .body .es-content-body td,
-u + .body .es-content-body div,
-u + .body .es-content-body p {
- color: #000000 !important;
-}
-u + .body td[bgcolor="#1C1C1E"] h1,
-u + .body td[bgcolor="#1C1C1E"] span {
- color: #ffffff !important;
-}
-u + .body h1 {
- color: #ffffff !important;
-}
-u + .body a {
- color: #9e6900 !important;
-}
-u + .body td[bgcolor="#1C1C1E"] a {
- color: #7EB8DA !important;
-}
-
 @media (prefers-color-scheme: dark) {
  /* Prevent iOS from inverting light backgrounds */
  .es-content-body,
@@ -675,22 +636,22 @@ u + .body td[bgcolor="#1C1C1E"] a {
  </table></td>
  </tr>
  <tr>
- <td align="center" class="es-m-p10r es-m-p10t es-m-p30r es-m-p30l" bgcolor="#1C1C1E" style="padding-top:0;padding-left:40px;padding-right:40px;background-color:#1C1C1E"><h1 class="es-m-txt-26" style="font-family: Satoshi, Arial, Helvetica, sans-serif;font-size:30px;line-height:140%;font-weight:700;color:#ffffff;margin:0">Take the <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" style="color:#7EB8DA; text-decoration: underline">Peace</a> Challenge<br>this Holy Week</h1></td>
+ <td align="center" class="es-m-p10r es-m-p10t es-m-p30r es-m-p30l" bgcolor="#1C1C1E" style="padding-top:0;padding-left:40px;padding-right:40px;background-color:#1C1C1E"><h1 class="es-m-txt-26" style="font-family: Satoshi, Arial, Helvetica, sans-serif;font-size:30px;line-height:140%;font-weight:700;color:#ffffff;margin:0">Find Perfect <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" style="color:#7EB8DA; text-decoration: underline">Peace</a><br>this Holy Week</h1></td>
  </tr>
  <tr>
- <td bgcolor="#1C1C1E" align="center" class="es-m-txt-c es-m-p0l es-m-p0r es-m-p10l es-m-p10r" style="letter-spacing:.01em!important;padding:10px 70px 30px 70px; background-color:#1C1C1E"><span class="es-m-txt-16" style="letter-spacing:.03em;font-size:18px;font-family:Georgia,serif;color:#ffffff;font-weight:400;font-style:italic;line-height:150%" lang="en">"Peace I leave with you; my peace I give you. I do not give to you as the world gives."<br>
+ <td bgcolor="#1C1C1E" align="center" class="es-m-txt-c es-m-p10l es-m-p10r" style="letter-spacing:.01em!important;padding:10px 70px 30px 70px; background-color:#1C1C1E"><span class="es-m-txt-16" style="letter-spacing:.03em;font-size:18px;font-family:Georgia,serif;color:#ffffff;font-weight:400;font-style:italic;line-height:150%" lang="en">"Peace I leave with you; my peace I give you. I do not give to you as the world gives."<br>
  <a universal="true" target="_blank" style="text-decoration:underline;color:#7EB8DA; font-weight: 500" href="https://www.pray.com/bible/kjv/john-14-27?deeplink=pray%3A%2F%2Fpage%2Fread%3Fchapter%3Dkjv-bible-john-14%26section%3Dkjv-bible-john-14-27&$desktop_url=https://www.pray.com/bible/kjv/john-14-27/">John 14:27</a></span></td>
  </tr>
 
  <tr>
- <td align="left" class="es-m-txt-c es-m-p20t es-m-p20r es-m-p20l" bgcolor="#ffffff" style="letter-spacing:.01em!important;padding-top:20px;padding-left:40px;padding-right:40px"><span class="es-m-txt-16" style="letter-spacing:.01em;font-size:18px; font-family:Satoshi,Arial,sans-serif;color:#000000;line-height:150%; width:560px">
-					<strong>Take the Peace Challenge</strong> this Holy Week! Starting tomorrow (Palm Sunday), join us in focusing on Peace—the third fruit of the Spirit—as we journey through the most sacred week of the year. Listen to the <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" style="color:#9e6900; font-weight:bold; text-decoration:underline;">Daily Prayer</a> in the PRAY app and let God's peace prepare your heart for Easter. Let's pray:<br><br>
+ <td align="left" class="es-m-txt-l es-m-p20t es-m-p20r es-m-p20l" bgcolor="#ffffff" style="letter-spacing:.01em!important;padding-top:20px;padding-left:40px;padding-right:40px"><span class="es-m-txt-16" style="letter-spacing:.01em;font-size:18px; font-family:Satoshi,Arial,sans-serif;color:#000000;line-height:150%; width:560px">
+					Starting today, we're walking together through the most sacred week of the year—from Palm Sunday to the empty tomb. Our focus: peace, the third fruit of the Spirit. Open the <a universal="true" href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" style="color:#9e6900; font-weight:bold; text-decoration:underline;">Daily Prayer</a> in the PRAY app and let God's peace prepare your heart for Easter. Let's pray:<br><br>
 <span class="es-m-txt-16" style="letter-spacing:.01em;font-size:17px;font-family:Georgia,serif;font-weight:400;font-style:italic;line-height:150%" lang="en">Lord, as I enter Holy Week, quiet my heart and fill me with Your perfect peace. Help me release my anxieties and fix my eyes on the cross. Let Your peace guard my heart and mind as I journey to the empty tomb. In Jesus' Name, Amen</span>.</span></td>
  </tr>
  <tr>
  <td align="center" valign="top" style="letter-spacing:.01em!important;padding-left: 20px;padding-right: 20px;padding-top: 20px;width:600px;" class="es-m-p0b"><table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
  <tr>
- <td align="center" class="es-m-p30b es-m-p0t es-m-p0r es-m-p0l" style="letter-spacing:.01em!important;padding:10px 30px 30px 30px;border-radius: 0 0px 10px 10px;">
+ <td align="center" class="es-m-p10b es-m-p0t es-m-p0r es-m-p0l" style="letter-spacing:.01em!important;padding:10px 30px 0px 30px;border-radius: 0 0px 10px 10px;">
 
 				 <!--[if mso]>
 				 <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://pray.com/daily-prayer?deeplink=pray://page/daily?daily_id=morning&$desktop_url=https://www.pray.com/daily-prayer" style="height:52px;v-text-anchor:middle;width:250px;" arcsize="15%" stroke="f" fillcolor="#000000">
@@ -712,7 +673,7 @@ u + .body td[bgcolor="#1C1C1E"] a {
 
 <!-- NEW TOP LIVETAG START -->
 <tr>
-<td class="es-m-p0t es-m-p0b" align="left" style="letter-spacing:.01em!important;padding:0;background-color:#1C1C1E" bgcolor="#1C1C1E">
+<td class="es-m-p0t es-m-p0b" align="left" style="letter-spacing:.01em!important;padding:0;background-color:#ffffff" bgcolor="#ffffff">
 <div>
 <table align="center" data-lt-version="3.0.0">
 <tr><td colspan="2" align="center" style="line-height: 1px">
@@ -739,7 +700,7 @@ u + .body td[bgcolor="#1C1C1E"] a {
 
  
  <tr>
- <td align="center" bgcolor="#ffffff" style="text-align: center;padding-left: 100px;padding-right: 100px;padding-top: 40px;padding-bottom: 30px;background-color:#ffffff;" class="scripture-container es-m-p20t">
+ <td align="center" bgcolor="#ffffff" style="text-align: center;padding-left: 100px;padding-right: 100px;padding-top: 10px;padding-bottom: 30px;background-color:#ffffff;" class="scripture-container es-m-p10t">
 
  <!--[if gte mso 9]>
  <table width="480" cellspacing="0" cellpadding="0" align="center">
@@ -808,7 +769,7 @@ u + .body td[bgcolor="#1C1C1E"] a {
  </tr>
  <tr>
  <td align="center" class="es-m-txt-c es-m-p10t es-m-p20r es-m-p20l" bgcolor="#ffffff" style="letter-spacing:.01em!important;padding:10px 40px 10px 40px;background-color:#ffffff"><span class="es-m-txt-16" style="letter-spacing:.01em;font-size:18px; font-family:Satoshi,Arial,sans-serif;color:#000000;line-height:150%">Holy Week is just days away. Challenge yourself to daily peace prompts and Scripture reflections that will prepare you for the cross &amp; empty tomb.
-<br>
+<br><br>
  <strong>My Holy Week Commitments:</strong></span></td>
  </tr>
  
@@ -874,65 +835,11 @@ u + .body td[bgcolor="#1C1C1E"] a {
  
 
 
- <tr>
- <td class="es-m-p20t es-m-p20r es-m-p20l" align="left" bgcolor="#ffffff" style="letter-spacing:.01em!important;padding: 0 40px 0px 40px; background-color:#ffffff;">
-
- <!--[if gte mso 9]>
- <table width="600" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
- <tr>
- <td width="600">
- <![endif]-->
-
- <table width="100%" style="border-collapse:collapse">
- <tr>
- <td align="center" valign="top" style="letter-spacing:.01em!important;padding:0;width:640px;"><table width="100%" style="border-collapse:collapse">
- <tr>
- <td align="center" bgcolor="#E8F4FA" class=" es-m-txt-c es-m-p20l es-m-p20r es-m-p10b" style="letter-spacing:.01em!important;padding-bottom: 10px;padding-top: 30px; background-color: #E8F4FA; border-radius: 20px 20px 0px 0px"><span class="" style="letter-spacing:1px !important;font-family:Satoshi,Arial,sans-serif;font-size:16px;line-height:150%;font-weight:700;color:#000000;text-transform:uppercase">MARCH: FRUITS OF THE SPIRIT&nbsp;CALENDAR</span></td>
- </tr>
- </table></td>
- </tr>
- </table>
-
- <!--[if gte mso 9]>
- </td>
- </tr>
- </table>
- <![endif]-->
-
- </td>
- </tr>
- <tr>
- <td class="es-m-p20r es-m-p20l" align="center" valign="top" bgcolor="#ffffff" style="letter-spacing:.01em!important;padding-left: 40px;padding-right: 40px;width:600px; background-color:#ffffff"><table width="100%" style="border-collapse:collapse">
- <tr>
- <td align="center" bgcolor="#E8F4FA" class="es-m-txt-c es-m-p0t es-m-p20r es-m-p20l es-m-p0b" style="letter-spacing:.01em!important;padding:0 40px 20px 40px; background-color: #E8F4FA"><span class="es-m-txt-16" style="letter-spacing:.01em;font-size:16px; font-family:Satoshi,Arial,sans-serif;color:#000000;line-height:150%">This month's Fruit of the Spirit is <strong>Peace</strong>. Download the March calendar for daily peace prompts and Scripture reflections to guide you through Holy Week and into Easter with a heart at&nbsp;rest.</span></td>
- </tr>
- </table></td>
- </tr>
-
- <tr>
- <td align="center" valign="top" bgcolor="#ffffff" style="letter-spacing:.01em!important;padding-left: 40px;padding-right: 40px;padding-bottom: 30px;width:600px; background-color: #ffffff" class="es-m-p30b es-m-p20r es-m-p20l"><table width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
- <tr>
- <td bgcolor="#E8F4FA" align="center" class="es-m-p30b es-m-p20t es-m-p20r es-m-p20l" style="letter-spacing:.01em!important;padding:0 30px 30px 30px;background-color: #E8F4FA;border-radius: 0 0px 20px 20px;">
-
- <!--[if mso]>
- <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://braze-images.com/appboy/communication/assets/image_assets/images/699f72e6e2e332006307c150/original.jpg?1772057317" style="height:52px;v-text-anchor:middle;width:280px;" arcsize="15%" stroke="f" fillcolor="#00000d">
- <w:anchorlock/>
- <center style="color:#ffffff;font-family:Arial,sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;">DOWNLOAD CALENDAR</center>
- </v:roundrect>
- <![endif]-->
- <!--[if !mso]><!-- -->
- <span class="msohide es-button-border" style="letter-spacing:.01em!important;display:inline-block;border-radius:10px;width:auto;mso-hide:all; background: #00000d"><a href="https://braze-images.com/appboy/communication/assets/image_assets/images/699f72e6e2e332006307c150/original.jpg?1772057317" class="btn-align" target="_blank" style="mso-style-priority:100 !important;text-decoration:none;letter-spacing:0.03em !important;-webkit-text-size-adjust:none;-ms-text-size-adjust:none !important;color:#ffffff;font-size:16px;display:inline-block;border-radius:8px;font-family:Satoshi,Arial,sans-serif;font-weight:700;font-style:normal;line-height:150%;width:auto;text-align:center;padding:15px 30px;mso-padding-alt:0;mso-border-alt:10px solid #00000d;text-transform:uppercase; background: #00000d" aria-label="Download March Peace Calendar">Download Calendar</a></span>
- <!--<![endif]-->
-
- </td>
- </tr>
- </table></td>
- </tr>
 
 
 
  <tr>
- <td class="es-m-p0t" align="left" bgcolor="#ffffff" style="letter-spacing:.01em!important;padding: 10px 20px 0px 20px; background-color:#ffffff">
+ <td class="es-m-p20t" align="left" bgcolor="#ffffff" style="letter-spacing:.01em!important;padding: 40px 20px 0px 20px; background-color:#ffffff">
 
  <!--[if gte mso 9]>
  <table width="640" cellspacing="0" cellpadding="0" align="center" bgcolor="#ffffff">
@@ -1093,7 +1000,7 @@ u + .body td[bgcolor="#1C1C1E"] a {
  <tr>
  <td align="center" class="" style="">
  <tr>
- <td bgcolor="#F5F5F5" style="padding:0 20px 30px 20px; background-color:#F5F5F5" class="es-m-p20l es-m-p20r">
+ <td bgcolor="#F5F5F5" style="padding:0 20px 30px 20px; background-color:#F5F5F5" class="es-m-p20l es-m-p20r es-m-p0t">
 
  <!--[if gte mso 9]>
  <table width="640" cellspacing="0" cellpadding="0" align="center" bgcolor="#F5F5F5">
@@ -1104,15 +1011,11 @@ u + .body td[bgcolor="#1C1C1E"] a {
  <table cellspacing="0" cellpadding="0" width="100%">
  <tr> <th width="50%" class="stack-column-center mobile-border" style="border-radius: 10px 0px 0px 10px;background-color:#F5F5F5"><table cellspacing="0" cellpadding="0" width="100%">
  <!-- Desktop Easter Tab Link -->
- <tr class="es-mobile-hidden">
- <td style="text-align: center;padding:20px 15px 0px 20px;border-radius: 10px 0px 0px 10px" class="module-image es-m-p0t es-m-p30b">
- <a href="https://www.pray.com/discover?tag=easter" target="_blank" style="text-decoration: underline; color: #00000d;" rel="noopener"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/69b998b24ef7170063f16896/original.png?1773770929" width="290" alt="Easter on Pray.com" style="width: 100%; max-width: 290px;border-radius:7px; background-color: #f0f0f0;"></a></td>
+ <tr>
+ <td style="text-align: center;padding:20px 20px 0px 20px;border-radius: 10px 0px 0px 10px" class="es-m-p0t es-m-p10b">
+ <a universal="true" href="https://www.pray.com/discover?tag=easter&deeplink=pray%3A%2F%2Fpage%2Ftab%3Fname%3Dlisten%26tag%3Deaster&$desktop_url=https://www.pray.com/discover?tag=easter&utm_campaign=easter" target="_blank" style="text-decoration: underline; color: #00000d;" rel="noopener"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/69b998b24ef7170063f16896/original.png?1773770929" width="290" alt="Easter on Pray.com" style="width: 100%; max-width: 290px;border-radius:7px; background-color: #f0f0f0;"></a></td>
  </tr>
- <!-- Mobile Easter Tab Link -->
- <tr class="mobile-only-image" style="display:none">
- <td style="text-align: center;padding:0 15px 15px 20px;border-radius: 10px 0px 0px 10px" class="module-image es-m-p0t es-m-p30b">
- <a universal="true" href="https://pray.com?deeplink=pray%3A%2F%2Fpage%2Ftab%3Fname%3Dlisten%26tag%3Deaster" target="_blank" style="text-decoration: underline; color: #00000d;" rel="noopener"><img src="https://braze-images.com/appboy/communication/assets/image_assets/images/69b998b24ef7170063f16896/original.png?1773770929" width="290" alt="Easter on Pray.com" style="width: 100%; max-width: 290px;border-radius:7px; background-color: #f0f0f0;"></a></td>
- </tr>
+
  </table></th>
 
  <!--[if gte mso 9]>
@@ -1120,13 +1023,16 @@ u + .body td[bgcolor="#1C1C1E"] a {
  <td width="320" valign="middle">
  <![endif]-->
 
- <th valign="middle" width="50%" class="stack-column-center mobile-border-3" style="background-color:#F5F5F5"><table cellspacing="0" cellpadding="0" width="100%" >
+<th valign="middle" width="50%" class="stack-column-center mobile-border-3" style="background-color:#F5F5F5"><table cellspacing="0" cellpadding="0" width="100%" >
  <tr>
  <td valign="top" style="text-align: left; vertical-align:top;padding: 20px 30px 20px 10px;font-family: Satoshi, Arial, Helvetica, sans-serif; font-weight: 700; font-size: 20px; line-height: 150%; color: #00000d; " class="copy-2 es-m-p0">Explore the Easter&nbsp;Tab
  <div style="letter-spacing:.01em;font-size:16px; font-family:Satoshi,Arial,sans-serif;color:#00000d;line-height:150%;padding-top:5px; font-weight: normal;">Journey through Holy Week with curated content designed to prepare your heart for the resurrection. From Palm Sunday to Easter morning, find messages that draw you closer to the cross and the hope it&nbsp;brings.</div>
- <div style="font-size:17px; color: #444444;font-family:Satoshi,Arial,sans-serif;text-transform:none;font-weight: 400;letter-spacing:0;padding-top:5px;padding-bottom:0;display:block" class="es-m-p0b"><!-- Desktop link --><a class="desktop-link" href="https://www.pray.com/discover?tag=easter" style="text-decoration:underline;color:#9e6900; font-weight: bold;">Visit the Easter Tab</a><!-- Mobile link --><a class="mobile-link" universal="true" href="https://pray.com?deeplink=pray%3A%2F%2Fpage%2Ftab%3Fname%3Dlisten%26tag%3Deaster" style="text-decoration:underline;color:#9e6900; font-weight: bold;">Visit the Easter Tab</a></div></td>
+ <div style="font-size:17px; color: #444444;font-family:Satoshi,Arial,sans-serif;text-transform:none;font-weight: 400;letter-spacing:0;padding-top:5px;padding-bottom:0;" class="es-m-p0b"><a universal="true" href="https://www.pray.com/discover?tag=easter&deeplink=pray%3A%2F%2Fpage%2Ftab%3Fname%3Dlisten%26tag%3Deaster&$desktop_url=https://www.pray.com/discover?tag=easter&utm_campaign=easter" style="text-decoration:underline;color:#9e6900; font-weight: bold;">Visit the Easter Tab</a></div></td>
  </tr>
  </table></th>
+
+
+
  </tr>
  </table>
 
@@ -1146,7 +1052,7 @@ u + .body td[bgcolor="#1C1C1E"] a {
  {% if {{custom_attribute.${subscription_tier}}} == blank %}
  
  <tr>
- <td bgcolor="fffffe" style="padding:40px 40px 40px 40px; background-color: #ffffff;" class="es-m-p20t es-m-p20r es-m-p20l">
+ <td bgcolor="fffffe" style="padding:40px 40px 10px 40px; background-color: #ffffff;" class="es-m-p20t es-m-p20r es-m-p20l">
 
  <!--[if gte mso 9]>
  <table width="600" cellspacing="0" cellpadding="0" align="center" bgcolor="#E8F4FA" style="border-radius:14px;">
@@ -1216,7 +1122,7 @@ u + .body td[bgcolor="#1C1C1E"] a {
 
 
  <tr>
- <td align="center" bgcolor="#ffffff" style="text-align: center;padding-left: 100px;padding-right: 100px;padding-top: 0;padding-bottom: 30px;background-color:#ffffff;" class="scripture-container">
+ <td align="center" bgcolor="#ffffff" style="text-align: center;padding-left: 100px;padding-right: 100px;padding-top: 30px;padding-bottom: 30px;background-color:#ffffff;" class="scripture-container es-m-p10t">
 
  <!--[if gte mso 9]>
  <table width="480" cellspacing="0" cellpadding="0" align="center">
